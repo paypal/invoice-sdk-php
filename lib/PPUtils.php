@@ -1,8 +1,8 @@
 <?php
 class PPUtils {
 	
-	const SDK_VERSION = "0.6";
-	const SDK_NAME = "PHP Invoice SDK ";
+	const SDK_VERSION = "1.0";
+	const SDK_NAME = "invoicing-php-sdk";
 	
 	/**
 	 * 
@@ -65,6 +65,6 @@ class PPUtils {
 	 * parameter when making API calls
 	 */
 	public function getRequestSource() {
-		return str_replace(" ", "_", self::SDK_NAME). self::SDK_VERSION;
+		return str_replace(" ", "-", self::SDK_NAME) . "-" . self::SDK_VERSION;
 	}
 }

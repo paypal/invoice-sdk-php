@@ -68,7 +68,7 @@ class PPUtilsTest extends PHPUnit_Framework_TestCase
     public function testGetRequestSource()
     {
        $version =  $this->object->getRequestSource();
-       $this->assertEquals('PHP_Invoice_SDK_0.6',$version);
+       $this->assertEquals('invoicing-php-sdk-1.0',$version);
     }
 }
 ?>

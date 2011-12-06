@@ -1,0 +1,11 @@
+
+PayPal Invoicing SDK for PHP
+
+------------------------------------------------------------------------------------------------------
+Version 1.0 - September 23, 2011
+	This release contains wrappers for the 5 new invoicing APIs - UpdateInvoice, GetInvoiceDetails,
+CancelInvoice, SearchInvoices & MarkInvoiceAsPaid
+------------------------------------------------------------------------------------------------------
+Version 0.6 - May 10, 2011
+	Initial beta release of the invoicing SDK
+------------------------------------------------------------------------------------------------------
