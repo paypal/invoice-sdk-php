@@ -33,10 +33,10 @@ class PPBaseService {
 		return $this->serviceName;
 	}
 	
-	public function call($method, $requestObject, $apiUsername = null, $accessToken = null, $tokenSecret = null) {
+	public function call($method, $requestObject, $apiUsername = null) {
 		$service = new PPAPIService();
 		$service->setServiceName($this->serviceName);
-		return $service->makeRequest($method, $requestObject, $apiUsername ,$accessToken, $tokenSecret);
+		return $service->makeRequest($method, $requestObject, $apiUsername , $this->accessToken, $this->tokenSecret);
 		
 	}
 }

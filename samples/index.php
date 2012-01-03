@@ -1,45 +1,47 @@
+<?php
+$path = '../lib';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+require_once('PPUtils.php');
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <html>
 <head>
-  <title>PayPal SDK Samples Main Page</title>
-
+  <title>PayPal Invoicing SDK Samples Home</title>
+  <link rel="stylesheet" type="text/css" href="sdk.css"/>	
 </head>
 
 <body>
-  <center>
-    <h4>Welcome to PayPal Invoicing SDK Samples Home Page</h4>
+	<br/>
+    <center>
+	  <h4>PayPal Invoicing SDK Samples Home</h4>
+	  <h5>SDK v<?php echo PPUtils::SDK_VERSION; ?></h5>
+    </center>
 
-    <table>
+    <table align="center">
       <tr>
-        <th>Invoicing Samples (Reference
-        Implementations)</th>
-      </tr>
-
-      <tr>
-        <td><a id="PayImplicitLink" href="createAndSendInvoice.php" name=
-        "PayImplicitLink">createAndSendInvoice</a></td>
+		  <td><a href="createInvoice.php">CreateInvoice</a></td>
       </tr>
       <tr>
-		  <td><a id="PayParallelLink" href="createInvoice.php" name=
-		  "PayParallelLink">createInvoice</a></td>
+        <td><a href="sendInvoice.php">SendInvoice</a></td>
+      </tr>
+	  <tr>
+        <td><a href="createAndSendInvoice.php">CreateAndSendInvoice</a></td>
       </tr>
       <tr>
-		  <td><a id="PayChainedLink" href="getInvoiceDetails.php" name=
-		  "PayChainedLink">getInvoiceDetails</a></td>
+        <td><a href="updateInvoice.php">UpdateInvoice</a></td>
       </tr>
- 	  <tr>
-		  <td><a id="PayCreateLink" href="searchInvoice.php" name=
-		  "PayCreateLink">searchInvoice</a></td>
+	  <tr>
+		  <td><a href="getInvoiceDetails.php">GetInvoiceDetails</a></td>
       </tr>
       <tr>
-        <td><a id="PaymentDetailsLink" href="sendInvoice.php"
-        name="PaymentDetailsLink">sendInvoice</a></td>
+        <td><a href="cancelInvoice.php">CancelInvoice</a></td>
       </tr>
-
-
+	  <tr>
+		  <td><a href="searchInvoice.php">SearchInvoices</a></td>
+      </tr>
+      <tr>
+        <td><a href="markInvoiceAsPaid.php">MarkInvoiceAsPaid</a></td>
+      </tr>
     </table>
-  </center>
-
 </body>
 </html>

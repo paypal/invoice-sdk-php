@@ -20,17 +20,13 @@ try {
 	$permissions = new PermissionsService('Permissions');
 	$response = $permissions->GetAccessToken($request);
 
-
-
-
 	/* Display the API response back to the browser.
 	 If the response from PayPal was a success, display the response parameters'
 	 If the response was an error, display the errors received using APIError.php.
 	 */
 	$ack = strtoupper($response->responseEnvelope->ack);
-
-	if($ack!="SUCCESS"){
-		$_SESSION['reshash']=$response;
+	if($ack != "SUCCESS"){
+		$_SESSION['reshash'] = $response;
 		$location = "APIError.php";
 		header("Location: $location");
 	}
@@ -44,7 +40,8 @@ catch(Exception $ex) {
 
 <html>
 <head>
-
+	<title>PayPal Invoicing SDK Samples - Get Access Token Response</title>
+	<link rel="stylesheet" type="text/css" href="../sdk.css"/>
 </head>
 
 <body>

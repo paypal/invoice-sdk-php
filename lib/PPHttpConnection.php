@@ -163,11 +163,10 @@ class PPHttpConnection
 				$result = curl_exec($ch);
 				$httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);	
 										
-			} while (in_array($httpStatus, self::$retryCodes) && ++$retries < $this->retry );
-			
+			} while (in_array($httpStatus, self::$retryCodes) && ++$retries < $this->retry );		
 			
 		}
-		if ( curl_errno($ch) ) {			
+		if ( curl_errno($ch) ) {		
 			$ex = new PPConnectionException($url, curl_error($ch), curl_errno($ch));
 			curl_close($ch);
 			throw $ex;

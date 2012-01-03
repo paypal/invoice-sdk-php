@@ -11,7 +11,7 @@ require_once('services/PermissionsService.php');
 try {
 	$serverName = $_SERVER['SERVER_NAME'];
 	$serverPort = $_SERVER['SERVER_PORT'];
-	$url=dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
+	$url = dirname('http://'.$serverName.':'.$serverPort.$_SERVER['REQUEST_URI']);
 	$returnURL = $url."/GetAccessToken.php";
 	$cancelURL = $url. "/RequestPermissions.php" ;
 
@@ -30,7 +30,7 @@ try {
 	}
 	$requestEnvelope = new RequestEnvelope();
 	$requestEnvelope->errorLanguage = "en_US";
-	$request = new RequestPermissionsRequest($scope,$returnURL);
+	$request = new RequestPermissionsRequest($scope, $returnURL);
 	$request->requestEnvelope = $requestEnvelope;
 	$permissions = new PermissionsService('Permissions');
 	$response = $permissions->RequestPermissions($request);
@@ -40,8 +40,8 @@ try {
 	 */
 	$ack = strtoupper($response->responseEnvelope->ack);
 	session_start();
-	if($ack!="SUCCESS"){
-		$_SESSION['reshash']=$response;
+	if($ack != "SUCCESS"){
+		$_SESSION['reshash'] = $response;
 		$location = "APIError.php";
 		header("Location: $location");
 	}
@@ -49,15 +49,20 @@ try {
 
 }
 catch(Exception $ex) {
-	throw new Exception('Error occurred in GetPermissions method');
+	throw new Exception('Error occurred in GetPermissions method: ' . $ex->getMessage());
 }
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-
+<head>
+	<title>PayPal Invoicing SDK Samples - Request Permissions Response</title>
+	<link rel="stylesheet" type="text/css" href="../sdk.css"/>
+</head>
 
 <body>
+<div class="overview">Step 2) Redirect third party to PayPal so that the user may login and grant permissions to the API caller.</div>
+ 
 <br />
 <div id="request_form">
 

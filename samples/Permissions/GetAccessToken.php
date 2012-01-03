@@ -8,16 +8,16 @@
 
 <html>
 <head>
-<title>Permissions - Get Access Token</title>
+	<title>PayPal Invoicing SDK Samples - Get Access Token</title>
+	<link rel="stylesheet" type="text/css" href="../sdk.css"/>
 </head>
 <body>
-<center>
 
+	<center><h3>Permissions - Get Access Token</h3></center>
 	<form action="GetAccessTokenReceipt.php" method="post">
-	
-	
-	<h3>Permissions - Get Access Token</h3>
-	<table>
+	<div class="overview">Step 3) Invoke the GetAccessToken API to obtain a token and token secret that represents the granted third party permissions. The access token and secret returned by this API must be stored securely for future use.</div>
+
+	<table align="center">
 	<tr><td>
 	Verifier<input type="text" name="Verifier" size="50"
 		value="<?php if(isset($_REQUEST['verification_code'])) echo $_REQUEST['verification_code']?>" /><br></br>
@@ -28,6 +28,5 @@
 	</table>
 	</form>
 
-</center>
 </body>
 </html>

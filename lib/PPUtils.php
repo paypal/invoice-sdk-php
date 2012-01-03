@@ -1,7 +1,7 @@
 <?php
 class PPUtils {
 	
-	const SDK_VERSION = "1.0";
+	const SDK_VERSION = "1.1.84";
 	const SDK_NAME = "invoicing-php-sdk";
 	
 	/**

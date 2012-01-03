@@ -1,11 +1,11 @@
 <html>
 <head>
-	<title>CreateInvoice Sample API Page</title>
+	<title>UpdateInvoice Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
-	<h2>CreateInvoice API Test Page</h2>
+	<h2>UpdateInvoice API Test Page</h2>
 <?php
 $path = '../lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
@@ -19,7 +19,7 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('createInvoiceTest');
+$logger = new PPLoggingManager('updateInvoiceTest');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	// send request
@@ -29,25 +29,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$itemList->item = array($item1, $item2);
 	$invoice = new InvoiceType($_POST['merchantEmail'], $_POST['payerEmail'], $itemList, $_POST['currencyCode'], $_POST['paymentTerms']);
 	$requestEnvelope = new RequestEnvelope("en_US");
-	$createInvoiceRequest = new CreateInvoiceRequest($requestEnvelope, $invoice);
-	$logger->error("created CreateInvoiceRequest Object");
+	$updateInvoiceRequest = new UpdateInvoiceRequest($requestEnvelope, $_POST['invoiceId'], $invoice);
+	$logger->error("created UpdateInvoiceRequest Object");
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null))
+	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null))
 	{
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 
-	$createInvoiceResponse = $invoiceService->CreateInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->error("Received CreateInvoiceResponse:");
-	var_dump($createInvoiceResponse);
+	$updateInvoiceResponse = $invoiceService->UpdateInvoice($updateInvoiceRequest, 'jb-us-seller_api1.paypal.com');
+	$logger->error("Received UpdateInvoiceResponse:");
+	var_dump($updateInvoiceResponse);
 } else {
-?>
+
+	?>
+
 <form method="POST">
-<div id="apidetails">The CreateInvoice API operation is used to create a new "Draft" invoice. The call includes merchant and payer information in addition to invoice detail. The response to the call contains a invoice ID and a URL where the invoice can be viewed on a browser.</div>
+<div id="apidetails">The UpdateInvoice API operation is used to update an invoice.</div>
 <div class="params">
+<div class="param_name">Invoice ID *</div>
+<div class="param_value"><input type="text" name="invoiceId"/></div>
 <div class="param_name">Merchant Email</div>
 <div class="param_value"><input type="text" name="merchantEmail"
 	value="jb-us-seller@paypal.com" size="50" maxlength="260" /></div>
@@ -82,12 +86,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php
 include('permissions.php');
 ?>
-<input type="submit" name="CreateBtn" value="CreateInvoice" /></div>
+<input type="submit" name="CreateBtn" value="UpdateInvoice" /></div>
 </form>
-
 <?php
 }
 ?>
-<a href="index.php" >Home</a>
+	<a href="index.php" >Home</a>
 </body>
 </html>
