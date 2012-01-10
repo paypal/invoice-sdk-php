@@ -1,3 +1,9 @@
+<?php
+$path = '../lib';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+require_once('services/Invoice/InvoiceService.php');
+require_once('PPLoggingManager.php');
+?>
 <html>
 <head>
 	<title>GetInvoiceDetails Sample API Page</title>
@@ -7,11 +13,6 @@
 <body>
 <h2>GetInvoiceDetails API Test Page</h2>
 <?php
-$path = '../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/Invoice/InvoiceService.php');
-require_once('PPLoggingManager.php');
-session_start();
 
 
 $logger = new PPLoggingManager('GetInvoiceDetails');

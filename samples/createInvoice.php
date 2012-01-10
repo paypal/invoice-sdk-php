@@ -1,3 +1,10 @@
+<?php
+$path = '../lib';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+require_once('services/Invoice/InvoiceService.php');
+require_once('PPLoggingManager.php');
+session_start();
+?>
 <html>
 <head>
 	<title>CreateInvoice Sample API Page</title>
@@ -7,11 +14,6 @@
 <body>
 	<h2>CreateInvoice API Test Page</h2>
 <?php
-$path = '../lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/Invoice/InvoiceService.php');
-require_once('PPLoggingManager.php');
-session_start();
 
 //get the current filename
 $currentFile = $_SERVER["SCRIPT_NAME"];
