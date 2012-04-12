@@ -2,6 +2,9 @@
 PayPal Invoicing SDK for PHP
 
 ------------------------------------------------------------------------------------------------------
+Version 1.1.88 - April 11, 2012
+	This release contains wsdl update version 88.0
+------------------------------------------------------------------------------------------------------
 Version 1.1.84 - December 28, 2011
 	This release contains samples for the UpdateInvoice, CancelInvoice & MarkInvoiceAsPaid APIs.
 ------------------------------------------------------------------------------------------------------
