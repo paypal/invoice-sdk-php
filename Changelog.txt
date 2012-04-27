@@ -1,6 +1,5 @@
-
 PayPal Invoicing SDK for PHP
-Version 1.1.88 - April 17, 2012
+Version 1.2.88 - April 17, 2012
 	- Fix to get SDK working with Permissions API token
 ------------------------------------------------------------------------------------------------------
 Version 1.1.88 - April 11, 2012
