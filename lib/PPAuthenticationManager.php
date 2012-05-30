@@ -14,7 +14,7 @@ class PPAuthenticationManager
 
 		if(isset($accessToken) && isset($tokenSecret))
 		{
-			$headers_arr[] = "X-PP-AUTHORIZATION:  " . $this->generateAuthString($apiCred, $accessToken, $tokenSecret, $url);
+			$headers_arr[] = "X-PAYPAL-AUTHORIZATION:  " . $this->generateAuthString($apiCred, $accessToken, $tokenSecret, $url);
 			//$headers_arr[] = "CLIENT-AUTH: No cert";
 		}
 		// Add headers required for service authentication
