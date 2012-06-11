@@ -832,7 +832,8 @@ class InvoiceItemListType {
 		for($i=0; $i<count($this->item);$i++) {
 			$newPrefix = $prefix . "item($i).";
 			$str .= $delim . call_user_func(array($this->item[$i], 'toNVPString'), $newPrefix);
-		 }
+			$delim = '&';
+		}
 
 		return $str;
 	}
@@ -1012,6 +1013,24 @@ class InvoiceType {
 	 */
 	public $referrerCode;
 
+	/**
+	 * Label used to display custom amount value.
+	 * If a value is entered for customAmountLabel, then customAmountValue cannot be empty.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $customAmountLabel;
+
+	/**
+	 * Value of custom amount.
+	 * If a value is entered for customAmountValue, then customAmountLabel cannot be empty.
+	 *
+	 * @access public
+	 * @var decimal
+	 */
+	public $customAmountValue;
+
 
 	public function init($map = null, $prefix='') {
 		if($map != null) {
@@ -1102,6 +1121,14 @@ class InvoiceType {
 			$mapKeyName =  $prefix . 'referrerCode';
 			if($map != null && array_key_exists($mapKeyName, $map)) {
 				$this->referrerCode = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'customAmountLabel';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->customAmountLabel = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'customAmountValue';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->customAmountValue = $map[$mapKeyName];
 			}
 		}
 	}
@@ -1203,6 +1230,14 @@ class InvoiceType {
 		}
 		if( $this->referrerCode != null ) {
 			$str .= $delim .  $prefix . 'referrerCode=' . urlencode($this->referrerCode);
+			$delim = '&';
+		}
+		if( $this->customAmountLabel != null ) {
+			$str .= $delim .  $prefix . 'customAmountLabel=' . urlencode($this->customAmountLabel);
+			$delim = '&';
+		}
+		if( $this->customAmountValue != null ) {
+			$str .= $delim .  $prefix . 'customAmountValue=' . urlencode($this->customAmountValue);
 			$delim = '&';
 		}
 
@@ -1393,6 +1428,83 @@ class InvoiceDetailsType {
 }
 
 /**
+ * OtherPaymentRefundDetailsType
+ * Details of the refund made against this invoice.
+ */
+class OtherPaymentRefundDetailsType {
+	/**
+	 * Optional note associated with the refund.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $note;
+
+	/**
+	 * Date when the invoice was marked as refunded. If the date is not specified, the current date and time is used as a default.
+	 * In addition, the date must be after the payment date of the invoice.
+	 *
+	 * @access public
+	 * @var dateTime
+	 */
+	public $date;
+
+
+	public function init($map = null, $prefix='') {
+		if($map != null) {
+			$mapKeyName =  $prefix . 'note';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->note = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'date';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->date = $map[$mapKeyName];
+			}
+		}
+	}
+
+	public function toNVPString($prefix='') { 
+		$str = '';
+		$delim = '';
+		if( $this->note != null ) {
+			$str .= $delim .  $prefix . 'note=' . urlencode($this->note);
+			$delim = '&';
+		}
+		if( $this->date != null ) {
+			$str .= $delim .  $prefix . 'date=' . urlencode($this->date);
+			$delim = '&';
+		}
+
+		return $str;
+	}
+
+}
+
+/**
+ * PayPalPaymentRefundDetailsType
+ * Details of the paypal refund made against this invoice.
+ */
+class PayPalPaymentRefundDetailsType {
+	/**
+	 * Date when the invoice was marked as refunded by PayPal.
+	 *
+	 * @access public
+	 * @var dateTime
+	 */
+	public $date;
+
+
+	public function init($map = null, $prefix='') {
+		if($map != null) {
+			$mapKeyName =  $prefix . 'date';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->date = $map[$mapKeyName];
+			}
+		}
+	}
+}
+
+/**
  * PayPalPaymentDetailsType
  * PayPal payment details about the invoice.
  */
@@ -1518,7 +1630,7 @@ class PaymentDetailsType {
 	public $paypalPayment;
 
 	/**
-	 * PayPal payment details.
+	 * Other payment details.
 	 *
 	 * @access public
 	 * @var OtherPaymentDetailsType
@@ -1725,7 +1837,8 @@ class SearchParametersType {
 		}
 		for($i=0; $i<count($this->status);$i++) {
 			$str .= $delim .  $prefix ."status($i)=" .  urlencode($this->status[$i]);
-		 }
+			$delim = '&';
+		}
 		if( $this->lowerAmount != null ) {
 			$str .= $delim .  $prefix . 'lowerAmount=' . urlencode($this->lowerAmount);
 			$delim = '&';
@@ -2612,6 +2725,14 @@ class GetInvoiceDetailsResponse {
 	public $paymentDetails;
 
 	/**
+	 * The requested invoice refund details.
+	 *
+	 * @access public
+	 * @var PaymentRefundDetailsType
+	 */
+	public $refundDetails;
+
+	/**
 	 * The URL which lead merchant to view the invoice details on web.
 	 *
 	 * @access public
@@ -2648,6 +2769,11 @@ class GetInvoiceDetailsResponse {
 				$newPrefix = $prefix ."paymentDetails.";
 				$this->paymentDetails = new PaymentDetailsType();
 				$this->paymentDetails->init($map, $newPrefix);
+			}
+			if( PPUtils::array_match_key($map, $prefix."refundDetails.") ) {
+				$newPrefix = $prefix ."refundDetails.";
+				$this->refundDetails = new PaymentRefundDetailsType();
+				$this->refundDetails->init($map, $newPrefix);
 			}
 			$mapKeyName =  $prefix . 'invoiceURL';
 			if($map != null && array_key_exists($mapKeyName, $map)) {
@@ -3133,6 +3259,308 @@ class MarkInvoiceAsPaidResponse {
 				}
 				else break;
 				$i++;
+			}
+		}
+	}
+}
+
+/**
+ * MarkInvoiceAsRefundedRequest
+ * The request object for MarkInvoiceAsRefunded.
+ */
+class MarkInvoiceAsRefundedRequest {
+	/**
+	 * @access public
+	 * @var RequestEnvelope
+	 */
+	public $requestEnvelope;
+
+	/**
+	 * ID of the invoice to mark as refunded.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceID;
+
+	/**
+	 * Details of the refund made against this invoice.
+	 *
+	 * @access public
+	 * @var OtherPaymentRefundDetailsType
+	 */
+	public $refundDetail;
+
+
+	public function __construct($requestEnvelope = null, $invoiceID = null, $refundDetail = null) {
+		$this->requestEnvelope  = $requestEnvelope;
+		$this->invoiceID  = $invoiceID;
+		$this->refundDetail  = $refundDetail;
+	}
+
+	public function toNVPString($prefix='') { 
+		$str = '';
+		$delim = '';
+		if( $this->requestEnvelope != null ) {
+			$newPrefix = $prefix . 'requestEnvelope.';
+			$str .= $delim . call_user_func(array($this->requestEnvelope, 'toNVPString'), $newPrefix);
+			$delim = '&';
+		}
+		if( $this->invoiceID != null ) {
+			$str .= $delim .  $prefix . 'invoiceID=' . urlencode($this->invoiceID);
+			$delim = '&';
+		}
+		if( $this->refundDetail != null ) {
+			$newPrefix = $prefix . 'refundDetail.';
+			$str .= $delim . call_user_func(array($this->refundDetail, 'toNVPString'), $newPrefix);
+			$delim = '&';
+		}
+
+		return $str;
+	}
+
+}
+
+/**
+ * MarkInvoiceAsRefundedResponse
+ * The response object for MarkInvoiceAsRefunded.
+ */
+class MarkInvoiceAsRefundedResponse {
+	/**
+	 * @access public
+	 * @var ResponseEnvelope
+	 */
+	public $responseEnvelope;
+
+	/**
+	 * The invoice ID of the invoice that was marked as refunded.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceID;
+
+	/**
+	 * The invoice number of the invoice that was marked as refunded.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceNumber;
+
+	/**
+	 * The URL of the details page of the invoice that was marked as refunded.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceURL;
+
+	/**
+	 * array
+	 * @access public
+	 * @var ErrorData
+	 */
+	public $error;
+
+
+	public function init($map = null, $prefix='') {
+		if($map != null) {
+			if( PPUtils::array_match_key($map, $prefix."responseEnvelope.") ) {
+				$newPrefix = $prefix ."responseEnvelope.";
+				$this->responseEnvelope = new ResponseEnvelope();
+				$this->responseEnvelope->init($map, $newPrefix);
+			}
+			$mapKeyName =  $prefix . 'invoiceID';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->invoiceID = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'invoiceNumber';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->invoiceNumber = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'invoiceURL';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->invoiceURL = $map[$mapKeyName];
+			}
+			$i=0;
+			while(true) {
+				if( PPUtils::array_match_key($map, $prefix."error($i)") ) {
+					$newPrefix = $prefix."error($i).";
+					$this->error[$i] = new ErrorData();
+					$this->error[$i]->init($map, $newPrefix);
+				}
+				else break;
+				$i++;
+			}
+		}
+	}
+}
+
+/**
+ * MarkInvoiceAsUnpaidRequest
+ * The request object for MarkInvoiceAsUnpaid.
+ */
+class MarkInvoiceAsUnpaidRequest {
+	/**
+	 * @access public
+	 * @var RequestEnvelope
+	 */
+	public $requestEnvelope;
+
+	/**
+	 * ID of the invoice to mark as unpaid.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceID;
+
+
+	public function __construct($requestEnvelope = null, $invoiceID = null) {
+		$this->requestEnvelope  = $requestEnvelope;
+		$this->invoiceID  = $invoiceID;
+	}
+
+	public function toNVPString($prefix='') { 
+		$str = '';
+		$delim = '';
+		if( $this->requestEnvelope != null ) {
+			$newPrefix = $prefix . 'requestEnvelope.';
+			$str .= $delim . call_user_func(array($this->requestEnvelope, 'toNVPString'), $newPrefix);
+			$delim = '&';
+		}
+		if( $this->invoiceID != null ) {
+			$str .= $delim .  $prefix . 'invoiceID=' . urlencode($this->invoiceID);
+			$delim = '&';
+		}
+
+		return $str;
+	}
+
+}
+
+/**
+ * MarkInvoiceAsUnpaidResponse
+ * The response object for MarkInvoiceAsUnpaid.
+ */
+class MarkInvoiceAsUnpaidResponse {
+	/**
+	 * @access public
+	 * @var ResponseEnvelope
+	 */
+	public $responseEnvelope;
+
+	/**
+	 * The invoice ID of the invoice that was marked as unpaid.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceID;
+
+	/**
+	 * The invoice number of the invoice that was marked as unpaid.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceNumber;
+
+	/**
+	 * The URL of the details page of the invoice that was marked as unpaid.
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $invoiceURL;
+
+	/**
+	 * array
+	 * @access public
+	 * @var ErrorData
+	 */
+	public $error;
+
+
+	public function init($map = null, $prefix='') {
+		if($map != null) {
+			if( PPUtils::array_match_key($map, $prefix."responseEnvelope.") ) {
+				$newPrefix = $prefix ."responseEnvelope.";
+				$this->responseEnvelope = new ResponseEnvelope();
+				$this->responseEnvelope->init($map, $newPrefix);
+			}
+			$mapKeyName =  $prefix . 'invoiceID';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->invoiceID = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'invoiceNumber';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->invoiceNumber = $map[$mapKeyName];
+			}
+			$mapKeyName =  $prefix . 'invoiceURL';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->invoiceURL = $map[$mapKeyName];
+			}
+			$i=0;
+			while(true) {
+				if( PPUtils::array_match_key($map, $prefix."error($i)") ) {
+					$newPrefix = $prefix."error($i).";
+					$this->error[$i] = new ErrorData();
+					$this->error[$i]->init($map, $newPrefix);
+				}
+				else break;
+				$i++;
+			}
+		}
+	}
+}
+
+/**
+ * PaymentRefundDetailsType
+ * Payment refund details about the invoice.
+ */
+class PaymentRefundDetailsType {
+	/**
+	 * True if the invoice was refunded using PayPal.
+	 *
+	 * @access public
+	 * @var boolean
+	 */
+	public $viaPayPal;
+
+	/**
+	 * Other payment refund details.
+	 *
+	 * @access public
+	 * @var PayPalPaymentRefundDetailsType
+	 */
+	public $paypalPayment;
+
+	/**
+	 * details.
+	 *
+	 * @access public
+	 * @var OtherPaymentRefundDetailsType
+	 */
+	public $otherPayment;
+
+
+	public function init($map = null, $prefix='') {
+		if($map != null) {
+			$mapKeyName =  $prefix . 'viaPayPal';
+			if($map != null && array_key_exists($mapKeyName, $map)) {
+				$this->viaPayPal = $map[$mapKeyName];
+			}
+			if( PPUtils::array_match_key($map, $prefix."paypalPayment.") ) {
+				$newPrefix = $prefix ."paypalPayment.";
+				$this->paypalPayment = new PayPalPaymentRefundDetailsType();
+				$this->paypalPayment->init($map, $newPrefix);
+			}
+			if( PPUtils::array_match_key($map, $prefix."otherPayment.") ) {
+				$newPrefix = $prefix ."otherPayment.";
+				$this->otherPayment = new OtherPaymentRefundDetailsType();
+				$this->otherPayment->init($map, $newPrefix);
 			}
 		}
 	}

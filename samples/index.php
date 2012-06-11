@@ -7,7 +7,7 @@ require_once('PPUtils.php');
 <html>
 <head>
   <title>PayPal Invoicing SDK Samples Home</title>
-  <link rel="stylesheet" type="text/css" href="sdk.css"/>	
+  <link rel="stylesheet" type="text/css" href="sdk.css"/>
 </head>
 
 <body>
@@ -41,6 +41,12 @@ require_once('PPUtils.php');
       </tr>
       <tr>
         <td><a href="markInvoiceAsPaid.php">MarkInvoiceAsPaid</a></td>
+      </tr>
+      <tr>
+        <td><a href="markInvoiceAsUnpaid.php">MarkInvoiceAsUnpaid</a></td>
+      </tr>
+      <tr>
+        <td><a href="markInvoiceAsRefunded.php">MarkInvoiceAsRefunded</a></td>
       </tr>
     </table>
 </body>

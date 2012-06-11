@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoice = new InvoiceType($_POST['merchantEmail'], $_POST['payerEmail'], $itemList, $_POST['currencyCode'], $_POST['paymentTerms']);
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$createAndSendInvoiceRequest = new CreateAndSendInvoiceRequest($requestEnvelope, $invoice);
-	$logger->error("created CreateAndSendInvoiceRequest Object");
+	$logger->info("created CreateAndSendInvoiceRequest Object");
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 	$createAndSendInvoiceResponse = $invoiceService->CreateAndSendInvoice($createAndSendInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->error("Received CreateAndSendInvoiceResponse:");
+	$logger->info("Received CreateAndSendInvoiceResponse:");
 	var_dump($createAndSendInvoiceResponse);
 
 } else {
@@ -92,6 +92,6 @@ include('permissions.php');
 <?php
 }
 ?>
-	<a href="index.php" >Home</a>
+<br/><br/><a href="index.php" >Home</a>
 </body>
 </html>

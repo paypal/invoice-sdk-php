@@ -66,8 +66,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$searchInvoicesRequest = new SearchInvoicesRequest($requestEnvelope, $merchantEmail, $parameters, $page, $pageSize);
-	$logger->error("created GsearchInvoices Object");
-	
+	$logger->info("created GsearchInvoices Object");
+
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null))
@@ -76,7 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 	$searchInvoicesResponse = $invoiceService->SearchInvoices($searchInvoicesRequest);
-	$logger->error("Received searchInvoices Response");
+	$logger->info("Received searchInvoices Response");
 	var_dump($searchInvoicesResponse);
 } else {
 ?>
@@ -114,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<option value="MarkedAsPaid">MarkedAsPaid</option>
 		<option value="Canceled">Canceled</option>
 	</select>
-	 (Or) 
+	 (Or)
 	<select name="status[]">
 		<option value="">--Select a value--</option>
 		<option value="Draft">Draft</option>
@@ -123,7 +123,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<option value="MarkedAsPaid">MarkedAsPaid</option>
 		<option value="Canceled">Canceled</option>
 	</select>
-	 (Or) 
+	 (Or)
 	<select name="status[]">
 		<option value="">--Select a value--</option>
 		<option value="Draft">Draft</option>
@@ -131,16 +131,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<option value="Paid">Paid</option>
 		<option value="MarkedAsPaid">MarkedAsPaid</option>
 		<option value="Canceled">Canceled</option>
-	</select>				
-</div>			
+	</select>
+</div>
 <div class="param_name">Lowest invoice amount to match</div>
 <div class="param_value">
 	<input type="text" name="lowerAmount" value="1.0" />
-</div>									
+</div>
 <div class="param_name">Highest invoice amount to match</div>
 <div class="param_value">
 	<input type="text" name="upperAmount" value="100.0" />
-</div>			
+</div>
 <div class="param_name">Currency code</div>
 <div class="param_value">
 	<input type="text" name="currencyCode" value="USD" />
@@ -194,6 +194,6 @@ include('permissions.php');
 <?php
 }
 ?>
-	<a href="index.php" >Home</a>
+<br/><br/><a href="index.php" >Home</a>
 </body>
 </html>

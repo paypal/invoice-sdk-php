@@ -125,6 +125,34 @@ class InvoiceService extends PPBaseService {
 	}
 
 
+	/**
+	 * Service Call: MarkInvoiceAsUnpaid
+	 * @param MarkInvoiceAsUnpaidRequest $markInvoiceAsUnpaidRequest
+	 * @return MarkInvoiceAsUnpaidResponse
+	 * @throws APIException
+	 */
+	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiUsername=null) {
+		$ret = new MarkInvoiceAsUnpaidResponse();
+		$resp = $this->call("MarkInvoiceAsUnpaid", $markInvoiceAsUnpaidRequest, $apiUsername);
+		$ret->init(PPUtils::nvpToMap($resp));
+		return $ret;
+	}
+
+
+	/**
+	 * Service Call: MarkInvoiceAsRefunded
+	 * @param MarkInvoiceAsRefundedRequest $markInvoiceAsRefundedRequest
+	 * @return MarkInvoiceAsRefundedResponse
+	 * @throws APIException
+	 */
+	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiUsername=null) {
+		$ret = new MarkInvoiceAsRefundedResponse();
+		$resp = $this->call("MarkInvoiceAsRefunded", $markInvoiceAsRefundedRequest, $apiUsername);
+		$ret->init(PPUtils::nvpToMap($resp));
+		return $ret;
+	}
+
+
 }
 
 ?>

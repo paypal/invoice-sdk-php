@@ -23,16 +23,16 @@ $_SESSION['curFile'] = $currentFile;
 
 $logger = new PPLoggingManager('createInvoiceTest');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-	
+
 	// send request
 	$item1 = new InvoiceItemType($_POST['item_name1'], $_POST['item_quantity1'], $_POST['item_unitPrice1']);
-	$item2 = new InvoiceItemType($_POST['item_name2'], $_POST['item_quantity2'], $_POST['item_unitPrice2']);	
+	$item2 = new InvoiceItemType($_POST['item_name2'], $_POST['item_quantity2'], $_POST['item_unitPrice2']);
 	$itemList = new InvoiceItemListType();
 	$itemList->item = array($item1, $item2);
 	$invoice = new InvoiceType($_POST['merchantEmail'], $_POST['payerEmail'], $itemList, $_POST['currencyCode'], $_POST['paymentTerms']);
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$createInvoiceRequest = new CreateInvoiceRequest($requestEnvelope, $invoice);
-	$logger->error("created CreateInvoiceRequest Object");
+	$logger->info("created CreateInvoiceRequest Object");
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$createInvoiceResponse = $invoiceService->CreateInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->error("Received CreateInvoiceResponse:");
+	$logger->info("Received CreateInvoiceResponse:");
 	var_dump($createInvoiceResponse);
 } else {
 ?>
@@ -84,12 +84,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php
 include('permissions.php');
 ?>
-<input type="submit" name="CreateBtn" value="CreateInvoice" /></div>
+<input type="submit" name="CreateBtn" value="Create Invoice" /></div>
 </form>
 
 <?php
 }
 ?>
-<a href="index.php" >Home</a>
+<br/><br/><a href="index.php" >Home</a>
 </body>
 </html>

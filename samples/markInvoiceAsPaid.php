@@ -9,7 +9,7 @@ session_start();
 <html>
 <head>
 	<title>MarkInvoiceAsPaid Sample API Page</title>
-	<link rel="stylesheet" type="text/css" href="sdk.css"/>	
+	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
@@ -22,7 +22,7 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('SendInvoice');
+$logger = new PPLoggingManager('MarkInvoiceAsPaid');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// create request object
@@ -34,8 +34,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$payment->note = $_POST['note'];
 	if($_POST['paymentDate'] != "")
 		$payment->date = $_POST['paymentDate'];
-	$markInvoiceAsPaidRequest = new MarkInvoiceAsPaidRequest($requestEnvelope, $_POST['invoiceID'], $payment);	
-	$logger->error("created MarkInvoiceAsPaid Object");
+	$markInvoiceAsPaidRequest = new MarkInvoiceAsPaidRequest($requestEnvelope, $_POST['invoiceID'], $payment);
+	$logger->info("created MarkInvoiceAsPaid Object");
 
 
 	$invoiceService = new InvoiceService();
@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->error("Received MarkInvoiceAsPaidResponse:");
+	$logger->info("Received MarkInvoiceAsPaidResponse:");
 	var_dump($markInvoiceAsPaidResponse);
 } else {
 ?>
@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form method="POST">
 <div id="apidetails">The MarkInvoiceAsPaid API operation is used to mark an invoice as paid.</div>
 <div class="params">
-	<div class="param_name">InvoiceID *</div>
+	<div class="param_name">Invoice ID *</div>
 	<div class="param_value"><input type="text" name="invoiceID" value=""
 		size="50" maxlength="260" /></div>
 </div>
@@ -82,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	</div>
 </div>
 <div class="params">
-	<div class="param_name">Date when the invoice is paid</div>
+	<div class="param_name">Date when the invoice as paid</div>
 	<div class="param_value">
 		<input type="text" name="paymentDate" value="2011-12-20T02:56:08" />
 	</div>
@@ -94,6 +94,6 @@ include('permissions.php');
 <?php
 }
 ?>
-	<a href="index.php" >Home</a>
+<br/><br/><a href="index.php" >Home</a>
 </body>
 </html>

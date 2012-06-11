@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$sendInvoiceRequest = new SendInvoiceRequest($requestEnvelope, $_POST['invoiceID']);
-	$logger->error("created SendInvoice Object");
+	$logger->info("created SendInvoice Object");
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null))
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 	$sendInvoiceResponse = $invoiceService->SendInvoice($sendInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->error("Received SendInvoiceResponse:");
+	$logger->info("Received SendInvoiceResponse:");
 	var_dump($sendInvoiceResponse);
 } else {
 
@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form method="POST">
 <div id="apidetails">SendInvoice API operation is used to send an invoice to a payer and notify the payer of the pending invoice.</div>
 <div class="params">
-<div class="param_name">InvoiceID</div>
+<div class="param_name">Invoice ID</div>
 <div class="param_value"><input type="text" name="invoiceID" value=""
 	size="50" maxlength="260" /></div>
 </div>
@@ -56,6 +56,6 @@ include('permissions.php');
 <?php
 }
 ?>
-<a href="index.php" >Home</a>
+<br/><br/><a href="index.php" >Home</a>
 </body>
 </html>
