@@ -1,17 +1,24 @@
-<?php
-
+<?php 
 require_once('PPBaseService.php');
 require_once('Invoice.php');
 require_once('PPUtils.php');
+
+
 /**
- * Invoice wrapper class
- * Auto generated code
+ * AUTO GENERATED code for Invoice
  */
 class InvoiceService extends PPBaseService {
-	private static $SERVICE_VERSION='1.6.0';
+
+	// Service Version
+	private static $SERVICE_VERSION = "1.6.0";
+
+	// Service Name
+	private static $SERVICE_NAME = "Invoice";
+
 	public function __construct() {
 		parent::__construct('Invoice');
 	}
+
 
 	/**
 	 * Service Call: CreateInvoice
@@ -19,13 +26,13 @@ class InvoiceService extends PPBaseService {
 	 * @return CreateInvoiceResponse
 	 * @throws APIException
 	 */
-	public function CreateInvoice($createInvoiceRequest, $apiUsername=null) {
+	public function CreateInvoice($createInvoiceRequest, $apiUsername = null) {
 		$ret = new CreateInvoiceResponse();
 		$resp = $this->call("CreateInvoice", $createInvoiceRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: SendInvoice
@@ -33,13 +40,13 @@ class InvoiceService extends PPBaseService {
 	 * @return SendInvoiceResponse
 	 * @throws APIException
 	 */
-	public function SendInvoice($sendInvoiceRequest, $apiUsername=null) {
+	public function SendInvoice($sendInvoiceRequest, $apiUsername = null) {
 		$ret = new SendInvoiceResponse();
 		$resp = $this->call("SendInvoice", $sendInvoiceRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: CreateAndSendInvoice
@@ -47,13 +54,13 @@ class InvoiceService extends PPBaseService {
 	 * @return CreateAndSendInvoiceResponse
 	 * @throws APIException
 	 */
-	public function CreateAndSendInvoice($createAndSendInvoiceRequest, $apiUsername=null) {
+	public function CreateAndSendInvoice($createAndSendInvoiceRequest, $apiUsername = null) {
 		$ret = new CreateAndSendInvoiceResponse();
 		$resp = $this->call("CreateAndSendInvoice", $createAndSendInvoiceRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: UpdateInvoice
@@ -61,13 +68,13 @@ class InvoiceService extends PPBaseService {
 	 * @return UpdateInvoiceResponse
 	 * @throws APIException
 	 */
-	public function UpdateInvoice($updateInvoiceRequest, $apiUsername=null) {
+	public function UpdateInvoice($updateInvoiceRequest, $apiUsername = null) {
 		$ret = new UpdateInvoiceResponse();
 		$resp = $this->call("UpdateInvoice", $updateInvoiceRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: GetInvoiceDetails
@@ -75,13 +82,13 @@ class InvoiceService extends PPBaseService {
 	 * @return GetInvoiceDetailsResponse
 	 * @throws APIException
 	 */
-	public function GetInvoiceDetails($getInvoiceDetailsRequest, $apiUsername=null) {
+	public function GetInvoiceDetails($getInvoiceDetailsRequest, $apiUsername = null) {
 		$ret = new GetInvoiceDetailsResponse();
 		$resp = $this->call("GetInvoiceDetails", $getInvoiceDetailsRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: CancelInvoice
@@ -89,13 +96,13 @@ class InvoiceService extends PPBaseService {
 	 * @return CancelInvoiceResponse
 	 * @throws APIException
 	 */
-	public function CancelInvoice($cancelInvoiceRequest, $apiUsername=null) {
+	public function CancelInvoice($cancelInvoiceRequest, $apiUsername = null) {
 		$ret = new CancelInvoiceResponse();
 		$resp = $this->call("CancelInvoice", $cancelInvoiceRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: SearchInvoices
@@ -103,13 +110,13 @@ class InvoiceService extends PPBaseService {
 	 * @return SearchInvoicesResponse
 	 * @throws APIException
 	 */
-	public function SearchInvoices($searchInvoicesRequest, $apiUsername=null) {
+	public function SearchInvoices($searchInvoicesRequest, $apiUsername = null) {
 		$ret = new SearchInvoicesResponse();
 		$resp = $this->call("SearchInvoices", $searchInvoicesRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: MarkInvoiceAsPaid
@@ -117,13 +124,13 @@ class InvoiceService extends PPBaseService {
 	 * @return MarkInvoiceAsPaidResponse
 	 * @throws APIException
 	 */
-	public function MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $apiUsername=null) {
+	public function MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $apiUsername = null) {
 		$ret = new MarkInvoiceAsPaidResponse();
 		$resp = $this->call("MarkInvoiceAsPaid", $markInvoiceAsPaidRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: MarkInvoiceAsUnpaid
@@ -131,13 +138,13 @@ class InvoiceService extends PPBaseService {
 	 * @return MarkInvoiceAsUnpaidResponse
 	 * @throws APIException
 	 */
-	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiUsername=null) {
+	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiUsername = null) {
 		$ret = new MarkInvoiceAsUnpaidResponse();
 		$resp = $this->call("MarkInvoiceAsUnpaid", $markInvoiceAsUnpaidRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
+	 
 
 	/**
 	 * Service Call: MarkInvoiceAsRefunded
@@ -145,14 +152,12 @@ class InvoiceService extends PPBaseService {
 	 * @return MarkInvoiceAsRefundedResponse
 	 * @throws APIException
 	 */
-	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiUsername=null) {
+	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiUsername = null) {
 		$ret = new MarkInvoiceAsRefundedResponse();
 		$resp = $this->call("MarkInvoiceAsRefunded", $markInvoiceAsRefundedRequest, $apiUsername);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-
-
+	 
 }
-
 ?>
