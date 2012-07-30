@@ -1,6 +1,7 @@
 
 Version 1.2.92 - July 17, 2012 
-	- wsdl update version 1.2.92
+
+	- wsdl update version 92
 ------------------------------------------
 
 Version 1.2.90 - June 11, 2012
