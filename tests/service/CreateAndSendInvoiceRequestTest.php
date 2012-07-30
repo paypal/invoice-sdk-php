@@ -47,7 +47,7 @@ class CreateAndSendInvoiceRequestTest extends PHPUnit_Framework_TestCase
 
         $this->object = new CreateAndSendInvoiceRequest($requestEnvelope , $invoice);
         $ret = $this->object->toNVPString();
-        $this->assertEquals('requestEnvelope.errorLanguage=en_US&invoice.merchantEmail=jb-us-seller1%40paypal.com&invoice.payerEmail=jbui-us-personal1%40paypal.com&&invoice.itemList.item(0).name=item1&invoice.itemList.item(0).quantity=3&invoice.itemList.item(0).unitPrice=5&invoice.itemList.item(1).name=Iitem2&invoice.itemList.item(1).quantity=3&invoice.itemList.item(1).unitPrice=5&invoice.currencyCode=USD&invoice.paymentTerms=DUEONRECEIPT', $ret);
+        $this->assertEquals('requestEnvelope.errorLanguage=en_US&invoice.merchantEmail=jb-us-seller1%40paypal.com&invoice.payerEmail=jbui-us-personal1%40paypal.com&invoice.itemList.item(0).name=item1&invoice.itemList.item(0).quantity=3&invoice.itemList.item(0).unitPrice=5&invoice.itemList.item(1).name=Iitem2&invoice.itemList.item(1).quantity=3&invoice.itemList.item(1).unitPrice=5&invoice.currencyCode=USD&invoice.paymentTerms=DUEONRECEIPT', $ret);
     }
 }
 ?>
