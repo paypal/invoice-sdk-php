@@ -1,4 +1,10 @@
 
+Version 1.3.93 - August 13, 2012
+ 
+	- SDK Core - Deserialization Logic Change
+--------------------------------------------------------------------------------------------------
+
+
 Version 1.2.92 - July 17, 2012 
 
 	- wsdl update version 92

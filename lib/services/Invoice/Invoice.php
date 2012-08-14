@@ -5,54 +5,54 @@
   * 
   */
 /**
- * No Document Comments
+ * 
  */
 class BaseAddress  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $line1;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $line2;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $city;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $state;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $postalCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $countryCode;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -147,56 +147,56 @@ class BaseAddress  {
 class ErrorData  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var integer
 	 */ 
 	public $errorId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $domain;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $subdomain;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ErrorSeverity
 	 */ 
 	public $severity;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ErrorCategory
 	 */ 
 	public $category;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $message;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $exceptionId;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorParameter
@@ -255,19 +255,19 @@ class ErrorData  {
 
 
 /**
- * No Document Comments
+ * 
  */
 class ErrorParameter  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $name;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -300,14 +300,14 @@ class ErrorParameter  {
 class FaultMessage  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
 	public $responseEnvelope;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -401,7 +401,7 @@ class RequestEnvelope  {
 class ResponseEnvelope  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var dateTime
 	 */ 
@@ -415,14 +415,14 @@ class ResponseEnvelope  {
 	public $ack;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
 	public $correlationId;
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var string
 	 */ 
@@ -746,7 +746,7 @@ class InvoiceItemType  {
 class InvoiceItemListType  {
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var InvoiceItemType
@@ -2033,7 +2033,7 @@ class InvoiceSummaryType  {
 class InvoiceSummaryListType  {
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var InvoiceSummaryType
@@ -2069,7 +2069,7 @@ class InvoiceSummaryListType  {
 class CreateInvoiceRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -2118,7 +2118,7 @@ class CreateInvoiceRequest  {
 class CreateInvoiceResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -2155,7 +2155,7 @@ class CreateInvoiceResponse  {
 	public $totalAmount;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -2212,7 +2212,7 @@ class CreateInvoiceResponse  {
 class SendInvoiceRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -2260,7 +2260,7 @@ class SendInvoiceRequest  {
 class SendInvoiceResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -2282,7 +2282,7 @@ class SendInvoiceResponse  {
 	public $invoiceURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -2331,7 +2331,7 @@ class SendInvoiceResponse  {
 class CreateAndSendInvoiceRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -2380,7 +2380,7 @@ class CreateAndSendInvoiceRequest  {
 class CreateAndSendInvoiceResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -2417,7 +2417,7 @@ class CreateAndSendInvoiceResponse  {
 	public $totalAmount;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -2474,7 +2474,7 @@ class CreateAndSendInvoiceResponse  {
 class UpdateInvoiceRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -2535,7 +2535,7 @@ class UpdateInvoiceRequest  {
 class UpdateInvoiceResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -2572,7 +2572,7 @@ class UpdateInvoiceResponse  {
 	public $totalAmount;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -2629,7 +2629,7 @@ class UpdateInvoiceResponse  {
 class GetInvoiceDetailsRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -2677,7 +2677,7 @@ class GetInvoiceDetailsRequest  {
 class GetInvoiceDetailsResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -2720,7 +2720,7 @@ class GetInvoiceDetailsResponse  {
 	public $invoiceURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -2785,7 +2785,7 @@ class GetInvoiceDetailsResponse  {
 class CancelInvoiceRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -2865,7 +2865,7 @@ class CancelInvoiceRequest  {
 class CancelInvoiceResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -2894,7 +2894,7 @@ class CancelInvoiceResponse  {
 	public $invoiceURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -2947,7 +2947,7 @@ class CancelInvoiceResponse  {
 class SearchInvoicesRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -3032,7 +3032,7 @@ class SearchInvoicesRequest  {
 class SearchInvoicesResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -3074,7 +3074,7 @@ class SearchInvoicesResponse  {
 	public $hasPreviousPage;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -3136,7 +3136,7 @@ class SearchInvoicesResponse  {
 class MarkInvoiceAsPaidRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -3197,7 +3197,7 @@ class MarkInvoiceAsPaidRequest  {
 class MarkInvoiceAsPaidResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -3226,7 +3226,7 @@ class MarkInvoiceAsPaidResponse  {
 	public $invoiceURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -3279,7 +3279,7 @@ class MarkInvoiceAsPaidResponse  {
 class MarkInvoiceAsRefundedRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -3340,7 +3340,7 @@ class MarkInvoiceAsRefundedRequest  {
 class MarkInvoiceAsRefundedResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -3370,7 +3370,7 @@ class MarkInvoiceAsRefundedResponse  {
 	public $invoiceURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
@@ -3423,7 +3423,7 @@ class MarkInvoiceAsRefundedResponse  {
 class MarkInvoiceAsUnpaidRequest  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var RequestEnvelope
 	 */ 
@@ -3471,7 +3471,7 @@ class MarkInvoiceAsUnpaidRequest  {
 class MarkInvoiceAsUnpaidResponse  {
 
 	/**
-	 * No Document Comments
+	 * 
 	 *@access public
 	 *@var ResponseEnvelope
 	 */ 
@@ -3501,7 +3501,7 @@ class MarkInvoiceAsUnpaidResponse  {
 	public $invoiceURL;
 
 	/**
-	 * No Document Comments
+	 * 
      *@array
 	 *@access public
 	 *@var ErrorData
