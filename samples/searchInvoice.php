@@ -77,6 +77,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	$searchInvoicesResponse = $invoiceService->SearchInvoices($searchInvoicesRequest);
 	$logger->info("Received searchInvoices Response");
+	
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $searchInvoicesResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "</table>";
+	
 	var_dump($searchInvoicesResponse);
 } else {
 ?>

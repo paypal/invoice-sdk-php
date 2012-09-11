@@ -38,6 +38,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	$cancelInvoiceResponse = $invoiceService->CancelInvoice($cancelInvoiceRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received CancelInvoiceResponse:");
+	
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $cancelInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $cancelInvoiceResponse->invoiceID ."</div> </td></tr>";
+	echo "</table>";
+	
 	var_dump($cancelInvoiceResponse);
 } else {
 ?>

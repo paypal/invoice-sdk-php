@@ -31,6 +31,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	$getInvoiceDetailsResponse = $invoiceService->GetInvoiceDetails($getInvoiceDetailsRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received getInvoiceDetailsResponse");
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $getInvoiceDetailsResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "</table>";
 	var_dump($getInvoiceDetailsResponse);
 } else {
 ?>

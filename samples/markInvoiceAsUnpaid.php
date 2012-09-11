@@ -40,6 +40,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received MarkInvoiceAsUnpaidResponse:");
+	
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsUnpaidResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsUnpaidResponse->invoiceID ."</div> </td></tr>";
+	echo "</table>";
+	
 	var_dump($markInvoiceAsUnpaidResponse);
 } else {
 ?>

@@ -45,6 +45,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$updateInvoiceResponse = $invoiceService->UpdateInvoice($updateInvoiceRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received UpdateInvoiceResponse:");
+	
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $updateInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $updateInvoiceResponse->invoiceID ."</div> </td></tr>";
+	echo "</table>";
+	
 	var_dump($updateInvoiceResponse);
 } else {
 

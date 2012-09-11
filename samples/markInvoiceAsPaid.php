@@ -48,6 +48,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received MarkInvoiceAsPaidResponse:");
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsPaidResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsPaidResponse->invoiceID ."</div> </td></tr>";
+	echo "</table>";
 	var_dump($markInvoiceAsPaidResponse);
 } else {
 ?>

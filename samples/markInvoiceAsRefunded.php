@@ -45,6 +45,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$markInvoiceAsRefundedResponse = $invoiceService->MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received MarkInvoiceAsRefundedResponse:");
+	
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsRefundedResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsRefundedResponse->invoiceID ."</div> </td></tr>";
+	echo "</table>";
+	
 	var_dump($markInvoiceAsRefundedResponse);
 } else {
 ?>

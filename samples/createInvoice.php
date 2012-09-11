@@ -44,6 +44,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$createInvoiceResponse = $invoiceService->CreateInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
 	$logger->info("Received CreateInvoiceResponse:");
+	echo "<table>";
+	echo "<tr><td>Ack :</td><td><div id='Ack'>". $createInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
+	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $createInvoiceResponse->invoiceID ."</div> </td></tr>";
+	echo "</table>";
 	var_dump($createInvoiceResponse);
 } else {
 ?>
