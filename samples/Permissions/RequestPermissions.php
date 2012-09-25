@@ -20,7 +20,7 @@
 		</div>
 		</td>
 		<td align="left">
-		<input type="checkbox" name="chkScope[]" value='INVOICING' checked /> <b>INVOICING</b> <br />
+		<input type="checkbox" name="chkScope[]" value='INVOICING' checked="checked"/> <b>INVOICING</b> <br />
 		<input type="checkbox" name="chkScope[]" value='EXPRESS_CHECKOUT' /> EXPRESS_CHECKOUT <br />
 		<input type="checkbox" name="chkScope[]" value='DIRECT_PAYMENT' /> DIRECT_PAYMENT <br />
 		<input type="checkbox" name="chkScope[]" value='AUTH_CAPTURE' /> AUTH_CAPTURE <br />

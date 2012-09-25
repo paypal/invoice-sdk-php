@@ -7,15 +7,13 @@ session_start();
 ?>
 <html>
 <head>
-	<title>UpdateInvoice Sample API Page</title>
+	<title>PayPal Invoicing - UpdateInvoice Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
 	<h2>UpdateInvoice API Test Page</h2>
 <?php
-
-
 //get the current filename
 $currentFile = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentFile);
@@ -24,7 +22,6 @@ $_SESSION['curFile'] = $currentFile;
 
 $logger = new PPLoggingManager('updateInvoiceTest');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
 	// send request
 	$item1 = new InvoiceItemType($_POST['item_name1'], $_POST['item_quantity1'], $_POST['item_unitPrice1']);
 	$item2 = new InvoiceItemType($_POST['item_name2'], $_POST['item_quantity2'], $_POST['item_unitPrice2']);
@@ -37,25 +34,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 
-	$updateInvoiceResponse = $invoiceService->UpdateInvoice($updateInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->info("Received UpdateInvoiceResponse:");
-	
+	try {
+		$updateInvoiceResponse = $invoiceService->UpdateInvoice($updateInvoiceRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
+	$logger->info("Received UpdateInvoiceResponse:");	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $updateInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $updateInvoiceResponse->invoiceID ."</div> </td></tr>";
 	echo "</table>";
-	
+	require 'ShowAllResponse.php';	
+	echo "<pre>";
 	var_dump($updateInvoiceResponse);
+	echo "</pre>";
 } else {
-
-	?>
-
+?>
 <form method="POST">
 <div id="apidetails">The UpdateInvoice API operation is used to update an invoice.</div>
 <div class="params">

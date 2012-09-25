@@ -13,7 +13,7 @@ session_start();
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
-<h2>MarkInvoiceAsUnpaid API Test Page</h2>
+<h2>PayPal Invoicing - MarkInvoiceAsUnpaid API Test Page</h2>
 <?php
 
 //get the current filename
@@ -32,24 +32,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 
-	$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->info("Received MarkInvoiceAsUnpaidResponse:");
-	
+	try {
+		$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
+	$logger->info("Received MarkInvoiceAsUnpaidResponse:");	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsUnpaidResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsUnpaidResponse->invoiceID ."</div> </td></tr>";
 	echo "</table>";
-	
+	require 'ShowAllResponse.php';
+	echo "<pre>";	
 	var_dump($markInvoiceAsUnpaidResponse);
+	echo "</pre>";
 } else {
 ?>
-
 <form method="POST">
 <div id="apidetails">The MarkInvoiceAsUnpaid API operation is used to mark an invoice as unpaid.</div>
 <div class="params">

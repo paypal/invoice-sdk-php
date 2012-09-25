@@ -8,7 +8,7 @@ session_start();
 ?>
 <html>
 <head>
-	<title>MarkInvoiceAsRefunded Sample API Page</title>
+	<title>PayPal Invoicing - MarkInvoiceAsRefunded Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
@@ -37,21 +37,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 
-	$markInvoiceAsRefundedResponse = $invoiceService->MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, 'jb-us-seller_api1.paypal.com');
-	$logger->info("Received MarkInvoiceAsRefundedResponse:");
-	
+	try {
+		$markInvoiceAsRefundedResponse = $invoiceService->MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
+	$logger->info("Received MarkInvoiceAsRefundedResponse:");	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsRefundedResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsRefundedResponse->invoiceID ."</div> </td></tr>";
 	echo "</table>";
-	
+	require 'ShowAllResponse.php';
+	echo "<pre>";
 	var_dump($markInvoiceAsRefundedResponse);
+	echo "</pre>";
 } else {
 ?>
 

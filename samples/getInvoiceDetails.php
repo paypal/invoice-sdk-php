@@ -6,7 +6,7 @@ require_once('PPLoggingManager.php');
 ?>
 <html>
 <head>
-	<title>GetInvoiceDetails Sample API Page</title>
+	<title>PayPal Invoicing - GetInvoiceDetails Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
@@ -24,17 +24,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$logger->info("created GetInvoiceDetails Object");
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
-	$getInvoiceDetailsResponse = $invoiceService->GetInvoiceDetails($getInvoiceDetailsRequest, 'jb-us-seller_api1.paypal.com');
+	try {
+		$getInvoiceDetailsResponse = $invoiceService->GetInvoiceDetails($getInvoiceDetailsRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
 	$logger->info("Received getInvoiceDetailsResponse");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $getInvoiceDetailsResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "</table>";
+	require 'ShowAllResponse.php';
+	echo "<pre>";
 	var_dump($getInvoiceDetailsResponse);
+	echo "</pre>";
 } else {
 ?>
 <form method="POST">

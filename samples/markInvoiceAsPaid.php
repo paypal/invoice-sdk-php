@@ -8,7 +8,7 @@ session_start();
 ?>
 <html>
 <head>
-	<title>MarkInvoiceAsPaid Sample API Page</title>
+	<title>PayPal Invoicing - MarkInvoiceAsPaid Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
@@ -40,19 +40,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
-
-	$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest, 'jb-us-seller_api1.paypal.com');
+	try {
+		$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
 	$logger->info("Received MarkInvoiceAsPaidResponse:");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsPaidResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsPaidResponse->invoiceID ."</div> </td></tr>";
 	echo "</table>";
+	require 'ShowAllResponse.php';
+	echo "<pre>";
 	var_dump($markInvoiceAsPaidResponse);
+	echo "</pre>";
 } else {
 ?>
 

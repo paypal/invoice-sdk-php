@@ -8,7 +8,7 @@ session_start();
 ?>
 <html>
 <head>
-	<title>CreateAndSendInvoice Sample API Page</title>
+	<title>PayPal Invoicing - CreateAndSendInvoice Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
@@ -37,19 +37,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
-	$createAndSendInvoiceResponse = $invoiceService->CreateAndSendInvoice($createAndSendInvoiceRequest, 'jb-us-seller_api1.paypal.com');
+	try {
+		$createAndSendInvoiceResponse = $invoiceService->CreateAndSendInvoice($createAndSendInvoiceRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
 	$logger->info("Received CreateAndSendInvoiceResponse:");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $createAndSendInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $createAndSendInvoiceResponse->invoiceID ."</div> </td></tr>";
 	echo "</table>";
+	require 'ShowAllResponse.php';
+	echo "<pre>";
 	var_dump($createAndSendInvoiceResponse);
-
+	echo "</pre>";
 } else {
 ?>
 

@@ -7,16 +7,13 @@ session_start();
 ?>
 <html>
 <head>
-	<title>SearchInvoices Sample API Page</title>
+	<title>PayPal Invoicing - SearchInvoices Sample API Page</title>
 	<link rel="stylesheet" type="text/css" href="sdk.css"/>
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
 <h2>SearchInvoices API Test Page</h2>
 <?php
-
-
-
 $logger = new PPLoggingManager('SearchInvoices');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -70,22 +67,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null))
-	{
+	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
 		$invoiceService->setAccessToken($_POST['accessToken']);
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
-	$searchInvoicesResponse = $invoiceService->SearchInvoices($searchInvoicesRequest);
-	$logger->info("Received searchInvoices Response");
-	
+	try {
+		$searchInvoicesResponse = $invoiceService->SearchInvoices($searchInvoicesRequest);
+	} catch (Exception $ex) {
+		require_once 'error.php';
+		exit;
+	}
+	$logger->info("Received searchInvoices Response");	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $searchInvoicesResponse->responseEnvelope->ack ."</div> </td></tr>";
-	echo "</table>";
-	
+	echo "</table>";	
+	require 'ShowAllResponse.php';
+	echo "<pre>";
 	var_dump($searchInvoicesResponse);
+	echo "</pre>";
 } else {
 ?>
-
 <form method="POST">
 <div id="apidetails">The SearchInvoice API operation is used to search for invoices that match input criteria.</div>
 <div class="params">
@@ -162,22 +163,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<option value="API">API</option>
 	</select>
 </div>
-<div class="param_name">Invoice date ( Range: From & To)</div>
+<div class="param_name">Invoice date ( Range: From &amp; To)</div>
 <div class="param_value">
 	<input type="text" name="invoiceDateStart" value="2011-12-20T02:56:08" />
 	<input type="text" name="invoiceDateEnd" value="2011-12-25T02:56:08" />
 </div>
-<div class="param_name">Invoice due date ( Range: From & To)</div>
+<div class="param_name">Invoice due date ( Range: From &amp; To)</div>
 <div class="param_value">
 	<input type="text" name="dueDateStart" value="" />
 	<input type="text" name="dueDateEnd" value="" />
 </div>
-<div class="param_name">Payment date ( Range: From & To)</div>
+<div class="param_name">Payment date ( Range: From &amp; To)</div>
 <div class="param_value">
 	<input type="text" name="paymentDateStart" value="" />
 	<input type="text" name="paymentDateEnd" value="" />
 </div>
-<div class="param_name">Invoice creation date ( Range: From & To)</div>
+<div class="param_name">Invoice creation date ( Range: From &amp; To)</div>
 <div class="param_value">
 	<input type="text" name="creationDateStart" value="" />
 	<input type="text" name="creationDateEnd" value="" />

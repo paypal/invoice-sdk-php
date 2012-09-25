@@ -7,13 +7,13 @@
 	<div class="param_value">
 		<input type="text" name="accessToken"
 			value="<?php if(isset($_GET['permToken'])) echo $_GET['permToken'];?>"
-			size="50" maxlength="260" />
+			size="50" />
 	</div>
 	<div class="param_name">Token Secret</div>
 	<div class="param_value">
 		<input type="text" name="tokenSecret" id="auth"
 			value="<?php if(isset($_GET['permTokenSecret'])) echo $_GET['permTokenSecret'];?>"
-			size="50" maxlength="260" />
+			size="50" />
 	</div>
 	Click <a href="Permissions/RequestPermissions.php">here</a> to get AccessToken and TokenSecret<br />
 </div>
