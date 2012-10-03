@@ -1,4 +1,11 @@
 
+Version 1.4.95 - September 28, 2012
+ 
+	- Bug fixed for 'PPLoggingManager.php' to pickup configuration entries.(https://github.com/paypal/SDKs/issues/28)
+	- SDK sample enhancement and correction
+--------------------------------------------------------------------------------------------------
+
+
 Version 1.3.93 - August 13, 2012
  
 	- SDK Core - Deserialization Logic Change
