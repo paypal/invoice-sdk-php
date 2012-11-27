@@ -1,8 +1,6 @@
 <?php 
-require_once('PPBaseService.php');
-require_once('Invoice.php');
-require_once('PPUtils.php');
-
+require_once 'PPBaseService.php';
+require_once 'Invoice.php';
 
 /**
  * AUTO GENERATED code for Invoice
@@ -15,20 +13,29 @@ class InvoiceService extends PPBaseService {
 	// Service Name
 	private static $SERVICE_NAME = "Invoice";
 
+    // SDK Name
+	private static $SDK_NAME = "sdkname";
+	
+	// SDK Version
+	private static $SDK_VERSION = "sdkversion";
+
 	public function __construct() {
-		parent::__construct('Invoice');
+		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'));
 	}
 
 
 	/**
 	 * Service Call: CreateInvoice
 	 * @param CreateInvoiceRequest $createInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CreateInvoiceResponse
 	 * @throws APIException
 	 */
-	public function CreateInvoice($createInvoiceRequest, $apiUsername = NULL) {
+	public function CreateInvoice($createInvoiceRequest, $apiCredential = NULL) {
 		$ret = new CreateInvoiceResponse();
-		$resp = $this->call("CreateInvoice", $createInvoiceRequest, $apiUsername);
+		$resp = $this->call("CreateInvoice", $createInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -37,12 +44,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: SendInvoice
 	 * @param SendInvoiceRequest $sendInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SendInvoiceResponse
 	 * @throws APIException
 	 */
-	public function SendInvoice($sendInvoiceRequest, $apiUsername = NULL) {
+	public function SendInvoice($sendInvoiceRequest, $apiCredential = NULL) {
 		$ret = new SendInvoiceResponse();
-		$resp = $this->call("SendInvoice", $sendInvoiceRequest, $apiUsername);
+		$resp = $this->call("SendInvoice", $sendInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -51,12 +61,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: CreateAndSendInvoice
 	 * @param CreateAndSendInvoiceRequest $createAndSendInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CreateAndSendInvoiceResponse
 	 * @throws APIException
 	 */
-	public function CreateAndSendInvoice($createAndSendInvoiceRequest, $apiUsername = NULL) {
+	public function CreateAndSendInvoice($createAndSendInvoiceRequest, $apiCredential = NULL) {
 		$ret = new CreateAndSendInvoiceResponse();
-		$resp = $this->call("CreateAndSendInvoice", $createAndSendInvoiceRequest, $apiUsername);
+		$resp = $this->call("CreateAndSendInvoice", $createAndSendInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -65,12 +78,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: UpdateInvoice
 	 * @param UpdateInvoiceRequest $updateInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return UpdateInvoiceResponse
 	 * @throws APIException
 	 */
-	public function UpdateInvoice($updateInvoiceRequest, $apiUsername = NULL) {
+	public function UpdateInvoice($updateInvoiceRequest, $apiCredential = NULL) {
 		$ret = new UpdateInvoiceResponse();
-		$resp = $this->call("UpdateInvoice", $updateInvoiceRequest, $apiUsername);
+		$resp = $this->call("UpdateInvoice", $updateInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -79,12 +95,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: GetInvoiceDetails
 	 * @param GetInvoiceDetailsRequest $getInvoiceDetailsRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return GetInvoiceDetailsResponse
 	 * @throws APIException
 	 */
-	public function GetInvoiceDetails($getInvoiceDetailsRequest, $apiUsername = NULL) {
+	public function GetInvoiceDetails($getInvoiceDetailsRequest, $apiCredential = NULL) {
 		$ret = new GetInvoiceDetailsResponse();
-		$resp = $this->call("GetInvoiceDetails", $getInvoiceDetailsRequest, $apiUsername);
+		$resp = $this->call("GetInvoiceDetails", $getInvoiceDetailsRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -93,12 +112,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: CancelInvoice
 	 * @param CancelInvoiceRequest $cancelInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return CancelInvoiceResponse
 	 * @throws APIException
 	 */
-	public function CancelInvoice($cancelInvoiceRequest, $apiUsername = NULL) {
+	public function CancelInvoice($cancelInvoiceRequest, $apiCredential = NULL) {
 		$ret = new CancelInvoiceResponse();
-		$resp = $this->call("CancelInvoice", $cancelInvoiceRequest, $apiUsername);
+		$resp = $this->call("CancelInvoice", $cancelInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -107,12 +129,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: SearchInvoices
 	 * @param SearchInvoicesRequest $searchInvoicesRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return SearchInvoicesResponse
 	 * @throws APIException
 	 */
-	public function SearchInvoices($searchInvoicesRequest, $apiUsername = NULL) {
+	public function SearchInvoices($searchInvoicesRequest, $apiCredential = NULL) {
 		$ret = new SearchInvoicesResponse();
-		$resp = $this->call("SearchInvoices", $searchInvoicesRequest, $apiUsername);
+		$resp = $this->call("SearchInvoices", $searchInvoicesRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -121,12 +146,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: MarkInvoiceAsPaid
 	 * @param MarkInvoiceAsPaidRequest $markInvoiceAsPaidRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return MarkInvoiceAsPaidResponse
 	 * @throws APIException
 	 */
-	public function MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $apiUsername = NULL) {
+	public function MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsPaidResponse();
-		$resp = $this->call("MarkInvoiceAsPaid", $markInvoiceAsPaidRequest, $apiUsername);
+		$resp = $this->call("MarkInvoiceAsPaid", $markInvoiceAsPaidRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -135,12 +163,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: MarkInvoiceAsUnpaid
 	 * @param MarkInvoiceAsUnpaidRequest $markInvoiceAsUnpaidRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return MarkInvoiceAsUnpaidResponse
 	 * @throws APIException
 	 */
-	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiUsername = NULL) {
+	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsUnpaidResponse();
-		$resp = $this->call("MarkInvoiceAsUnpaid", $markInvoiceAsUnpaidRequest, $apiUsername);
+		$resp = $this->call("MarkInvoiceAsUnpaid", $markInvoiceAsUnpaidRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -149,12 +180,15 @@ class InvoiceService extends PPBaseService {
 	/**
 	 * Service Call: MarkInvoiceAsRefunded
 	 * @param MarkInvoiceAsRefundedRequest $markInvoiceAsRefundedRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
 	 * @return MarkInvoiceAsRefundedResponse
 	 * @throws APIException
 	 */
-	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiUsername = NULL) {
+	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsRefundedResponse();
-		$resp = $this->call("MarkInvoiceAsRefunded", $markInvoiceAsRefundedRequest, $apiUsername);
+		$resp = $this->call("MarkInvoiceAsRefunded", $markInvoiceAsRefundedRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
