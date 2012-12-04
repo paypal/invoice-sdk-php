@@ -17,8 +17,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $errorId;
 
@@ -26,8 +26,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $domain;
 
@@ -35,8 +35,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $subdomain;
 
@@ -44,8 +44,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ErrorSeverity
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $severity;
 
@@ -53,8 +53,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ErrorCategory
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $category;
 
@@ -62,8 +62,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $message;
 
@@ -71,8 +71,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $exceptionId;
 
@@ -82,7 +82,9 @@ class ErrorData
 	 * @access public
 	 
 	 
-	 * @var ErrorParameter
+	 * @value
+	 	 	 	 
+	 * @var ErrorParameter 	 
 	 */ 
 	public $parameter;
 
@@ -104,17 +106,16 @@ class ErrorParameter
 	 
 	 
 	 * @attribute 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $name;
 
 	/**
 	 * 
 	 * @access public
-	 
-	 
-	 * @var string
+     * @value 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $value;
 
@@ -134,8 +135,8 @@ class ResponseEnvelope
 	 * 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $timestamp;
 
@@ -143,8 +144,8 @@ class ResponseEnvelope
 	 * Application level acknowledgment code. 
 	 * @access public
 	 
-	 
-	 * @var AckCode
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ack;
 
@@ -152,8 +153,8 @@ class ResponseEnvelope
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $correlationId;
 
@@ -161,8 +162,8 @@ class ResponseEnvelope
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $build;
 
@@ -184,8 +185,8 @@ class RequestEnvelope
 	 * tag, e.g., en_US. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $errorLanguage;
 
@@ -212,8 +213,8 @@ class FaultMessage
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -223,7 +224,9 @@ class FaultMessage
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -245,8 +248,8 @@ class RequestPermissionsRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -256,7 +259,9 @@ class RequestPermissionsRequest
 	 * @access public
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $scope;
 
@@ -266,8 +271,8 @@ class RequestPermissionsRequest
 	 * parameters. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $callback;
 
@@ -295,8 +300,8 @@ class RequestPermissionsResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -307,8 +312,8 @@ class RequestPermissionsResponse
 	 * authorize the permissions. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $token;
 
@@ -318,7 +323,9 @@ class RequestPermissionsResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -340,8 +347,8 @@ class GetAccessTokenRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -350,8 +357,8 @@ class GetAccessTokenRequest
 	 * RequestPermissions call. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $token;
 
@@ -360,8 +367,8 @@ class GetAccessTokenRequest
 	 * authorization flow completed. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $verifier;
 
@@ -371,8 +378,8 @@ class GetAccessTokenRequest
 	 * lieu of the token and verifier. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $subjectAlias;
 
@@ -394,8 +401,8 @@ class GetAccessTokenResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -406,7 +413,9 @@ class GetAccessTokenResponse
 	 * @access public
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $scope;
 
@@ -415,8 +424,8 @@ class GetAccessTokenResponse
 	 * the user authorized. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $token;
 
@@ -425,8 +434,8 @@ class GetAccessTokenResponse
 	 * generating the signature. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $tokenSecret;
 
@@ -436,7 +445,9 @@ class GetAccessTokenResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -457,8 +468,8 @@ class GetPermissionsRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -466,8 +477,8 @@ class GetPermissionsRequest
 	 * The permanent access token to ask about. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $token;
 
@@ -494,8 +505,8 @@ class GetPermissionsResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -506,7 +517,9 @@ class GetPermissionsResponse
 	 * @access public
 	 
 	 
-	 * @var string
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $scope;
 
@@ -516,7 +529,9 @@ class GetPermissionsResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -537,8 +552,8 @@ class CancelPermissionsRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -546,8 +561,8 @@ class CancelPermissionsRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $token;
 
@@ -574,8 +589,8 @@ class CancelPermissionsResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -585,7 +600,9 @@ class CancelPermissionsResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -607,7 +624,9 @@ class PersonalAttributeList
 	 * @access public
 	 
 	 
-	 * @var PersonalAttribute
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $attribute;
 
@@ -629,8 +648,8 @@ class PersonalData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var PersonalAttribute
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $personalDataKey;
 
@@ -638,8 +657,8 @@ class PersonalData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $personalDataValue;
 
@@ -662,7 +681,9 @@ class PersonalDataList
 	 * @access public
 	 
 	 
-	 * @var PersonalData
+	 * @value
+	 	 	 	 
+	 * @var PersonalData 	 
 	 */ 
 	public $personalData;
 
@@ -685,8 +706,8 @@ class GetBasicPersonalDataRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -694,8 +715,8 @@ class GetBasicPersonalDataRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var PersonalAttributeList
+	 	 	 	 
+	 * @var PersonalAttributeList 	 
 	 */ 
 	public $attributeList;
 
@@ -725,8 +746,8 @@ class GetAdvancedPersonalDataRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -734,8 +755,8 @@ class GetAdvancedPersonalDataRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var PersonalAttributeList
+	 	 	 	 
+	 * @var PersonalAttributeList 	 
 	 */ 
 	public $attributeList;
 
@@ -762,8 +783,8 @@ class GetBasicPersonalDataResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -771,8 +792,8 @@ class GetBasicPersonalDataResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var PersonalDataList
+	 	 	 	 
+	 * @var PersonalDataList 	 
 	 */ 
 	public $response;
 
@@ -782,7 +803,9 @@ class GetBasicPersonalDataResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -802,8 +825,8 @@ class GetAdvancedPersonalDataResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -811,8 +834,8 @@ class GetAdvancedPersonalDataResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var PersonalDataList
+	 	 	 	 
+	 * @var PersonalDataList 	 
 	 */ 
 	public $response;
 
@@ -822,7 +845,9 @@ class GetAdvancedPersonalDataResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 

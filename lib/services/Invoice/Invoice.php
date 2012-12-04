@@ -17,8 +17,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $line1;
 
@@ -26,8 +26,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $line2;
 
@@ -35,8 +35,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $city;
 
@@ -44,8 +44,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $state;
 
@@ -53,8 +53,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $postalCode;
 
@@ -62,8 +62,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $countryCode;
 
@@ -71,8 +71,8 @@ class BaseAddress
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $type;
 
@@ -102,8 +102,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $errorId;
 
@@ -111,8 +111,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $domain;
 
@@ -120,8 +120,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $subdomain;
 
@@ -129,8 +129,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ErrorSeverity
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $severity;
 
@@ -138,8 +138,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ErrorCategory
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $category;
 
@@ -147,8 +147,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $message;
 
@@ -156,8 +156,8 @@ class ErrorData
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $exceptionId;
 
@@ -167,7 +167,9 @@ class ErrorData
 	 * @access public
 	 
 	 
-	 * @var ErrorParameter
+	 * @value
+	 	 	 	 
+	 * @var ErrorParameter 	 
 	 */ 
 	public $parameter;
 
@@ -189,8 +191,8 @@ class ErrorParameter
 	 
 	 
 	 * @attribute 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $name;
 
@@ -198,8 +200,8 @@ class ErrorParameter
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $value;
 
@@ -220,8 +222,8 @@ class FaultMessage
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -231,7 +233,9 @@ class FaultMessage
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -256,8 +260,8 @@ class RequestEnvelope
 	 * enumerated values of the detail level for each component. 
 	 * @access public
 	 
-	 
-	 * @var DetailLevelCode
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $detailLevel;
 
@@ -266,8 +270,8 @@ class RequestEnvelope
 	 * tag, e.g., en_US. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $errorLanguage;
 
@@ -295,8 +299,8 @@ class ResponseEnvelope
 	 * 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $timestamp;
 
@@ -304,8 +308,8 @@ class ResponseEnvelope
 	 * Application level acknowledgment code. 
 	 * @access public
 	 
-	 
-	 * @var AckCode
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $ack;
 
@@ -313,8 +317,8 @@ class ResponseEnvelope
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $correlationId;
 
@@ -322,8 +326,8 @@ class ResponseEnvelope
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $build;
 
@@ -344,8 +348,8 @@ class BusinessInfoType
 	 * First name of the company contact. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $firstName;
 
@@ -353,8 +357,8 @@ class BusinessInfoType
 	 * Last name of the company contact. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $lastName;
 
@@ -362,8 +366,8 @@ class BusinessInfoType
 	 * Business name of the company. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $businessName;
 
@@ -371,8 +375,8 @@ class BusinessInfoType
 	 * Phone number for contacting the company. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $phone;
 
@@ -380,8 +384,8 @@ class BusinessInfoType
 	 * Fax number used by the company. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $fax;
 
@@ -389,8 +393,8 @@ class BusinessInfoType
 	 * Website used by the company. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $website;
 
@@ -399,8 +403,8 @@ class BusinessInfoType
 	 * details. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $customValue;
 
@@ -408,8 +412,8 @@ class BusinessInfoType
 	 * Street address of the company. 
 	 * @access public
 	 
-	 
-	 * @var BaseAddress
+	 	 	 	 
+	 * @var BaseAddress 	 
 	 */ 
 	public $address;
 
@@ -430,8 +434,8 @@ class InvoiceItemType
 	 * SKU or item name. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $name;
 
@@ -439,8 +443,8 @@ class InvoiceItemType
 	 * Description of the item. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $description;
 
@@ -448,8 +452,8 @@ class InvoiceItemType
 	 * Date on which the product or service was provided. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $date;
 
@@ -457,8 +461,8 @@ class InvoiceItemType
 	 * Item count. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $quantity;
 
@@ -467,8 +471,8 @@ class InvoiceItemType
 	 * 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $unitPrice;
 
@@ -476,8 +480,8 @@ class InvoiceItemType
 	 * Name of an applicable tax, if any. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $taxName;
 
@@ -485,8 +489,8 @@ class InvoiceItemType
 	 * Rate of an applicable tax, if any. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $taxRate;
 
@@ -517,7 +521,9 @@ class InvoiceItemListType
 	 * @access public
 	 
 	 
-	 * @var InvoiceItemType
+	 * @value
+	 	 	 	 
+	 * @var InvoiceItemType 	 
 	 */ 
 	public $item;
 
@@ -545,8 +551,8 @@ class InvoiceType
 	 * Merchant's email. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $merchantEmail;
 
@@ -554,8 +560,8 @@ class InvoiceType
 	 * Email to which the invoice will be sent. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $payerEmail;
 
@@ -563,8 +569,8 @@ class InvoiceType
 	 * Unique identifier for the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $number;
 
@@ -573,8 +579,8 @@ class InvoiceType
 	 * the invoice. 
 	 * @access public
 	 
-	 
-	 * @var BusinessInfoType
+	 	 	 	 
+	 * @var BusinessInfoType 	 
 	 */ 
 	public $merchantInfo;
 
@@ -582,8 +588,8 @@ class InvoiceType
 	 * List of items included in this invoice. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceItemListType
+	 	 	 	 
+	 * @var InvoiceItemListType 	 
 	 */ 
 	public $itemList;
 
@@ -591,8 +597,8 @@ class InvoiceType
 	 * Currency used for all invoice item amounts and totals. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $currencyCode;
 
@@ -600,8 +606,8 @@ class InvoiceType
 	 * Date on which the invoice will be enabled. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $invoiceDate;
 
@@ -609,8 +615,8 @@ class InvoiceType
 	 * Date on which the invoice payment is due. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $dueDate;
 
@@ -618,8 +624,8 @@ class InvoiceType
 	 * Terms by which the invoice payment is due. 
 	 * @access public
 	 
-	 
-	 * @var PaymentTermsType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $paymentTerms;
 
@@ -627,8 +633,8 @@ class InvoiceType
 	 * A discount percent applied to the invoice, if any. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $discountPercent;
 
@@ -637,8 +643,8 @@ class InvoiceType
 	 * DiscountPercent is provided, DiscountAmount is ignored. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $discountAmount;
 
@@ -646,8 +652,8 @@ class InvoiceType
 	 * General terms for the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $terms;
 
@@ -655,8 +661,8 @@ class InvoiceType
 	 * Note to the payer company. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $note;
 
@@ -664,8 +670,8 @@ class InvoiceType
 	 * Memo for book keeping that is private to the Merchant. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $merchantMemo;
 
@@ -673,8 +679,8 @@ class InvoiceType
 	 * Billing information for the payer. 
 	 * @access public
 	 
-	 
-	 * @var BusinessInfoType
+	 	 	 	 
+	 * @var BusinessInfoType 	 
 	 */ 
 	public $billingInfo;
 
@@ -682,8 +688,8 @@ class InvoiceType
 	 * Shipping information for the payer. 
 	 * @access public
 	 
-	 
-	 * @var BusinessInfoType
+	 	 	 	 
+	 * @var BusinessInfoType 	 
 	 */ 
 	public $shippingInfo;
 
@@ -691,8 +697,8 @@ class InvoiceType
 	 * Cost of shipping. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $shippingAmount;
 
@@ -700,8 +706,8 @@ class InvoiceType
 	 * Name of the applicable tax on shipping cost, if any. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $shippingTaxName;
 
@@ -709,8 +715,8 @@ class InvoiceType
 	 * Rate of the applicable tax on shipping cost, if any. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $shippingTaxRate;
 
@@ -718,8 +724,8 @@ class InvoiceType
 	 * The external image URL of the invoice's logo, if any 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $logoUrl;
 
@@ -728,8 +734,8 @@ class InvoiceType
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $referrerCode;
 
@@ -739,8 +745,8 @@ class InvoiceType
 	 * be empty. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $customAmountLabel;
 
@@ -749,8 +755,8 @@ class InvoiceType
 	 * customAmountValue, then customAmountLabel cannot be empty. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $customAmountValue;
 
@@ -782,8 +788,8 @@ class InvoiceDetailsType
 	 * Status of the invoice. 
 	 * @access public
 	 
-	 
-	 * @var StatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $status;
 
@@ -793,8 +799,8 @@ class InvoiceDetailsType
 	 * system and will ignore any changes made by API callers. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $totalAmount;
 
@@ -803,8 +809,8 @@ class InvoiceDetailsType
 	 * API call. 
 	 * @access public
 	 
-	 
-	 * @var OriginType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $origin;
 
@@ -812,8 +818,8 @@ class InvoiceDetailsType
 	 * Date when the invoice was created. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $createdDate;
 
@@ -821,8 +827,8 @@ class InvoiceDetailsType
 	 * Account that created the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $createdBy;
 
@@ -830,8 +836,8 @@ class InvoiceDetailsType
 	 * If canceled, date when the invoice was canceled. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $canceledDate;
 
@@ -839,8 +845,8 @@ class InvoiceDetailsType
 	 * Actor who canceled the invoice. 
 	 * @access public
 	 
-	 
-	 * @var ActorType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $canceledByActor;
 
@@ -848,8 +854,8 @@ class InvoiceDetailsType
 	 * Account that canceled the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $canceledBy;
 
@@ -857,8 +863,8 @@ class InvoiceDetailsType
 	 * Date when the invoice was last edited. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $lastUpdatedDate;
 
@@ -866,8 +872,8 @@ class InvoiceDetailsType
 	 * Account that last edited the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $lastUpdatedBy;
 
@@ -875,8 +881,8 @@ class InvoiceDetailsType
 	 * Date when the invoice was first sent. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $firstSentDate;
 
@@ -884,8 +890,8 @@ class InvoiceDetailsType
 	 * Date when the invoice was last sent. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $lastSentDate;
 
@@ -893,8 +899,8 @@ class InvoiceDetailsType
 	 * Account that last sent the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $lastSentBy;
 
@@ -902,8 +908,8 @@ class InvoiceDetailsType
 	 * If the invoice was paid, date when the invoice was paid. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $paidDate;
 
@@ -923,8 +929,8 @@ class OtherPaymentRefundDetailsType
 	 * Optional note associated with the refund. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $note;
 
@@ -935,8 +941,8 @@ class OtherPaymentRefundDetailsType
 	 * date of the invoice. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $date;
 
@@ -956,8 +962,8 @@ class PayPalPaymentRefundDetailsType
 	 * Date when the invoice was marked as refunded by PayPal. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $date;
 
@@ -977,8 +983,8 @@ class PayPalPaymentDetailsType
 	 * Transaction ID of the PayPal payment. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $transactionID;
 
@@ -986,8 +992,8 @@ class PayPalPaymentDetailsType
 	 * Date when the invoice was paid. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $date;
 
@@ -1007,8 +1013,8 @@ class OtherPaymentDetailsType
 	 * Method used for the offline payment. 
 	 * @access public
 	 
-	 
-	 * @var PaymentMethodsType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $method;
 
@@ -1016,8 +1022,8 @@ class OtherPaymentDetailsType
 	 * Optional note associated with the payment. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $note;
 
@@ -1025,8 +1031,8 @@ class OtherPaymentDetailsType
 	 * Date when the invoice was paid. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $date;
 
@@ -1046,8 +1052,8 @@ class PaymentDetailsType
 	 * True if the invoice was paid using PayPal. 
 	 * @access public
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $viaPayPal;
 
@@ -1055,8 +1061,8 @@ class PaymentDetailsType
 	 * PayPal payment details. 
 	 * @access public
 	 
-	 
-	 * @var PayPalPaymentDetailsType
+	 	 	 	 
+	 * @var PayPalPaymentDetailsType 	 
 	 */ 
 	public $paypalPayment;
 
@@ -1064,8 +1070,8 @@ class PaymentDetailsType
 	 * Other payment details. 
 	 * @access public
 	 
-	 
-	 * @var OtherPaymentDetailsType
+	 	 	 	 
+	 * @var OtherPaymentDetailsType 	 
 	 */ 
 	public $otherPayment;
 
@@ -1085,8 +1091,8 @@ class DateRangeType
 	 * Start of the date range. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $startDate;
 
@@ -1094,8 +1100,8 @@ class DateRangeType
 	 * End of the date range. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $endDate;
 
@@ -1115,8 +1121,8 @@ class SearchParametersType
 	 * Email search string. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $email;
 
@@ -1124,8 +1130,8 @@ class SearchParametersType
 	 * Recipient search string. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $recipientName;
 
@@ -1133,8 +1139,8 @@ class SearchParametersType
 	 * Company search string. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $businessName;
 
@@ -1142,8 +1148,8 @@ class SearchParametersType
 	 * Invoice number search string. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -1153,7 +1159,9 @@ class SearchParametersType
 	 * @access public
 	 
 	 
-	 * @var StatusType
+	 * @value
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $status;
 
@@ -1162,8 +1170,8 @@ class SearchParametersType
 	 * returned. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $lowerAmount;
 
@@ -1172,8 +1180,8 @@ class SearchParametersType
 	 * returned. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $upperAmount;
 
@@ -1182,8 +1190,8 @@ class SearchParametersType
 	 * lowerAmount or upperAmount is specified. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $currencyCode;
 
@@ -1191,8 +1199,8 @@ class SearchParametersType
 	 * Invoice memo search string. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $memo;
 
@@ -1201,8 +1209,8 @@ class SearchParametersType
 	 * API call. 
 	 * @access public
 	 
-	 
-	 * @var OriginType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $origin;
 
@@ -1210,8 +1218,8 @@ class SearchParametersType
 	 * Invoice date range filter. 
 	 * @access public
 	 
-	 
-	 * @var DateRangeType
+	 	 	 	 
+	 * @var DateRangeType 	 
 	 */ 
 	public $invoiceDate;
 
@@ -1219,8 +1227,8 @@ class SearchParametersType
 	 * Invoice due date range filter. 
 	 * @access public
 	 
-	 
-	 * @var DateRangeType
+	 	 	 	 
+	 * @var DateRangeType 	 
 	 */ 
 	public $dueDate;
 
@@ -1228,8 +1236,8 @@ class SearchParametersType
 	 * Invoice payment date range filter. 
 	 * @access public
 	 
-	 
-	 * @var DateRangeType
+	 	 	 	 
+	 * @var DateRangeType 	 
 	 */ 
 	public $paymentDate;
 
@@ -1237,8 +1245,8 @@ class SearchParametersType
 	 * Invoice creation date range filter. 
 	 * @access public
 	 
-	 
-	 * @var DateRangeType
+	 	 	 	 
+	 * @var DateRangeType 	 
 	 */ 
 	public $creationDate;
 
@@ -1258,8 +1266,8 @@ class InvoiceSummaryType
 	 * The created invoice's ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1267,8 +1275,8 @@ class InvoiceSummaryType
 	 * Invoice creator's email. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $merchantEmail;
 
@@ -1276,8 +1284,8 @@ class InvoiceSummaryType
 	 * Email to which the invoice will be sent. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $payerEmail;
 
@@ -1285,8 +1293,8 @@ class InvoiceSummaryType
 	 * Unique identifier for the invoice. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $number;
 
@@ -1294,8 +1302,8 @@ class InvoiceSummaryType
 	 * Business name of the billing info. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $billingBusinessName;
 
@@ -1303,8 +1311,8 @@ class InvoiceSummaryType
 	 * First name of the billing info. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $billingFirstName;
 
@@ -1312,8 +1320,8 @@ class InvoiceSummaryType
 	 * Last name of the billing info. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $billingLastName;
 
@@ -1321,8 +1329,8 @@ class InvoiceSummaryType
 	 * Business name of the shipping info. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $shippingBusinessName;
 
@@ -1330,8 +1338,8 @@ class InvoiceSummaryType
 	 * First name of the shipping info. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $shippingFirstName;
 
@@ -1339,8 +1347,8 @@ class InvoiceSummaryType
 	 * Last name of the shipping info. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $shippingLastName;
 
@@ -1348,8 +1356,8 @@ class InvoiceSummaryType
 	 * Total amount of the invoice. 
 	 * @access public
 	 
-	 
-	 * @var double
+	 	 	 	 
+	 * @var double 	 
 	 */ 
 	public $totalAmount;
 
@@ -1357,8 +1365,8 @@ class InvoiceSummaryType
 	 * Currency used for all invoice item amounts and totals. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $currencyCode;
 
@@ -1366,8 +1374,8 @@ class InvoiceSummaryType
 	 * Date on which the invoice will be enabled. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $invoiceDate;
 
@@ -1375,8 +1383,8 @@ class InvoiceSummaryType
 	 * Date on which the invoice payment is due. 
 	 * @access public
 	 
-	 
-	 * @var dateTime
+	 	 	 	 
+	 * @var dateTime 	 
 	 */ 
 	public $dueDate;
 
@@ -1384,8 +1392,8 @@ class InvoiceSummaryType
 	 * Status of the invoice. 
 	 * @access public
 	 
-	 
-	 * @var StatusType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $status;
 
@@ -1394,8 +1402,8 @@ class InvoiceSummaryType
 	 * API call. 
 	 * @access public
 	 
-	 
-	 * @var OriginType
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $origin;
 
@@ -1404,8 +1412,8 @@ class InvoiceSummaryType
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $referrerCode;
 
@@ -1427,7 +1435,9 @@ class InvoiceSummaryListType
 	 * @access public
 	 
 	 
-	 * @var InvoiceSummaryType
+	 * @value
+	 	 	 	 
+	 * @var InvoiceSummaryType 	 
 	 */ 
 	public $invoice;
 
@@ -1447,8 +1457,8 @@ class CreateInvoiceRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -1456,8 +1466,8 @@ class CreateInvoiceRequest
 	 * Data to populate the newly created invoice. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceType
+	 	 	 	 
+	 * @var InvoiceType 	 
 	 */ 
 	public $invoice;
 
@@ -1485,8 +1495,8 @@ class CreateInvoiceResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -1494,8 +1504,8 @@ class CreateInvoiceResponse
 	 * The created invoice's ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1503,8 +1513,8 @@ class CreateInvoiceResponse
 	 * The created invoice's number. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -1513,8 +1523,8 @@ class CreateInvoiceResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -1523,8 +1533,8 @@ class CreateInvoiceResponse
 	 * tax, less any discount). 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $totalAmount;
 
@@ -1534,7 +1544,9 @@ class CreateInvoiceResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -1554,8 +1566,8 @@ class SendInvoiceRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -1563,8 +1575,8 @@ class SendInvoiceRequest
 	 * ID of the invoice to send. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1592,8 +1604,8 @@ class SendInvoiceResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -1601,8 +1613,8 @@ class SendInvoiceResponse
 	 * The sent invoice's ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1611,8 +1623,8 @@ class SendInvoiceResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -1622,7 +1634,9 @@ class SendInvoiceResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -1642,8 +1656,8 @@ class CreateAndSendInvoiceRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -1651,8 +1665,8 @@ class CreateAndSendInvoiceRequest
 	 * Data to populate the newly created invoice. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceType
+	 	 	 	 
+	 * @var InvoiceType 	 
 	 */ 
 	public $invoice;
 
@@ -1680,8 +1694,8 @@ class CreateAndSendInvoiceResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -1689,8 +1703,8 @@ class CreateAndSendInvoiceResponse
 	 * The created invoice's ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1698,8 +1712,8 @@ class CreateAndSendInvoiceResponse
 	 * The created invoice's number. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -1708,8 +1722,8 @@ class CreateAndSendInvoiceResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -1718,8 +1732,8 @@ class CreateAndSendInvoiceResponse
 	 * tax, less any discount). 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $totalAmount;
 
@@ -1729,7 +1743,9 @@ class CreateAndSendInvoiceResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -1749,8 +1765,8 @@ class UpdateInvoiceRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -1758,8 +1774,8 @@ class UpdateInvoiceRequest
 	 * invoice's ID 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1767,8 +1783,8 @@ class UpdateInvoiceRequest
 	 * Data to populate the newly created invoice. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceType
+	 	 	 	 
+	 * @var InvoiceType 	 
 	 */ 
 	public $invoice;
 
@@ -1797,8 +1813,8 @@ class UpdateInvoiceResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -1806,8 +1822,8 @@ class UpdateInvoiceResponse
 	 * The invoice's ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1815,8 +1831,8 @@ class UpdateInvoiceResponse
 	 * The updated invoice's number. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -1825,8 +1841,8 @@ class UpdateInvoiceResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -1835,8 +1851,8 @@ class UpdateInvoiceResponse
 	 * tax, less any discount). 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $totalAmount;
 
@@ -1846,7 +1862,9 @@ class UpdateInvoiceResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -1866,8 +1884,8 @@ class GetInvoiceDetailsRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -1875,8 +1893,8 @@ class GetInvoiceDetailsRequest
 	 * ID of the invoice to retrieve. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1904,8 +1922,8 @@ class GetInvoiceDetailsResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -1913,8 +1931,8 @@ class GetInvoiceDetailsResponse
 	 * The requested invoice. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceType
+	 	 	 	 
+	 * @var InvoiceType 	 
 	 */ 
 	public $invoice;
 
@@ -1922,8 +1940,8 @@ class GetInvoiceDetailsResponse
 	 * The requested invoice details. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceDetailsType
+	 	 	 	 
+	 * @var InvoiceDetailsType 	 
 	 */ 
 	public $invoiceDetails;
 
@@ -1931,8 +1949,8 @@ class GetInvoiceDetailsResponse
 	 * The requested invoice payment details. 
 	 * @access public
 	 
-	 
-	 * @var PaymentDetailsType
+	 	 	 	 
+	 * @var PaymentDetailsType 	 
 	 */ 
 	public $paymentDetails;
 
@@ -1940,8 +1958,8 @@ class GetInvoiceDetailsResponse
 	 * The requested invoice refund details. 
 	 * @access public
 	 
-	 
-	 * @var PaymentRefundDetailsType
+	 	 	 	 
+	 * @var PaymentRefundDetailsType 	 
 	 */ 
 	public $refundDetails;
 
@@ -1950,8 +1968,8 @@ class GetInvoiceDetailsResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -1961,7 +1979,9 @@ class GetInvoiceDetailsResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -1981,8 +2001,8 @@ class CancelInvoiceRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -1990,8 +2010,8 @@ class CancelInvoiceRequest
 	 * invoice's ID 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -1999,8 +2019,8 @@ class CancelInvoiceRequest
 	 * Subject of the cancellation notification 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $subject;
 
@@ -2008,8 +2028,8 @@ class CancelInvoiceRequest
 	 * Note to send payer within the cancellation notification 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $noteForPayer;
 
@@ -2017,8 +2037,8 @@ class CancelInvoiceRequest
 	 * send a copy of cancellation notification to merchant 
 	 * @access public
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $sendCopyToMerchant;
 
@@ -2045,8 +2065,8 @@ class CancelInvoiceResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -2054,8 +2074,8 @@ class CancelInvoiceResponse
 	 * The canceled invoice's ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2063,8 +2083,8 @@ class CancelInvoiceResponse
 	 * The canceled invoice's number. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -2073,8 +2093,8 @@ class CancelInvoiceResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -2084,7 +2104,9 @@ class CancelInvoiceResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -2104,8 +2126,8 @@ class SearchInvoicesRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -2113,8 +2135,8 @@ class SearchInvoicesRequest
 	 * Invoice creator's email. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $merchantEmail;
 
@@ -2122,8 +2144,8 @@ class SearchInvoicesRequest
 	 * Parameters constraining the search. 
 	 * @access public
 	 
-	 
-	 * @var SearchParametersType
+	 	 	 	 
+	 * @var SearchParametersType 	 
 	 */ 
 	public $parameters;
 
@@ -2131,8 +2153,8 @@ class SearchInvoicesRequest
 	 * Page number of result set, starting with 1. 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $page;
 
@@ -2140,8 +2162,8 @@ class SearchInvoicesRequest
 	 * Number of results per page, between 1 and 100. 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $pageSize;
 
@@ -2172,8 +2194,8 @@ class SearchInvoicesResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -2181,8 +2203,8 @@ class SearchInvoicesResponse
 	 * Number of invoices that matched the search. 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $count;
 
@@ -2190,8 +2212,8 @@ class SearchInvoicesResponse
 	 * Page of invoice summaries that matched the search. 
 	 * @access public
 	 
-	 
-	 * @var InvoiceSummaryListType
+	 	 	 	 
+	 * @var InvoiceSummaryListType 	 
 	 */ 
 	public $invoiceList;
 
@@ -2199,8 +2221,8 @@ class SearchInvoicesResponse
 	 * Page number of result set. 
 	 * @access public
 	 
-	 
-	 * @var integer
+	 	 	 	 
+	 * @var integer 	 
 	 */ 
 	public $page;
 
@@ -2208,8 +2230,8 @@ class SearchInvoicesResponse
 	 * True if another page of invoice summary results exists. 
 	 * @access public
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $hasNextPage;
 
@@ -2217,8 +2239,8 @@ class SearchInvoicesResponse
 	 * True if a previous page of invoice summary results exists. 
 	 * @access public
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $hasPreviousPage;
 
@@ -2228,7 +2250,9 @@ class SearchInvoicesResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -2248,8 +2272,8 @@ class MarkInvoiceAsPaidRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -2257,8 +2281,8 @@ class MarkInvoiceAsPaidRequest
 	 * ID of the invoice to mark as paid. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2266,8 +2290,8 @@ class MarkInvoiceAsPaidRequest
 	 * Details of the payment made against this invoice. 
 	 * @access public
 	 
-	 
-	 * @var OtherPaymentDetailsType
+	 	 	 	 
+	 * @var OtherPaymentDetailsType 	 
 	 */ 
 	public $payment;
 
@@ -2296,8 +2320,8 @@ class MarkInvoiceAsPaidResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -2305,8 +2329,8 @@ class MarkInvoiceAsPaidResponse
 	 * The paid invoice ID. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2314,8 +2338,8 @@ class MarkInvoiceAsPaidResponse
 	 * The paid invoice number. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -2324,8 +2348,8 @@ class MarkInvoiceAsPaidResponse
 	 * web. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -2335,7 +2359,9 @@ class MarkInvoiceAsPaidResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -2355,8 +2381,8 @@ class MarkInvoiceAsRefundedRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -2364,8 +2390,8 @@ class MarkInvoiceAsRefundedRequest
 	 * ID of the invoice to mark as refunded. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2373,8 +2399,8 @@ class MarkInvoiceAsRefundedRequest
 	 * Details of the refund made against this invoice. 
 	 * @access public
 	 
-	 
-	 * @var OtherPaymentRefundDetailsType
+	 	 	 	 
+	 * @var OtherPaymentRefundDetailsType 	 
 	 */ 
 	public $refundDetail;
 
@@ -2403,8 +2429,8 @@ class MarkInvoiceAsRefundedResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -2412,8 +2438,8 @@ class MarkInvoiceAsRefundedResponse
 	 * The invoice ID of the invoice that was marked as refunded. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2422,8 +2448,8 @@ class MarkInvoiceAsRefundedResponse
 	 * refunded. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -2432,8 +2458,8 @@ class MarkInvoiceAsRefundedResponse
 	 * as refunded. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -2443,7 +2469,9 @@ class MarkInvoiceAsRefundedResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -2463,8 +2491,8 @@ class MarkInvoiceAsUnpaidRequest
 	 * 
 	 * @access public
 	 
-	 
-	 * @var RequestEnvelope
+	 	 	 	 
+	 * @var RequestEnvelope 	 
 	 */ 
 	public $requestEnvelope;
 
@@ -2472,8 +2500,8 @@ class MarkInvoiceAsUnpaidRequest
 	 * ID of the invoice to mark as unpaid. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2501,8 +2529,8 @@ class MarkInvoiceAsUnpaidResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var ResponseEnvelope
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
 	 */ 
 	public $responseEnvelope;
 
@@ -2510,8 +2538,8 @@ class MarkInvoiceAsUnpaidResponse
 	 * The invoice ID of the invoice that was marked as unpaid. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceID;
 
@@ -2520,8 +2548,8 @@ class MarkInvoiceAsUnpaidResponse
 	 * 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceNumber;
 
@@ -2530,8 +2558,8 @@ class MarkInvoiceAsUnpaidResponse
 	 * as unpaid. 
 	 * @access public
 	 
-	 
-	 * @var string
+	 	 	 	 
+	 * @var string 	 
 	 */ 
 	public $invoiceURL;
 
@@ -2541,7 +2569,9 @@ class MarkInvoiceAsUnpaidResponse
 	 * @access public
 	 
 	 
-	 * @var ErrorData
+	 * @value
+	 	 	 	 
+	 * @var ErrorData 	 
 	 */ 
 	public $error;
 
@@ -2561,8 +2591,8 @@ class PaymentRefundDetailsType
 	 * True if the invoice was refunded using PayPal.  
 	 * @access public
 	 
-	 
-	 * @var boolean
+	 	 	 	 
+	 * @var boolean 	 
 	 */ 
 	public $viaPayPal;
 
@@ -2570,8 +2600,8 @@ class PaymentRefundDetailsType
 	 * Other payment refund details.  
 	 * @access public
 	 
-	 
-	 * @var PayPalPaymentRefundDetailsType
+	 	 	 	 
+	 * @var PayPalPaymentRefundDetailsType 	 
 	 */ 
 	public $paypalPayment;
 
@@ -2579,8 +2609,8 @@ class PaymentRefundDetailsType
 	 * details.  
 	 * @access public
 	 
-	 
-	 * @var OtherPaymentRefundDetailsType
+	 	 	 	 
+	 * @var OtherPaymentRefundDetailsType 	 
 	 */ 
 	public $otherPayment;
 
