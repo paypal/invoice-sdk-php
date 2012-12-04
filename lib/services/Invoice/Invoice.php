@@ -166,8 +166,6 @@ class ErrorData
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorParameter 	 
 	 */ 
@@ -179,6 +177,7 @@ class ErrorData
 
 
 /**
+ * @hasAttribute
  * 
  */
  
@@ -200,6 +199,8 @@ class ErrorParameter
 	 * 
 	 * @access public
 	 
+	 
+	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -232,8 +233,6 @@ class FaultMessage
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -520,8 +519,6 @@ class InvoiceItemListType
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var InvoiceItemType 	 
 	 */ 
@@ -1158,8 +1155,6 @@ class SearchParametersType
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -1434,8 +1429,6 @@ class InvoiceSummaryListType
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var InvoiceSummaryType 	 
 	 */ 
@@ -1543,8 +1536,6 @@ class CreateInvoiceResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -1633,8 +1624,6 @@ class SendInvoiceResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -1742,8 +1731,6 @@ class CreateAndSendInvoiceResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -1861,8 +1848,6 @@ class UpdateInvoiceResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -1978,8 +1963,6 @@ class GetInvoiceDetailsResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -2103,8 +2086,6 @@ class CancelInvoiceResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -2249,8 +2230,6 @@ class SearchInvoicesResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -2358,8 +2337,6 @@ class MarkInvoiceAsPaidResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -2468,8 +2445,6 @@ class MarkInvoiceAsRefundedResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -2568,8 +2543,6 @@ class MarkInvoiceAsUnpaidResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 

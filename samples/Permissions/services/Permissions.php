@@ -81,8 +81,6 @@ class ErrorData
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorParameter 	 
 	 */ 
@@ -94,6 +92,7 @@ class ErrorData
 
 
 /**
+ * @hasAttribute
  * 
  */
  
@@ -114,7 +113,10 @@ class ErrorParameter
 	/**
 	 * 
 	 * @access public
-     * @value 	 	 	 
+	 
+	 
+	 * @value
+	 	 	 	 
 	 * @var string 	 
 	 */ 
 	public $value;
@@ -223,8 +225,6 @@ class FaultMessage
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -258,8 +258,6 @@ class RequestPermissionsRequest
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -322,8 +320,6 @@ class RequestPermissionsResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -412,8 +408,6 @@ class GetAccessTokenResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -444,8 +438,6 @@ class GetAccessTokenResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -516,8 +508,6 @@ class GetPermissionsResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -528,8 +518,6 @@ class GetPermissionsResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -599,8 +587,6 @@ class CancelPermissionsResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -623,8 +609,6 @@ class PersonalAttributeList
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var string 	 
 	 */ 
@@ -680,8 +664,6 @@ class PersonalDataList
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var PersonalData 	 
 	 */ 
@@ -802,8 +784,6 @@ class GetBasicPersonalDataResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
@@ -844,8 +824,6 @@ class GetAdvancedPersonalDataResponse
      * @array
 	 * @access public
 	 
-	 
-	 * @value
 	 	 	 	 
 	 * @var ErrorData 	 
 	 */ 
