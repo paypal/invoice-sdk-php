@@ -1,6 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once 'PPConfigManager.php';
 
 /**
@@ -31,8 +29,8 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 	{
 	}
 
-	
-	
+
+
 	/**
 	 * @test
 	 */
@@ -40,7 +38,6 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 	{
 		$instance = $this->object->getInstance();
 		$this->assertTrue($instance instanceof PPConfigManager);
-		
 	}
 
 	/**
@@ -52,11 +49,12 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 		$this->assertContains('jb-us-seller_api1.paypal.com', $ret);
 		$this->assertArrayHasKey('acct1.UserName', $ret);
 		$this->assertTrue(sizeof($ret) == 4);
+		
 		$ret = $this->object->get('acct1.UserName');
 		$this->assertEquals('jb-us-seller_api1.paypal.com', $ret);
 		$ret = $this->object->get("acct");
-		$this->assertEquals(sizeof($ret), 9);
-		
+		$this->assertEquals(sizeof($ret), 8);
+
 	}
 
 	/**
@@ -67,12 +65,9 @@ class PPConfigManagerTest extends PHPUnit_Framework_TestCase
 		$ret = $this->object->getIniPrefix();
 		$this->assertContains('acct1', $ret);
 		$this->assertEquals(sizeof($ret), 2);
+		
 		$ret = $this->object->getIniPrefix('jb-us-seller_api1.paypal.com');
 		$this->assertEquals('acct1', $ret);
-		
-		
 	}
-	
-
 }
 ?>

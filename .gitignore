@@ -6,3 +6,7 @@
 .buildpath
 .project
 .settings
+
+# Others
+.DS_Store
+

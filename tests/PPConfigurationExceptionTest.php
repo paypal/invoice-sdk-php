@@ -1,11 +1,9 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once 'exceptions/PPConfigurationException.php';
 
 /**
  * Test class for PPConfigurationException.
- * 
+ *
  */
 class PPConfigurationExceptionTest extends PHPUnit_Framework_TestCase
 {
@@ -34,7 +32,7 @@ class PPConfigurationExceptionTest extends PHPUnit_Framework_TestCase
     {
     	$this->setExpectedException('PPConfigurationException');
     	throw new PPConfigurationException('Test PPConfigurationException');
-    	
+
     }
 }
 ?>

@@ -2,18 +2,6 @@
 PayPal PHP Invoice SDK
 ======================
 
-
-This is a "Work in progress" SDK. If you are looking for a Invoice SDK, please see 
-
-https://www.x.com/developers/paypal/documentation-tools/paypal-sdk-index#invoicingnew
-
-  OR 
-
-https://github.com/paypal/SDKs/tree/master/Invoicing/invoicing-php-sdk
-
-
-
-
 Prerequisites
 -------------
 

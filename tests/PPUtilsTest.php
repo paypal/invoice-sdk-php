@@ -1,11 +1,9 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once 'PPUtils.php';
 
 /**
  * Test class for PPUtils.
- * 
+ *
  */
 class PPUtilsTest extends PHPUnit_Framework_TestCase
 {

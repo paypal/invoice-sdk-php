@@ -1,6 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once 'services\Invoice\Invoice.php';
 
 /**
@@ -30,17 +28,18 @@ class ResponseEnvelopeTest extends PHPUnit_Framework_TestCase
     protected function tearDown()
     {
     }
+
     /**
 	 * @test
 	 */
-    public function ResponseEnvelopeTest()
+    public function deserializationTest()
     {
     	 $this->map = array(
     		'responseEnvelope.ack' => 'Success',
-'responseEnvelope.timestamp' => '2011-05-29T23%3A58%3A46.879-07%3A00',
-'responseEnvelope.correlationId' =>  '2eba4859262a9',
-'responseEnvelope.build' =>  '1917403',
-);
+			'responseEnvelope.timestamp' => '2011-05-29T23%3A58%3A46.879-07%3A00',
+			'responseEnvelope.correlationId' =>  '2eba4859262a9',
+			'responseEnvelope.build' =>  '1917403',
+		);
 
 		$this->object = new ResponseEnvelope();
 			$this->object->init($this->map ,'responseEnvelope.' );
@@ -48,7 +47,7 @@ class ResponseEnvelopeTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals('Success', $this->object->ack);
 		$this->assertEquals('1917403', $this->object->build);
 		$this->assertEquals('2eba4859262a9', $this->object->correlationId);
-		$this->assertEquals('2011-05-29T23%3A58%3A46.879-07%3A00', $this->object->timestamp);
+		$this->assertEquals('2011-05-29T23:58:46.879-07:00', $this->object->timestamp);
     	
     }
 }

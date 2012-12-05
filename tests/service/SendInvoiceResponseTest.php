@@ -1,5 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
 
 require_once 'services\Invoice\Invoice.php';
 require_once 'PPUtils.php';
@@ -33,23 +32,23 @@ class SendInvoiceResponseTest extends PHPUnit_Framework_TestCase
 	/**
 	 * @test
 	 */
-	public function SendInvoiceResponseTest()
+	public function deserializationTest()
 	{
 		$this->map = array(
     		'responseEnvelope.ack' => 'Success',
-'responseEnvelope.timestamp' => '2011-05-29T23%3A58%3A46.879-07%3A00',
-'responseEnvelope.correlationId' =>  '2eba4859262a9',
-'responseEnvelope.build' =>  '1917403',
-'invoiceID' =>  'INV2-GEKM-LTFQ-7NWN-9YDL');
+			'responseEnvelope.timestamp' => '2011-05-29T23%3A58%3A46.879-07%3A00',
+			'responseEnvelope.correlationId' =>  '2eba4859262a9',
+			'responseEnvelope.build' =>  '1917403',
+			'invoiceID' =>  'INV2-GEKM-LTFQ-7NWN-9YDL');
 
 		$ret = $this->object = new SendInvoiceResponse();
-$ret->init($this->map);
+		$ret->init($this->map);
 		$this->assertEquals('INV2-GEKM-LTFQ-7NWN-9YDL' , $ret->invoiceID);
 		$this->assertNull($ret->error);
 		$this->assertEquals('Success', $ret->responseEnvelope->ack);
 		$this->assertEquals('1917403', $ret->responseEnvelope->build);
 		$this->assertEquals('2eba4859262a9', $ret->responseEnvelope->correlationId);
-		$this->assertEquals('2011-05-29T23%3A58%3A46.879-07%3A00', $ret->responseEnvelope->timestamp);
+		$this->assertEquals('2011-05-29T23:58:46.879-07:00', $ret->responseEnvelope->timestamp);
 
 	}
 }
