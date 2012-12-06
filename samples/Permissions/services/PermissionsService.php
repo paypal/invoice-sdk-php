@@ -126,4 +126,3 @@ class PermissionsService extends PPBaseService {
 	}
 	 
 }
-?>

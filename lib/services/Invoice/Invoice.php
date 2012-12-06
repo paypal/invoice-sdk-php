@@ -2589,8 +2589,3 @@ class PaymentRefundDetailsType
 
 
 }
-
-
-
-
-?>
