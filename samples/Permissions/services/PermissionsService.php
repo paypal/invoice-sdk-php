@@ -14,10 +14,10 @@ class PermissionsService extends PPBaseService {
 	private static $SERVICE_NAME = "Permissions";
 
     // SDK Name
-	private static $SDK_NAME = "sdkname";
+	private static $SDK_NAME = "permissions-php-sdk";
 	
 	// SDK Version
-	private static $SDK_VERSION = "sdkversion";
+	private static $SDK_VERSION = "2.1.96";
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'));
@@ -35,7 +35,7 @@ class PermissionsService extends PPBaseService {
 	 */
 	public function RequestPermissions($requestPermissionsRequest, $apiCredential = NULL) {
 		$ret = new RequestPermissionsResponse();
-		$resp = $this->call("RequestPermissions", $requestPermissionsRequest, $apiCredential);
+		$resp = $this->call('Permissions', 'RequestPermissions', $requestPermissionsRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -52,7 +52,7 @@ class PermissionsService extends PPBaseService {
 	 */
 	public function GetAccessToken($getAccessTokenRequest, $apiCredential = NULL) {
 		$ret = new GetAccessTokenResponse();
-		$resp = $this->call("GetAccessToken", $getAccessTokenRequest, $apiCredential);
+		$resp = $this->call('Permissions', 'GetAccessToken', $getAccessTokenRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -69,7 +69,7 @@ class PermissionsService extends PPBaseService {
 	 */
 	public function GetPermissions($getPermissionsRequest, $apiCredential = NULL) {
 		$ret = new GetPermissionsResponse();
-		$resp = $this->call("GetPermissions", $getPermissionsRequest, $apiCredential);
+		$resp = $this->call('Permissions', 'GetPermissions', $getPermissionsRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -86,7 +86,7 @@ class PermissionsService extends PPBaseService {
 	 */
 	public function CancelPermissions($cancelPermissionsRequest, $apiCredential = NULL) {
 		$ret = new CancelPermissionsResponse();
-		$resp = $this->call("CancelPermissions", $cancelPermissionsRequest, $apiCredential);
+		$resp = $this->call('Permissions', 'CancelPermissions', $cancelPermissionsRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -103,7 +103,7 @@ class PermissionsService extends PPBaseService {
 	 */
 	public function GetBasicPersonalData($getBasicPersonalDataRequest, $apiCredential = NULL) {
 		$ret = new GetBasicPersonalDataResponse();
-		$resp = $this->call("GetBasicPersonalData", $getBasicPersonalDataRequest, $apiCredential);
+		$resp = $this->call('Permissions', 'GetBasicPersonalData', $getBasicPersonalDataRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -120,7 +120,7 @@ class PermissionsService extends PPBaseService {
 	 */
 	public function GetAdvancedPersonalData($getAdvancedPersonalDataRequest, $apiCredential = NULL) {
 		$ret = new GetAdvancedPersonalDataResponse();
-		$resp = $this->call("GetAdvancedPersonalData", $getAdvancedPersonalDataRequest, $apiCredential);
+		$resp = $this->call('Permissions', 'GetAdvancedPersonalData', $getAdvancedPersonalDataRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
