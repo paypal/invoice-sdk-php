@@ -1,6 +1,4 @@
 <?php 
-require_once 'PPBaseService.php';
-require_once 'Invoice.php';
 
 /**
  * AUTO GENERATED code for Invoice
@@ -14,10 +12,10 @@ class InvoiceService extends PPBaseService {
 	private static $SERVICE_NAME = "Invoice";
 
     // SDK Name
-	private static $SDK_NAME = "invoice-php-sdk";
+	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	private static $SDK_VERSION = "2.1.96";
+	protected static $SDK_VERSION = "2.1.96";
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'));
