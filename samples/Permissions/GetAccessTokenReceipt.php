@@ -4,10 +4,7 @@
  GetAccessTokenReceipt.php
  Called by GetAccessToken.php
  ********************************************/
-$path = '..\..\lib';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once('services/PermissionsService.php');
-session_start();
+require_once('../PPBootStrap.php');
 
 
 $requestEnvelope = new RequestEnvelope();

@@ -1,0 +1,23 @@
+{
+    "name": "paypal/php-sdk-sample",
+    "description": "PayPal invoice SDK for PHP",
+    "keywords": ["paypal", "php", "sdk"],
+    "type": "library",
+    "homepage": "https://x.com",
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "PayPal",
+            "homepage": "https://github.com/paypal/invoice-sdk-php/contributors"
+        }
+    ],
+        "repositories": [
+        { "type": "composer", "url": "http://localhost/Autoloader/satis/web/" }
+       
+    ],
+    "require": {
+        "php": ">=5.2.0",
+        "ext-curl": "*",
+        "paypal/invoice-sdk-php":"dev-composer"
+    }
+}
