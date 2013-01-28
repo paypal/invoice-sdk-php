@@ -1,5 +1,5 @@
 <?php
-require_once 'services\Invoice\InvoiceService.php';
+require_once('/../PPBootStrap.php');
 
 /**
  * Test class for InvoiceService.

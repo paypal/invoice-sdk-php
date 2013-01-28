@@ -1,7 +1,6 @@
 <?php
 
-require_once 'services\Invoice\Invoice.php';
-require_once 'PPUtils.php';
+require_once('/../PPBootStrap.php');
 /**
  * Test class for SendInvoiceResponse.
  *
