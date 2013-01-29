@@ -12,13 +12,15 @@ class InvoiceService extends PPBaseService {
 	private static $SERVICE_NAME = "Invoice";
 
     // SDK Name
-	protected static $SDK_NAME = "invoice-php-sdk";
+	protected static $SDK_NAME = "sdkname";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.1.96";
+	protected static $SDK_VERSION = "sdkversion";
 
 	public function __construct() {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'));
+        parent::$SDK_NAME    = self::$SDK_NAME ;
+        parent::$SDK_VERSION = self::$SDK_VERSION;
 	}
 
 
