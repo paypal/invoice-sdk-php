@@ -1,6 +1,4 @@
 <?php
-require_once('/../PPBootStrap.php');
-
 /**
  * Test class for InvoiceService.
  *
@@ -45,10 +43,8 @@ class InvoiceServiceTest extends PHPUnit_Framework_TestCase
 		$requestEnvelope->errorLanguage = "en_US";
 		$createInvoiceRequest = new CreateInvoiceRequest($requestEnvelope, $invoice);
 		$invoice_service = new InvoiceService();
-
 		$ret = $invoice_service->CreateInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-
-
+        
 		self::$invoicID = $ret->invoiceID;
 		$this->assertNotNull($ret);
 		$this->assertNotNull($ret->invoiceID);
@@ -76,8 +72,6 @@ class InvoiceServiceTest extends PHPUnit_Framework_TestCase
 		$invoice_service->setTokenSecret("3M5zkwsU-F0OKhvsuSJmITYJueg");
 		$ret = $invoice_service->CreateInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
 		$this->assertNotNull($ret);
-		//$this->assertNotNull($ret->invoiceID);
-		//$this->assertEquals(0, count($ret->error));
 
 	}
 
@@ -95,7 +89,6 @@ class InvoiceServiceTest extends PHPUnit_Framework_TestCase
 		$invc = new InvoiceService();
 		$ret = $invc->SendInvoice($req);
 		$this->assertNotNull($ret);
-
 		$this->assertNotNull($ret->invoiceID);
 		$this->assertEquals(0, count($ret->error));
 	}
@@ -115,9 +108,8 @@ class InvoiceServiceTest extends PHPUnit_Framework_TestCase
 		$requestEnvelope->errorLanguage = "en_US";
 		$createInvoiceRequest = new CreateInvoiceRequest($requestEnvelope, $invoice);
 		$invoice_service = new InvoiceService();
-
-		$ret = $invoice_service->CreateInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
-
+		$ret = $invoice_service->CreateAndSendInvoice($createInvoiceRequest, 'jb-us-seller_api1.paypal.com');
+        
 		$this->assertNotNull($ret);
 		$this->assertNotNull($ret->invoiceID);
 		$this->assertEquals(0, count($ret->error));
