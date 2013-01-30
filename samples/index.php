@@ -12,7 +12,6 @@ require_once('PPBootStrap.php');
 	<br/>
     <center>
 	  <h4>PayPal Invoicing SDK Samples Home</h4>
-	  <h5>SDK v<?php echo PPUtils::SDK_VERSION; ?></h5>
     </center>
 
     <table align="center">
