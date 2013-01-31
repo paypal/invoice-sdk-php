@@ -5,7 +5,7 @@
  Called by GetAccessToken.php
  ********************************************/
 require_once('../PPBootStrap.php');
-
+session_start();
 
 $requestEnvelope = new RequestEnvelope();
 $requestEnvelope->errorLanguage = "en_US";
