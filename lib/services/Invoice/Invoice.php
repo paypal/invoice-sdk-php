@@ -4,12 +4,10 @@
   * Auto generated code 
   * 
   */
-require_once 'PPUtils.php';
-require_once 'PPMessage.php';	
 /**
  * 
  */
- 
+if(!class_exists('BaseAddress', false)) {
 class BaseAddress  
   extends PPMessage   {
 
@@ -87,6 +85,7 @@ class BaseAddress
 
 
 }
+}
 
 
 
@@ -94,7 +93,7 @@ class BaseAddress
  * This type contains the detailed error information resulting
  * from the service operation. 
  */
- 
+if(!class_exists('ErrorData', false)) {
 class ErrorData  
   extends PPMessage   {
 
@@ -173,6 +172,7 @@ class ErrorData
 
 
 }
+}
 
 
 
@@ -180,7 +180,7 @@ class ErrorData
  * @hasAttribute
  * 
  */
- 
+if(!class_exists('ErrorParameter', false)) {
 class ErrorParameter  
   extends PPMessage   {
 
@@ -208,6 +208,7 @@ class ErrorParameter
 
 
 }
+}
 
 
 
@@ -215,7 +216,7 @@ class ErrorParameter
  * This specifies a fault, encapsulating error data, with
  * specific error codes. 
  */
- 
+if(!class_exists('FaultMessage', false)) {
 class FaultMessage  
   extends PPMessage   {
 
@@ -240,6 +241,7 @@ class FaultMessage
 
 
 }
+}
 
 
 
@@ -247,7 +249,7 @@ class FaultMessage
  * This specifies the list of parameters with every request to
  * the service. 
  */
- 
+if(!class_exists('RequestEnvelope', false)) {
 class RequestEnvelope  
   extends PPMessage   {
 
@@ -283,6 +285,7 @@ class RequestEnvelope
 
 
 }
+}
 
 
 
@@ -290,7 +293,7 @@ class RequestEnvelope
  * This specifies a list of parameters with every response from
  * a service. 
  */
- 
+if(!class_exists('ResponseEnvelope', false)) {
 class ResponseEnvelope  
   extends PPMessage   {
 
@@ -332,6 +335,7 @@ class ResponseEnvelope
 
 
 }
+}
 
 
 
@@ -339,7 +343,6 @@ class ResponseEnvelope
  * Contact information for a company participating in the
  * invoicing system. 
  */
- 
 class BusinessInfoType  
   extends PPMessage   {
 
@@ -425,7 +428,6 @@ class BusinessInfoType
  * Item information about a service or product listed in the
  * invoice. 
  */
- 
 class InvoiceItemType  
   extends PPMessage   {
 
@@ -510,7 +512,6 @@ class InvoiceItemType
 /**
  * A list of invoice items. 
  */
- 
 class InvoiceItemListType  
   extends PPMessage   {
 
@@ -540,7 +541,6 @@ class InvoiceItemListType
  * Invoice details about the merchant, payer, totals and terms.
  * 
  */
- 
 class InvoiceType  
   extends PPMessage   {
 
@@ -777,7 +777,6 @@ class InvoiceType
  * Invoice details about the invoice status and state change
  * dates. 
  */
- 
 class InvoiceDetailsType  
   extends PPMessage   {
 
@@ -918,7 +917,6 @@ class InvoiceDetailsType
 /**
  * Details of the refund made against this invoice. 
  */
- 
 class OtherPaymentRefundDetailsType  
   extends PPMessage   {
 
@@ -951,7 +949,6 @@ class OtherPaymentRefundDetailsType
 /**
  * Details of the paypal refund made against this invoice. 
  */
- 
 class PayPalPaymentRefundDetailsType  
   extends PPMessage   {
 
@@ -972,7 +969,6 @@ class PayPalPaymentRefundDetailsType
 /**
  * PayPal payment details about the invoice. 
  */
- 
 class PayPalPaymentDetailsType  
   extends PPMessage   {
 
@@ -1002,7 +998,6 @@ class PayPalPaymentDetailsType
 /**
  * Offline payment details about the invoice. 
  */
- 
 class OtherPaymentDetailsType  
   extends PPMessage   {
 
@@ -1041,7 +1036,6 @@ class OtherPaymentDetailsType
 /**
  * Payment details about the invoice. 
  */
- 
 class PaymentDetailsType  
   extends PPMessage   {
 
@@ -1080,7 +1074,6 @@ class PaymentDetailsType
 /**
  * Determines an inclusive date range. 
  */
- 
 class DateRangeType  
   extends PPMessage   {
 
@@ -1110,7 +1103,6 @@ class DateRangeType
 /**
  * Search parameters criteria. 
  */
- 
 class SearchParametersType  
   extends PPMessage   {
 
@@ -1253,7 +1245,6 @@ class SearchParametersType
 /**
  * Summary of invoice information. 
  */
- 
 class InvoiceSummaryType  
   extends PPMessage   {
 
@@ -1420,7 +1411,6 @@ class InvoiceSummaryType
 /**
  * A list of invoice summaries. 
  */
- 
 class InvoiceSummaryListType  
   extends PPMessage   {
 
@@ -1442,7 +1432,6 @@ class InvoiceSummaryListType
 /**
  * The request object for CreateInvoice. 
  */
- 
 class CreateInvoiceRequest  
   extends PPMessage   {
 
@@ -1480,7 +1469,6 @@ class CreateInvoiceRequest
 /**
  * The response object for CreateInvoice. 
  */
- 
 class CreateInvoiceResponse  
   extends PPMessage   {
 
@@ -1549,7 +1537,6 @@ class CreateInvoiceResponse
 /**
  * The request object for SendInvoice. 
  */
- 
 class SendInvoiceRequest  
   extends PPMessage   {
 
@@ -1587,7 +1574,6 @@ class SendInvoiceRequest
 /**
  * The response object for SendInvoice. 
  */
- 
 class SendInvoiceResponse  
   extends PPMessage   {
 
@@ -1637,7 +1623,6 @@ class SendInvoiceResponse
 /**
  * The request object for CreateAndSendInvoice. 
  */
- 
 class CreateAndSendInvoiceRequest  
   extends PPMessage   {
 
@@ -1675,7 +1660,6 @@ class CreateAndSendInvoiceRequest
 /**
  * The response object for CreateAndSendInvoice. 
  */
- 
 class CreateAndSendInvoiceResponse  
   extends PPMessage   {
 
@@ -1744,7 +1728,6 @@ class CreateAndSendInvoiceResponse
 /**
  * The request object for UpdateInvoice. 
  */
- 
 class UpdateInvoiceRequest  
   extends PPMessage   {
 
@@ -1792,7 +1775,6 @@ class UpdateInvoiceRequest
 /**
  * The response object for UpdateInvoice. 
  */
- 
 class UpdateInvoiceResponse  
   extends PPMessage   {
 
@@ -1861,7 +1843,6 @@ class UpdateInvoiceResponse
 /**
  * The request object for GetInvoiceDetails. 
  */
- 
 class GetInvoiceDetailsRequest  
   extends PPMessage   {
 
@@ -1899,7 +1880,6 @@ class GetInvoiceDetailsRequest
 /**
  * The response object for CreateInvoice. 
  */
- 
 class GetInvoiceDetailsResponse  
   extends PPMessage   {
 
@@ -1976,7 +1956,6 @@ class GetInvoiceDetailsResponse
 /**
  * The request object for CancelInvoice. 
  */
- 
 class CancelInvoiceRequest  
   extends PPMessage   {
 
@@ -2040,7 +2019,6 @@ class CancelInvoiceRequest
 /**
  * The response object for CancelInvoice. 
  */
- 
 class CancelInvoiceResponse  
   extends PPMessage   {
 
@@ -2099,7 +2077,6 @@ class CancelInvoiceResponse
 /**
  * The request object for SearchInvoices. 
  */
- 
 class SearchInvoicesRequest  
   extends PPMessage   {
 
@@ -2167,7 +2144,6 @@ class SearchInvoicesRequest
 /**
  * The response object for SearchInvoices. 
  */
- 
 class SearchInvoicesResponse  
   extends PPMessage   {
 
@@ -2243,7 +2219,6 @@ class SearchInvoicesResponse
 /**
  * The request object for MarkInvoiceAsPaid. 
  */
- 
 class MarkInvoiceAsPaidRequest  
   extends PPMessage   {
 
@@ -2291,7 +2266,6 @@ class MarkInvoiceAsPaidRequest
 /**
  * The response object for MarkInvoiceAsPaid. 
  */
- 
 class MarkInvoiceAsPaidResponse  
   extends PPMessage   {
 
@@ -2350,7 +2324,6 @@ class MarkInvoiceAsPaidResponse
 /**
  * The request object for MarkInvoiceAsRefunded. 
  */
- 
 class MarkInvoiceAsRefundedRequest  
   extends PPMessage   {
 
@@ -2398,7 +2371,6 @@ class MarkInvoiceAsRefundedRequest
 /**
  * The response object for MarkInvoiceAsRefunded. 
  */
- 
 class MarkInvoiceAsRefundedResponse  
   extends PPMessage   {
 
@@ -2458,7 +2430,6 @@ class MarkInvoiceAsRefundedResponse
 /**
  * The request object for MarkInvoiceAsUnpaid. 
  */
- 
 class MarkInvoiceAsUnpaidRequest  
   extends PPMessage   {
 
@@ -2496,7 +2467,6 @@ class MarkInvoiceAsUnpaidRequest
 /**
  * The response object for MarkInvoiceAsUnpaid. 
  */
- 
 class MarkInvoiceAsUnpaidResponse  
   extends PPMessage   {
 
@@ -2556,7 +2526,6 @@ class MarkInvoiceAsUnpaidResponse
 /**
  * Payment refund details about the invoice.  
  */
- 
 class PaymentRefundDetailsType  
   extends PPMessage   {
 
