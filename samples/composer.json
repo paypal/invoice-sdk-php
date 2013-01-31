@@ -18,6 +18,7 @@
         "php": ">=5.2.0",
         "ext-curl": "*",
         "paypal/invoice-sdk-php":"dev-composer",
+        "paypal/permissions-sdk-php":"dev-composer",
         "paypal/sdk-core-php":"dev-composer"
     }
 }
