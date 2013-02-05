@@ -1,3 +1,12 @@
+Version 2.2.98 - February 05, 2013
+ 
+	- Added support for composer.
+    - Added installation script that fetches the dependencies and installs sdk if composer not present, contributed by: https://github.com/rrehbeindoi.
+    - Added loading the static configuration from a different source.
+	
+You can see source code of this release in github under https://github.com/paypal/invoice-sdk-php/tree/v2.2.98.
+--------------------------------------------------------------------------------------------------
+
 Version 2.1.96 - December 14, 2012
  
 	- Added support for Instant Payment Notification (Refer IPN-README.md for more details)
