@@ -10,10 +10,6 @@
             "homepage": "https://github.com/paypal/invoice-sdk-php/contributors"
         }
     ],
-        "repositories": [
-        { "type": "composer", "url": "http://localhost/Autoloader/satis/web" }
-       
-    ],
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
