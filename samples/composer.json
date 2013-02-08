@@ -2,7 +2,7 @@
     "name": "paypal/php-sdk-sample",
     "description": "PayPal invoice SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://x.com",
+    "homepage": "https://www.x.com/developers/paypal",
     "license": "Apache2",
     "authors": [
         {
