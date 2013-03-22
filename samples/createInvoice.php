@@ -18,7 +18,6 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('createInvoiceTest');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// send request
@@ -29,7 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoice = new InvoiceType($_POST['merchantEmail'], $_POST['payerEmail'], $itemList, $_POST['currencyCode'], $_POST['paymentTerms']);
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$createInvoiceRequest = new CreateInvoiceRequest($requestEnvelope, $invoice);
-	$logger->info("created CreateInvoiceRequest Object");
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
@@ -43,7 +41,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received CreateInvoiceResponse:");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $createInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $createInvoiceResponse->invoiceID ."</div> </td></tr>";

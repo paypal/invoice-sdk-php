@@ -17,7 +17,6 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('updateInvoiceTest');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// send request
 	$item1 = new InvoiceItemType($_POST['item_name1'], $_POST['item_quantity1'], $_POST['item_unitPrice1']);
@@ -27,8 +26,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoice = new InvoiceType($_POST['merchantEmail'], $_POST['payerEmail'], $itemList, $_POST['currencyCode'], $_POST['paymentTerms']);
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$updateInvoiceRequest = new UpdateInvoiceRequest($requestEnvelope, $_POST['invoiceId'], $invoice);
-	$logger->info("created UpdateInvoiceRequest Object");
-
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
@@ -42,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received UpdateInvoiceResponse:");	
+	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $updateInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $updateInvoiceResponse->invoiceID ."</div> </td></tr>";

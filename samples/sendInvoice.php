@@ -19,12 +19,10 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile']=$currentFile;
 
-$logger = new PPLoggingManager('SendInvoice');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$sendInvoiceRequest = new SendInvoiceRequest($requestEnvelope, $_POST['invoiceID']);
-	$logger->info("created SendInvoice Object");
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
@@ -37,7 +35,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received SendInvoiceResponse:");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $sendInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $sendInvoiceResponse->invoiceID ."</div> </td></tr>";

@@ -19,13 +19,11 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('CancelInvoice');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$cancelInvoiceRequest = new CancelInvoiceRequest($requestEnvelope);
 	$cancelInvoiceRequest->invoiceID = $_POST['invoiceID'];
-	$logger->info("created CancelInvoice Object");
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
@@ -38,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}		
-	$logger->info("Received CancelInvoiceResponse:");
+
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $cancelInvoiceResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $cancelInvoiceResponse->invoiceID ."</div> </td></tr>";

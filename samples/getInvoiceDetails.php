@@ -11,14 +11,11 @@ require_once('PPBootStrap.php');
 <h2>GetInvoiceDetails API Test Page</h2>
 <?php
 
-
-$logger = new PPLoggingManager('GetInvoiceDetails');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$getInvoiceDetailsRequest = new GetInvoiceDetailsRequest($requestEnvelope, $_POST['invoiceID']);
-	$logger->info("created GetInvoiceDetails Object");
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
@@ -31,7 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received getInvoiceDetailsResponse");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $getInvoiceDetailsResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "</table>";

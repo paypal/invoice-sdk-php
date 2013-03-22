@@ -19,7 +19,6 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('MarkInvoiceAsPaid');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// create request object
@@ -32,7 +31,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if($_POST['paymentDate'] != "")
 		$payment->date = $_POST['paymentDate'];
 	$markInvoiceAsPaidRequest = new MarkInvoiceAsPaidRequest($requestEnvelope, $_POST['invoiceID'], $payment);
-	$logger->info("created MarkInvoiceAsPaid Object");
 
 
 	$invoiceService = new InvoiceService();
@@ -47,7 +45,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received MarkInvoiceAsPaidResponse:");
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsPaidResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsPaidResponse->invoiceID ."</div> </td></tr>";

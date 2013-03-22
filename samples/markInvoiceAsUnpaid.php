@@ -19,13 +19,11 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('MarkInvoiceAsUnpaid');
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$markInvoiceAsUnpaidRequest = new MarkInvoiceAsUnpaidRequest($requestEnvelope, $_POST['invoiceID']);
-	$logger->info("created MarkInvoiceAsUnpaid Object");
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
@@ -40,7 +38,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received MarkInvoiceAsUnpaidResponse:");	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsUnpaidResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsUnpaidResponse->invoiceID ."</div> </td></tr>";

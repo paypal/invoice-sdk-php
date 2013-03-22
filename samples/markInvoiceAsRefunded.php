@@ -19,7 +19,6 @@ $parts = Explode('/', $currentFile);
 $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
-$logger = new PPLoggingManager('MarkInvoiceAsRefunded');
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create request object
@@ -30,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if($_POST['refundDate'] != "")
 		$refundDetails->date = $_POST['refundDate'];
 	$markInvoiceAsRefundedRequest = new MarkInvoiceAsRefundedRequest($requestEnvelope, $_POST['invoiceID'], $refundDetails);
-	$logger->info("created MarkInvoiceAsRefunded Object");
+
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
@@ -45,7 +44,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		require_once 'error.php';
 		exit;
 	}
-	$logger->info("Received MarkInvoiceAsRefundedResponse:");	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $markInvoiceAsRefundedResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "<tr><td>InvoiceID :</td><td><div id='InvoiceID'>". $markInvoiceAsRefundedResponse->invoiceID ."</div> </td></tr>";

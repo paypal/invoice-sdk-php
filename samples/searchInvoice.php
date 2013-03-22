@@ -11,7 +11,7 @@ session_start();
 <body>
 <h2>SearchInvoices API Test Page</h2>
 <?php
-$logger = new PPLoggingManager('SearchInvoices');
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// create request object
@@ -60,7 +60,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	$searchInvoicesRequest = new SearchInvoicesRequest($requestEnvelope, $merchantEmail, $parameters, $page, $pageSize);
-	$logger->info("created GsearchInvoices Object");
 
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
@@ -73,8 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;
-	}
-	$logger->info("Received searchInvoices Response");	
+	}	
 	echo "<table>";
 	echo "<tr><td>Ack :</td><td><div id='Ack'>". $searchInvoicesResponse->responseEnvelope->ack ."</div> </td></tr>";
 	echo "</table>";	
