@@ -1,12 +1,12 @@
 <?php 
 
 /**
- * AUTO GENERATED code for Invoice
+ *  AUTO GENERATED code for Invoice
  */
 class InvoiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "1.6.0";
+	private static $SERVICE_VERSION = "1.8.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "Invoice";
@@ -15,7 +15,7 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.2.98";
+	protected static $SDK_VERSION = "2.3.100";
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);
@@ -189,6 +189,23 @@ class InvoiceService extends PPBaseService {
 	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsRefundedResponse();
 		$resp = $this->call('Invoice', 'MarkInvoiceAsRefunded', $markInvoiceAsRefundedRequest, $apiCredential);
+		$ret->init(PPUtils::nvpToMap($resp));
+		return $ret;
+	}
+	 
+
+	/**
+	 * Service Call: DeleteInvoice
+	 * @param DeleteInvoiceRequest $deleteInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
+	 * @return DeleteInvoiceResponse
+	 * @throws APIException
+	 */
+	public function DeleteInvoice($deleteInvoiceRequest, $apiCredential = NULL) {
+		$ret = new DeleteInvoiceResponse();
+		$resp = $this->call('Invoice', 'DeleteInvoice', $deleteInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
