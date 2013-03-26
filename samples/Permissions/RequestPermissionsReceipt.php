@@ -25,7 +25,7 @@ $requestEnvelope = new RequestEnvelope();
 $requestEnvelope->errorLanguage = "en_US";
 $request = new RequestPermissionsRequest($scope, $returnURL);
 $request->requestEnvelope = $requestEnvelope;
-$permissions = new PermissionsService('Permissions');
+$permissions = new PermissionsService();
 try {
 	$response = $permissions->RequestPermissions($request);
 } catch (Exception $ex) {
