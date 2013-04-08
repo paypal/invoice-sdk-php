@@ -1,6 +1,12 @@
 <?php
 require_once('PPBootStrap.php');
 session_start();
+
+/*
+ *  # UpdateInvoice API
+ Use the UpdateInvoice API operation to update an invoice
+ This sample code uses Invoice PHP SDK to make API call
+ */
 ?>
 <html>
 <head>
@@ -18,14 +24,65 @@ $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-	// send request
+	
+	/*
+	 * 
+		 ##UpdateInvoiceRequest
+		 Use the UpdateInvoiceRequest message to update an invoice.
+
+		 The code for the language in which errors are returned, which must be
+		 en_US.
+	 */
+	
+	/*
+	 *  InvoiceItemType which takes mandatory params:
+		
+		 * `Item Name` - SKU or name of the item.
+		 * `Quantity` - Item count.
+		 * `Amount` - Price of the item, in the currency specified by the
+		 invoice.
+	 */
 	$item1 = new InvoiceItemType($_POST['item_name1'], $_POST['item_quantity1'], $_POST['item_unitPrice1']);
 	$item2 = new InvoiceItemType($_POST['item_name2'], $_POST['item_quantity2'], $_POST['item_unitPrice2']);
 	$itemList = new InvoiceItemListType();
 	$itemList->item = array($item1, $item2);
+	
+	/*
+	 *  InvoiceType which takes mandatory params:
+		
+		 * `Merchant Email` - Merchant email address.
+		 * `Personal Email` - Payer email address.
+		 * `InvoiceItemList` - List of items included in this invoice.
+		 * `CurrencyCode` - Currency used for all invoice item amounts and
+		 totals.
+		 * `PaymentTerms` - Terms by which the invoice payment is due. It is
+		 one of the following values:
+		 * DueOnReceipt - Payment is due when the payer receives the invoice.
+		 * DueOnDateSpecified - Payment is due on the date specified in the
+		 invoice.
+		 * Net10 - Payment is due 10 days from the invoice date.
+		 * Net15 - Payment is due 15 days from the invoice date.
+		 * Net30 - Payment is due 30 days from the invoice date.
+		 * Net45 - Payment is due 45 days from the invoice date.
+	 */
 	$invoice = new InvoiceType($_POST['merchantEmail'], $_POST['payerEmail'], $itemList, $_POST['currencyCode'], $_POST['paymentTerms']);
 	$requestEnvelope = new RequestEnvelope("en_US");
+	
+	/*
+	 *  UpdateInvoiceRequest which takes mandatory params:
+		
+		 * `Request Envelope` - Information common to each API operation, such
+		 as the language in which an error message is returned.
+		 * `Invoice ID` - ID of the invoice to update.
+		 * `Invoice` - Merchant, payer, and invoice information.
+	 */
 	$updateInvoiceRequest = new UpdateInvoiceRequest($requestEnvelope, $_POST['invoiceId'], $invoice);
+	
+	/*
+	 * 	 ## Creating service wrapper object
+		 Creating service wrapper object to make API call and loading
+		 configuration file for your credentials and endpoint
+	 */
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {

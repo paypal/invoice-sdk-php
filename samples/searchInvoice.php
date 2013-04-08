@@ -1,6 +1,12 @@
 <?php
 require_once('PPBootStrap.php');
 session_start();
+
+/*
+ *  # SearchInvoices API
+ Use the SearchInvoice API operation to search an invoice.
+ This sample code uses Invoice PHP SDK to make API call
+ */
 ?>
 <html>
 <head>
@@ -14,7 +20,13 @@ session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	// create request object
+	/*
+	 *  ##SearchInvoicesRequest
+		 Use the SearchInvoiceRequest message to search an invoice.
+
+		 The code for the language in which errors are returned, which must be
+		 en_US.
+	 */
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$merchantEmail= $_POST['merchantEmail'];
 	$page = $_POST['pageNumber'];
@@ -22,6 +34,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$parameters = new SearchParametersType();
 	$parameters->businessName = $_POST['businessName'];
+	
+	/*
+	 *  Currency used for lower and upper amounts. It is required when you
+		 specify lowerAmount or upperAmount.
+	 */
 	$parameters->currencyCode = $_POST['currencyCode'];
 	$parameters->email = $_POST['email'];
 	$parameters->recipientName = $_POST['recipientName'];
@@ -31,6 +48,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$parameters->status[] = $status;
 	}
 	$parameters->lowerAmount = $_POST['lowerAmount'];
+	
+	/*
+	 *  Invoice amount search. It specifies the smallest amount to be
+		 returned. If you pass a value for this field, you must also pass a
+		 currencyCode value.
+	 */
 	$parameters->upperAmount = $_POST['upperAmount'];
 	$parameters->memo = $_POST['memo'];
 	$parameters->origin = $_POST['origin'];
@@ -59,8 +82,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$parameters->creationDate = $dateRange;
 	}
 
+	/*
+	 *  SearchInvoicesRequest which takes mandatory params:
+		
+		 * `Request Envelope` - Information common to each API operation, such
+		 as the language in which an error message is returned.
+		 * `Merchant Email` - Email address of invoice creator.
+		 * `SearchParameters` - Parameters constraining the search.
+		 * `Page` - Page number of result set, starting with 1.
+		 * `Page Size` - Number of results per page, between 1 and 100.
+	 */
 	$searchInvoicesRequest = new SearchInvoicesRequest($requestEnvelope, $merchantEmail, $parameters, $page, $pageSize);
 
+	/*
+	 *  ## Creating service wrapper object
+		 Creating service wrapper object to make API call and loading
+		 configuration file for your credentials and endpoint
+	 */
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
@@ -68,6 +106,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 	try {
+
+		/*
+		 *  ## Making API call
+			 Invoke the appropriate method corresponding to API in service
+			 wrapper object
+		 */
 		$searchInvoicesResponse = $invoiceService->SearchInvoices($searchInvoicesRequest);
 	} catch (Exception $ex) {
 		require_once 'error.php';
