@@ -1,7 +1,9 @@
 <?php
 require_once('PPBootStrap.php');
 session_start();
-
+/*
+ * Use the MarkInvoiceAsPaid API operation to mark an invoice as paid. 
+ */
 ?>
 <html>
 <head>
@@ -20,19 +22,42 @@ $currentFile = $parts[count($parts) - 1];
 $_SESSION['curFile'] = $currentFile;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+	
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$payment = new OtherPaymentDetailsType();
+	/*
+	 * (Optional) Method that can be used to mark an invoice as paid when the payer pays offline. It is one of the following values:
+
+    BankTransfer – Payment is made by a bank transfer.
+    Cash – Payment is made in cash.
+    Check – Payment is made by check.
+    CreditCard – Payment is made by a credit card.
+    DebitCard – Payment is made by a debit card.
+    Other – Payment is made by a method not specified in this list.
+    PayPal – Payment is made by PayPal.
+    WireTransfer – Payment is made by a wire transfer.
+
+	 */
 	if($_POST['paymentMethod'] != "")
 		$payment->method = $_POST['paymentMethod'];
+	/*
+	 * (Optional) Optional note associated with the payment. 
+	 */
 	if($_POST['note'] != "")
 		$payment->note = $_POST['note'];
+	/*
+	 * (Required) Date when the invoice was paid. 
+	 */
 	if($_POST['paymentDate'] != "")
 		$payment->date = $_POST['paymentDate'];
 	$markInvoiceAsPaidRequest = new MarkInvoiceAsPaidRequest($requestEnvelope, $_POST['invoiceID'], $payment);
 
-
+	/*
+	 * 	 ## Creating service wrapper object
+	Creating service wrapper object to make API call and loading
+	configuration file for your credentials and endpoint
+	*/
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {

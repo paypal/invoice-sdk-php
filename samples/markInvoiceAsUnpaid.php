@@ -1,7 +1,9 @@
 <?php
 require_once('PPBootStrap.php');
 session_start();
-
+/*
+ * Use the MarkInvoiceAsUnpaid API operation to mark an invoice as unpaid. 
+ */
 ?>
 <html>
 <head>
@@ -23,8 +25,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// create request object
 	$requestEnvelope = new RequestEnvelope("en_US");
+	/*
+	 * (Required) ID of the invoice to mark as unpaid. 
+	 */
 	$markInvoiceAsUnpaidRequest = new MarkInvoiceAsUnpaidRequest($requestEnvelope, $_POST['invoiceID']);
-
+	/*
+	 * 	 ## Creating service wrapper object
+	Creating service wrapper object to make API call and loading
+	configuration file for your credentials and endpoint
+	*/
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {

@@ -12,7 +12,9 @@ session_start();
 <h2>CancelInvoice API Test Page</h2>
 <?php
 
-
+/*
+ * Use the CancelInvoice API operation to cancel an invoice. 
+ */
 //get the current filename
 $currentFile = $_SERVER["SCRIPT_NAME"];
 $parts = Explode('/', $currentFile);
@@ -21,9 +23,20 @@ $_SESSION['curFile'] = $currentFile;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create request object
+	/*
+	 * (Required) RFC 3066 language in which error messages are returned; by default it is en_US, which is the only language currently supported. 
+	 */
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$cancelInvoiceRequest = new CancelInvoiceRequest($requestEnvelope);
+	/*
+	 * (Optional) ID of the invoice. 
+	 */
 	$cancelInvoiceRequest->invoiceID = $_POST['invoiceID'];
+	/*
+	 * 	 ## Creating service wrapper object
+	Creating service wrapper object to make API call and loading
+	configuration file for your credentials and endpoint
+	*/
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
@@ -31,6 +44,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$invoiceService->setTokenSecret($_POST['tokenSecret']);
 	}
 	try {
+		/* wrap API method calls on the service object with a try catch */
+		
 		$cancelInvoiceResponse = $invoiceService->CancelInvoice($cancelInvoiceRequest);
 	} catch (Exception $ex) {
 		require_once 'error.php';

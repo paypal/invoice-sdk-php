@@ -1,7 +1,9 @@
 <?php
 require_once('PPBootStrap.php');
 session_start();
-
+/*
+ * Use the MarkInvoiceAsRefunded API operation to mark an invoice as refunded. This API operation canonly be used for full refunds. 
+ */
 ?>
 <html>
 <head>
@@ -22,6 +24,9 @@ $_SESSION['curFile'] = $currentFile;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create request object
+	/*
+	 * (Required) Information common to each API operation, such as the language in which an error message is returned. 
+	 */
 	$requestEnvelope = new RequestEnvelope("en_US");
 	$refundDetails = new OtherPaymentRefundDetailsType();
 	if($_POST['note'] != "")
