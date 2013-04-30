@@ -5,14 +5,14 @@
   * 
   */
 /**
- *  
+ * 
  */
 if(!class_exists('BaseAddress', false)) {
 class BaseAddress  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -21,7 +21,7 @@ class BaseAddress
 	public $line1;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -30,7 +30,7 @@ class BaseAddress
 	public $line2;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -39,7 +39,7 @@ class BaseAddress
 	public $city;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -48,7 +48,7 @@ class BaseAddress
 	public $state;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -57,7 +57,7 @@ class BaseAddress
 	public $postalCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -66,7 +66,7 @@ class BaseAddress
 	public $countryCode;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -90,15 +90,15 @@ class BaseAddress
 
 
 /**
- *  This type contains the detailed error information resulting
- *  from the service operation. 
+ * This type contains the detailed error information resulting
+ * from the service operation. 
  */
 if(!class_exists('ErrorData', false)) {
 class ErrorData  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -107,7 +107,7 @@ class ErrorData
 	public $errorId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -116,7 +116,7 @@ class ErrorData
 	public $domain;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -125,7 +125,7 @@ class ErrorData
 	public $subdomain;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -134,7 +134,7 @@ class ErrorData
 	public $severity;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -143,7 +143,7 @@ class ErrorData
 	public $category;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -152,7 +152,7 @@ class ErrorData
 	public $message;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -161,7 +161,7 @@ class ErrorData
 	public $exceptionId;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -178,14 +178,14 @@ class ErrorData
 
 /**
  * @hasAttribute
- *  
+ * 
  */
 if(!class_exists('ErrorParameter', false)) {
 class ErrorParameter  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 
@@ -196,7 +196,7 @@ class ErrorParameter
 	public $name;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 
@@ -213,15 +213,15 @@ class ErrorParameter
 
 
 /**
- *  This specifies a fault, encapsulating error data, with
- *  specific error codes. 
+ * This specifies a fault, encapsulating error data, with
+ * specific error codes. 
  */
 if(!class_exists('FaultMessage', false)) {
 class FaultMessage  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -230,7 +230,7 @@ class FaultMessage
 	public $responseEnvelope;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -246,19 +246,19 @@ class FaultMessage
 
 
 /**
- *  This specifies the list of parameters with every request to
- *  the service. 
+ * This specifies the list of parameters with every request to
+ * the service. 
  */
 if(!class_exists('RequestEnvelope', false)) {
 class RequestEnvelope  
   extends PPMessage   {
 
 	/**
-	*  This specifies the required detail level that is needed by a
-	*  client application pertaining to a particular data component
-	*  (e.g., Item, Transaction, etc.). The detail level is
-	*  specified in the DetailLevelCodeType which has all the
-	*  enumerated values of the detail level for each component. 
+	 * This specifies the required detail level that is needed by a
+	 * client application pertaining to a particular data component
+	 * (e.g., Item, Transaction, etc.). The detail level is
+	 * specified in the DetailLevelCodeType which has all the
+	 * enumerated values of the detail level for each component. 
 	 * @access public
 	 
 	 	 	 	 
@@ -267,8 +267,8 @@ class RequestEnvelope
 	public $detailLevel;
 
 	/**
-	*  This should be the standard RFC 3066 language identification
-	*  tag, e.g., en_US. 
+	 * This should be the standard RFC 3066 language identification
+	 * tag, e.g., en_US. 
 	 * @access public
 	 
 	 	 	 	 
@@ -283,15 +283,15 @@ class RequestEnvelope
 
 
 /**
- *  This specifies a list of parameters with every response from
- *  a service. 
+ * This specifies a list of parameters with every response from
+ * a service. 
  */
 if(!class_exists('ResponseEnvelope', false)) {
 class ResponseEnvelope  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -300,7 +300,7 @@ class ResponseEnvelope
 	public $timestamp;
 
 	/**
-	*  Application level acknowledgment code. 
+	 * Application level acknowledgment code. 
 	 * @access public
 	 
 	 	 	 	 
@@ -309,7 +309,7 @@ class ResponseEnvelope
 	public $ack;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -318,7 +318,7 @@ class ResponseEnvelope
 	public $correlationId;
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -333,14 +333,14 @@ class ResponseEnvelope
 
 
 /**
- *  Contact information for a company participating in the
- *  invoicing system. 
+ * Contact information for a company participating in the
+ * invoicing system. 
  */
 class BusinessInfoType  
   extends PPMessage   {
 
 	/**
-	*  First name of the company contact. 
+	 * First name of the company contact. 
 	 * @access public
 	 
 	 	 	 	 
@@ -349,7 +349,7 @@ class BusinessInfoType
 	public $firstName;
 
 	/**
-	*  Last name of the company contact. 
+	 * Last name of the company contact. 
 	 * @access public
 	 
 	 	 	 	 
@@ -358,7 +358,7 @@ class BusinessInfoType
 	public $lastName;
 
 	/**
-	*  Business name of the company. 
+	 * Business name of the company. 
 	 * @access public
 	 
 	 	 	 	 
@@ -367,7 +367,7 @@ class BusinessInfoType
 	public $businessName;
 
 	/**
-	*  Phone number for contacting the company. 
+	 * Phone number for contacting the company. 
 	 * @access public
 	 
 	 	 	 	 
@@ -376,7 +376,7 @@ class BusinessInfoType
 	public $phone;
 
 	/**
-	*  Fax number used by the company. 
+	 * Fax number used by the company. 
 	 * @access public
 	 
 	 	 	 	 
@@ -385,7 +385,7 @@ class BusinessInfoType
 	public $fax;
 
 	/**
-	*  Website used by the company. 
+	 * Website used by the company. 
 	 * @access public
 	 
 	 	 	 	 
@@ -394,8 +394,8 @@ class BusinessInfoType
 	public $website;
 
 	/**
-	*  Custom value to be displayed in the contact information
-	*  details. 
+	 * Custom value to be displayed in the contact information
+	 * details. 
 	 * @access public
 	 
 	 	 	 	 
@@ -404,7 +404,7 @@ class BusinessInfoType
 	public $customValue;
 
 	/**
-	*  Street address of the company. 
+	 * Street address of the company. 
 	 * @access public
 	 
 	 	 	 	 
@@ -418,14 +418,14 @@ class BusinessInfoType
 
 
 /**
- *  Item information about a service or product listed in the
- *  invoice. 
+ * Item information about a service or product listed in the
+ * invoice. 
  */
 class InvoiceItemType  
   extends PPMessage   {
 
 	/**
-	*  SKU or item name. 
+	 * SKU or item name. 
 	 * @access public
 	 
 	 	 	 	 
@@ -434,7 +434,7 @@ class InvoiceItemType
 	public $name;
 
 	/**
-	*  Description of the item. 
+	 * Description of the item. 
 	 * @access public
 	 
 	 	 	 	 
@@ -443,7 +443,7 @@ class InvoiceItemType
 	public $description;
 
 	/**
-	*  Date on which the product or service was provided. 
+	 * Date on which the product or service was provided. 
 	 * @access public
 	 
 	 	 	 	 
@@ -452,7 +452,7 @@ class InvoiceItemType
 	public $date;
 
 	/**
-	*  Item count. 
+	 * Item count. 
 	 * @access public
 	 
 	 	 	 	 
@@ -461,8 +461,8 @@ class InvoiceItemType
 	public $quantity;
 
 	/**
-	*  Price of the item, in the currency specified by the invoice.
-	*  
+	 * Price of the item, in the currency specified by the invoice.
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -471,7 +471,7 @@ class InvoiceItemType
 	public $unitPrice;
 
 	/**
-	*  Name of an applicable tax, if any. 
+	 * Name of an applicable tax, if any. 
 	 * @access public
 	 
 	 	 	 	 
@@ -480,7 +480,7 @@ class InvoiceItemType
 	public $taxName;
 
 	/**
-	*  Rate of an applicable tax, if any. 
+	 * Rate of an applicable tax, if any. 
 	 * @access public
 	 
 	 	 	 	 
@@ -503,13 +503,13 @@ class InvoiceItemType
 
 
 /**
- *  A list of invoice items. 
+ * A list of invoice items. 
  */
 class InvoiceItemListType  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -531,14 +531,14 @@ class InvoiceItemListType
 
 
 /**
- *  Invoice details about the merchant, payer, totals and terms.
- *  
+ * Invoice details about the merchant, payer, totals and terms.
+ * 
  */
 class InvoiceType  
   extends PPMessage   {
 
 	/**
-	*  Merchant's email. 
+	 * Merchant's email. 
 	 * @access public
 	 
 	 	 	 	 
@@ -547,7 +547,7 @@ class InvoiceType
 	public $merchantEmail;
 
 	/**
-	*  Email to which the invoice will be sent. 
+	 * Email to which the invoice will be sent. 
 	 * @access public
 	 
 	 	 	 	 
@@ -556,7 +556,7 @@ class InvoiceType
 	public $payerEmail;
 
 	/**
-	*  Unique identifier for the invoice. 
+	 * Unique identifier for the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -565,8 +565,8 @@ class InvoiceType
 	public $number;
 
 	/**
-	*  Company contact information of the merchant company sending
-	*  the invoice. 
+	 * Company contact information of the merchant company sending
+	 * the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -575,7 +575,7 @@ class InvoiceType
 	public $merchantInfo;
 
 	/**
-	*  List of items included in this invoice. 
+	 * List of items included in this invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -584,7 +584,17 @@ class InvoiceType
 	public $itemList;
 
 	/**
-	*  Currency used for all invoice item amounts and totals. 
+	 * If True, indicates tax calculated after discount. Default is
+	 * False.
+	 * @access public
+	 
+	 	 	 	 
+	 * @var boolean 	 
+	 */ 
+	public $taxCalculatedAfterDiscount;
+
+	/**
+	 * Currency used for all invoice item amounts and totals. 
 	 * @access public
 	 
 	 	 	 	 
@@ -593,7 +603,7 @@ class InvoiceType
 	public $currencyCode;
 
 	/**
-	*  Date on which the invoice will be enabled. 
+	 * Date on which the invoice will be enabled. 
 	 * @access public
 	 
 	 	 	 	 
@@ -602,7 +612,7 @@ class InvoiceType
 	public $invoiceDate;
 
 	/**
-	*  Date on which the invoice payment is due. 
+	 * Date on which the invoice payment is due. 
 	 * @access public
 	 
 	 	 	 	 
@@ -611,7 +621,7 @@ class InvoiceType
 	public $dueDate;
 
 	/**
-	*  Terms by which the invoice payment is due. 
+	 * Terms by which the invoice payment is due. 
 	 * @access public
 	 
 	 	 	 	 
@@ -620,7 +630,7 @@ class InvoiceType
 	public $paymentTerms;
 
 	/**
-	*  A discount percent applied to the invoice, if any. 
+	 * A discount percent applied to the invoice, if any. 
 	 * @access public
 	 
 	 	 	 	 
@@ -629,8 +639,8 @@ class InvoiceType
 	public $discountPercent;
 
 	/**
-	*  A discount amount applied to the invoice, if any. If
-	*  DiscountPercent is provided, DiscountAmount is ignored. 
+	 * A discount amount applied to the invoice, if any. If
+	 * DiscountPercent is provided, DiscountAmount is ignored. 
 	 * @access public
 	 
 	 	 	 	 
@@ -639,7 +649,7 @@ class InvoiceType
 	public $discountAmount;
 
 	/**
-	*  General terms for the invoice. 
+	 * General terms for the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -648,7 +658,7 @@ class InvoiceType
 	public $terms;
 
 	/**
-	*  Note to the payer company. 
+	 * Note to the payer company. 
 	 * @access public
 	 
 	 	 	 	 
@@ -657,7 +667,7 @@ class InvoiceType
 	public $note;
 
 	/**
-	*  Memo for book keeping that is private to the Merchant. 
+	 * Memo for book keeping that is private to the Merchant. 
 	 * @access public
 	 
 	 	 	 	 
@@ -666,8 +676,8 @@ class InvoiceType
 	public $merchantMemo;
 
 	/**
-	*  Details of the receipt. Applicable only when invoice is a
-	*  receipt. 
+	 * Details of the receipt. Applicable only when invoice is a
+	 * receipt. 
 	 * @access public
 	 
 	 	 	 	 
@@ -676,7 +686,7 @@ class InvoiceType
 	public $receiptDetails;
 
 	/**
-	*  Billing information for the payer. 
+	 * Billing information for the payer. 
 	 * @access public
 	 
 	 	 	 	 
@@ -685,7 +695,7 @@ class InvoiceType
 	public $billingInfo;
 
 	/**
-	*  Shipping information for the payer. 
+	 * Shipping information for the payer. 
 	 * @access public
 	 
 	 	 	 	 
@@ -694,7 +704,7 @@ class InvoiceType
 	public $shippingInfo;
 
 	/**
-	*  Cost of shipping. 
+	 * Cost of shipping. 
 	 * @access public
 	 
 	 	 	 	 
@@ -703,7 +713,7 @@ class InvoiceType
 	public $shippingAmount;
 
 	/**
-	*  Name of the applicable tax on shipping cost, if any. 
+	 * Name of the applicable tax on shipping cost, if any. 
 	 * @access public
 	 
 	 	 	 	 
@@ -712,7 +722,7 @@ class InvoiceType
 	public $shippingTaxName;
 
 	/**
-	*  Rate of the applicable tax on shipping cost, if any. 
+	 * Rate of the applicable tax on shipping cost, if any. 
 	 * @access public
 	 
 	 	 	 	 
@@ -721,7 +731,7 @@ class InvoiceType
 	public $shippingTaxRate;
 
 	/**
-	*  The external image URL of the invoice's logo, if any 
+	 * The external image URL of the invoice's logo, if any 
 	 * @access public
 	 
 	 	 	 	 
@@ -730,8 +740,8 @@ class InvoiceType
 	public $logoUrl;
 
 	/**
-	*  BN code for tracking transactions with a particular partner.
-	*  
+	 * BN code for tracking transactions with a particular partner.
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -740,9 +750,9 @@ class InvoiceType
 	public $referrerCode;
 
 	/**
-	*  Label used to display custom amount value. If a value is
-	*  entered for customAmountLabel, then customAmountValue cannot
-	*  be empty. 
+	 * Label used to display custom amount value. If a value is
+	 * entered for customAmountLabel, then customAmountValue cannot
+	 * be empty. 
 	 * @access public
 	 
 	 	 	 	 
@@ -751,8 +761,8 @@ class InvoiceType
 	public $customAmountLabel;
 
 	/**
-	*  Value of custom amount. If a value is entered for
-	*  customAmountValue, then customAmountLabel cannot be empty. 
+	 * Value of custom amount. If a value is entered for
+	 * customAmountValue, then customAmountLabel cannot be empty. 
 	 * @access public
 	 
 	 	 	 	 
@@ -777,14 +787,14 @@ class InvoiceType
 
 
 /**
- *  Invoice details about the invoice status and state change
- *  dates. 
+ * Invoice details about the invoice status and state change
+ * dates. 
  */
 class InvoiceDetailsType  
   extends PPMessage   {
 
 	/**
-	*  Status of the invoice. 
+	 * Status of the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -793,9 +803,9 @@ class InvoiceDetailsType
 	public $status;
 
 	/**
-	*  The total amount of the invoice (cost of items, shipping and
-	*  tax, less any discount). This field is set by the invoicing
-	*  system and will ignore any changes made by API callers. 
+	 * The total amount of the invoice (cost of items, shipping and
+	 * tax, less any discount). This field is set by the invoicing
+	 * system and will ignore any changes made by API callers. 
 	 * @access public
 	 
 	 	 	 	 
@@ -804,8 +814,8 @@ class InvoiceDetailsType
 	public $totalAmount;
 
 	/**
-	*  Whether the invoice was created via the website or via an
-	*  API call. 
+	 * Whether the invoice was created via the website or via an
+	 * API call. 
 	 * @access public
 	 
 	 	 	 	 
@@ -814,7 +824,7 @@ class InvoiceDetailsType
 	public $origin;
 
 	/**
-	*  Date when the invoice was created. 
+	 * Date when the invoice was created. 
 	 * @access public
 	 
 	 	 	 	 
@@ -823,7 +833,7 @@ class InvoiceDetailsType
 	public $createdDate;
 
 	/**
-	*  Account that created the invoice. 
+	 * Account that created the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -832,7 +842,7 @@ class InvoiceDetailsType
 	public $createdBy;
 
 	/**
-	*  If canceled, date when the invoice was canceled. 
+	 * If canceled, date when the invoice was canceled. 
 	 * @access public
 	 
 	 	 	 	 
@@ -841,7 +851,7 @@ class InvoiceDetailsType
 	public $canceledDate;
 
 	/**
-	*  Actor who canceled the invoice. 
+	 * Actor who canceled the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -850,7 +860,7 @@ class InvoiceDetailsType
 	public $canceledByActor;
 
 	/**
-	*  Account that canceled the invoice. 
+	 * Account that canceled the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -859,7 +869,7 @@ class InvoiceDetailsType
 	public $canceledBy;
 
 	/**
-	*  Date when the invoice was last edited. 
+	 * Date when the invoice was last edited. 
 	 * @access public
 	 
 	 	 	 	 
@@ -868,7 +878,7 @@ class InvoiceDetailsType
 	public $lastUpdatedDate;
 
 	/**
-	*  Account that last edited the invoice. 
+	 * Account that last edited the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -877,7 +887,7 @@ class InvoiceDetailsType
 	public $lastUpdatedBy;
 
 	/**
-	*  Date when the invoice was first sent. 
+	 * Date when the invoice was first sent. 
 	 * @access public
 	 
 	 	 	 	 
@@ -886,7 +896,7 @@ class InvoiceDetailsType
 	public $firstSentDate;
 
 	/**
-	*  Date when the invoice was last sent. 
+	 * Date when the invoice was last sent. 
 	 * @access public
 	 
 	 	 	 	 
@@ -895,7 +905,7 @@ class InvoiceDetailsType
 	public $lastSentDate;
 
 	/**
-	*  Account that last sent the invoice. 
+	 * Account that last sent the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -904,7 +914,7 @@ class InvoiceDetailsType
 	public $lastSentBy;
 
 	/**
-	*  If the invoice was paid, date when the invoice was paid. 
+	 * If the invoice was paid, date when the invoice was paid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -918,13 +928,13 @@ class InvoiceDetailsType
 
 
 /**
- *  Details of the refund made against this invoice. 
+ * Details of the refund made against this invoice. 
  */
 class OtherPaymentRefundDetailsType  
   extends PPMessage   {
 
 	/**
-	*  Optional note associated with the refund. 
+	 * Optional note associated with the refund. 
 	 * @access public
 	 
 	 	 	 	 
@@ -933,10 +943,10 @@ class OtherPaymentRefundDetailsType
 	public $note;
 
 	/**
-	*  Date when the invoice was marked as refunded. If the date is
-	*  not specified, the current date and time is used as a
-	*  default. In addition, the date must be after the payment
-	*  date of the invoice. 
+	 * Date when the invoice was marked as refunded. If the date is
+	 * not specified, the current date and time is used as a
+	 * default. In addition, the date must be after the payment
+	 * date of the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -950,13 +960,13 @@ class OtherPaymentRefundDetailsType
 
 
 /**
- *  Details of the paypal refund made against this invoice. 
+ * Details of the paypal refund made against this invoice. 
  */
 class PayPalPaymentRefundDetailsType  
   extends PPMessage   {
 
 	/**
-	*  Date when the invoice was marked as refunded by PayPal. 
+	 * Date when the invoice was marked as refunded by PayPal. 
 	 * @access public
 	 
 	 	 	 	 
@@ -970,13 +980,13 @@ class PayPalPaymentRefundDetailsType
 
 
 /**
- *  PayPal payment details about the invoice. 
+ * PayPal payment details about the invoice. 
  */
 class PayPalPaymentDetailsType  
   extends PPMessage   {
 
 	/**
-	*  Transaction ID of the PayPal payment. 
+	 * Transaction ID of the PayPal payment. 
 	 * @access public
 	 
 	 	 	 	 
@@ -985,7 +995,7 @@ class PayPalPaymentDetailsType
 	public $transactionID;
 
 	/**
-	*  Date when the invoice was paid. 
+	 * Date when the invoice was paid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -999,13 +1009,13 @@ class PayPalPaymentDetailsType
 
 
 /**
- *  Offline payment details about the invoice. 
+ * Offline payment details about the invoice. 
  */
 class OtherPaymentDetailsType  
   extends PPMessage   {
 
 	/**
-	*  Method used for the offline payment. 
+	 * Method used for the offline payment. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1014,7 +1024,7 @@ class OtherPaymentDetailsType
 	public $method;
 
 	/**
-	*  Optional note associated with the payment. 
+	 * Optional note associated with the payment. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1023,7 +1033,7 @@ class OtherPaymentDetailsType
 	public $note;
 
 	/**
-	*  Date when the invoice was paid. 
+	 * Date when the invoice was paid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1037,13 +1047,13 @@ class OtherPaymentDetailsType
 
 
 /**
- *  Payment details about the invoice. 
+ * Payment details about the invoice. 
  */
 class PaymentDetailsType  
   extends PPMessage   {
 
 	/**
-	*  True if the invoice was paid using PayPal. 
+	 * True if the invoice was paid using PayPal. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1052,7 +1062,7 @@ class PaymentDetailsType
 	public $viaPayPal;
 
 	/**
-	*  PayPal payment details. 
+	 * PayPal payment details. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1061,7 +1071,7 @@ class PaymentDetailsType
 	public $paypalPayment;
 
 	/**
-	*  Other payment details. 
+	 * Other payment details. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1075,13 +1085,13 @@ class PaymentDetailsType
 
 
 /**
- *  Determines an inclusive date range. 
+ * Determines an inclusive date range. 
  */
 class DateRangeType  
   extends PPMessage   {
 
 	/**
-	*  Start of the date range. 
+	 * Start of the date range. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1090,7 +1100,7 @@ class DateRangeType
 	public $startDate;
 
 	/**
-	*  End of the date range. 
+	 * End of the date range. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1104,13 +1114,13 @@ class DateRangeType
 
 
 /**
- *  Search parameters criteria. 
+ * Search parameters criteria. 
  */
 class SearchParametersType  
   extends PPMessage   {
 
 	/**
-	*  Email search string. 
+	 * Email search string. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1119,7 +1129,7 @@ class SearchParametersType
 	public $email;
 
 	/**
-	*  Recipient search string. 
+	 * Recipient search string. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1128,7 +1138,7 @@ class SearchParametersType
 	public $recipientName;
 
 	/**
-	*  Company search string. 
+	 * Company search string. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1137,7 +1147,7 @@ class SearchParametersType
 	public $businessName;
 
 	/**
-	*  Invoice number search string. 
+	 * Invoice number search string. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1146,7 +1156,7 @@ class SearchParametersType
 	public $invoiceNumber;
 
 	/**
-	*  Invoice status search. 
+	 * Invoice status search. 
      * @array
 	 * @access public
 	 
@@ -1156,8 +1166,8 @@ class SearchParametersType
 	public $status;
 
 	/**
-	*  Invoice amount search. Specifies the smallest amount to be
-	*  returned. 
+	 * Invoice amount search. Specifies the smallest amount to be
+	 * returned. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1166,8 +1176,8 @@ class SearchParametersType
 	public $lowerAmount;
 
 	/**
-	*  Invoice amount search. Specifies the largest amount to be
-	*  returned. 
+	 * Invoice amount search. Specifies the largest amount to be
+	 * returned. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1176,8 +1186,8 @@ class SearchParametersType
 	public $upperAmount;
 
 	/**
-	*  Currency used for lower and upper amounts. Required when
-	*  lowerAmount or upperAmount is specified. 
+	 * Currency used for lower and upper amounts. Required when
+	 * lowerAmount or upperAmount is specified. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1186,7 +1196,7 @@ class SearchParametersType
 	public $currencyCode;
 
 	/**
-	*  Invoice memo search string. 
+	 * Invoice memo search string. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1195,8 +1205,8 @@ class SearchParametersType
 	public $memo;
 
 	/**
-	*  Whether the invoice was created via the website or via an
-	*  API call. 
+	 * Whether the invoice was created via the website or via an
+	 * API call. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1205,7 +1215,7 @@ class SearchParametersType
 	public $origin;
 
 	/**
-	*  Invoice date range filter. 
+	 * Invoice date range filter. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1214,7 +1224,7 @@ class SearchParametersType
 	public $invoiceDate;
 
 	/**
-	*  Invoice due date range filter. 
+	 * Invoice due date range filter. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1223,7 +1233,7 @@ class SearchParametersType
 	public $dueDate;
 
 	/**
-	*  Invoice payment date range filter. 
+	 * Invoice payment date range filter. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1232,7 +1242,7 @@ class SearchParametersType
 	public $paymentDate;
 
 	/**
-	*  Invoice creation date range filter. 
+	 * Invoice creation date range filter. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1246,13 +1256,13 @@ class SearchParametersType
 
 
 /**
- *  Summary of invoice information. 
+ * Summary of invoice information. 
  */
 class InvoiceSummaryType  
   extends PPMessage   {
 
 	/**
-	*  The created invoice's ID. 
+	 * The created invoice's ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1261,7 +1271,7 @@ class InvoiceSummaryType
 	public $invoiceID;
 
 	/**
-	*  Invoice creator's email. 
+	 * Invoice creator's email. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1270,7 +1280,7 @@ class InvoiceSummaryType
 	public $merchantEmail;
 
 	/**
-	*  Email to which the invoice will be sent. 
+	 * Email to which the invoice will be sent. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1279,7 +1289,7 @@ class InvoiceSummaryType
 	public $payerEmail;
 
 	/**
-	*  Unique identifier for the invoice. 
+	 * Unique identifier for the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1288,7 +1298,7 @@ class InvoiceSummaryType
 	public $number;
 
 	/**
-	*  Business name of the billing info. 
+	 * Business name of the billing info. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1297,7 +1307,7 @@ class InvoiceSummaryType
 	public $billingBusinessName;
 
 	/**
-	*  First name of the billing info. 
+	 * First name of the billing info. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1306,7 +1316,7 @@ class InvoiceSummaryType
 	public $billingFirstName;
 
 	/**
-	*  Last name of the billing info. 
+	 * Last name of the billing info. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1315,7 +1325,7 @@ class InvoiceSummaryType
 	public $billingLastName;
 
 	/**
-	*  Business name of the shipping info. 
+	 * Business name of the shipping info. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1324,7 +1334,7 @@ class InvoiceSummaryType
 	public $shippingBusinessName;
 
 	/**
-	*  First name of the shipping info. 
+	 * First name of the shipping info. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1333,7 +1343,7 @@ class InvoiceSummaryType
 	public $shippingFirstName;
 
 	/**
-	*  Last name of the shipping info. 
+	 * Last name of the shipping info. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1342,7 +1352,7 @@ class InvoiceSummaryType
 	public $shippingLastName;
 
 	/**
-	*  Total amount of the invoice. 
+	 * Total amount of the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1351,7 +1361,7 @@ class InvoiceSummaryType
 	public $totalAmount;
 
 	/**
-	*  Currency used for all invoice item amounts and totals. 
+	 * Currency used for all invoice item amounts and totals. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1360,7 +1370,7 @@ class InvoiceSummaryType
 	public $currencyCode;
 
 	/**
-	*  Date on which the invoice will be enabled. 
+	 * Date on which the invoice will be enabled. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1369,7 +1379,7 @@ class InvoiceSummaryType
 	public $invoiceDate;
 
 	/**
-	*  Date on which the invoice payment is due. 
+	 * Date on which the invoice payment is due. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1378,7 +1388,7 @@ class InvoiceSummaryType
 	public $dueDate;
 
 	/**
-	*  Status of the invoice. 
+	 * Status of the invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1387,8 +1397,8 @@ class InvoiceSummaryType
 	public $status;
 
 	/**
-	*  Whether the invoice was created via the website or via an
-	*  API call. 
+	 * Whether the invoice was created via the website or via an
+	 * API call. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1397,8 +1407,8 @@ class InvoiceSummaryType
 	public $origin;
 
 	/**
-	*  BN code for tracking transactions with a particular partner.
-	*  
+	 * BN code for tracking transactions with a particular partner.
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1412,13 +1422,13 @@ class InvoiceSummaryType
 
 
 /**
- *  A list of invoice summaries. 
+ * A list of invoice summaries. 
  */
 class InvoiceSummaryListType  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1433,13 +1443,13 @@ class InvoiceSummaryListType
 
 
 /**
- *  The request object for CreateInvoice. 
+ * The request object for CreateInvoice. 
  */
 class CreateInvoiceRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1448,7 +1458,7 @@ class CreateInvoiceRequest
 	public $requestEnvelope;
 
 	/**
-	*  Data to populate the newly created invoice. 
+	 * Data to populate the newly created invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1470,13 +1480,13 @@ class CreateInvoiceRequest
 
 
 /**
- *  The response object for CreateInvoice. 
+ * The response object for CreateInvoice. 
  */
 class CreateInvoiceResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1485,7 +1495,7 @@ class CreateInvoiceResponse
 	public $responseEnvelope;
 
 	/**
-	*  The created invoice's ID. 
+	 * The created invoice's ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1494,7 +1504,7 @@ class CreateInvoiceResponse
 	public $invoiceID;
 
 	/**
-	*  The created invoice's number. 
+	 * The created invoice's number. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1503,8 +1513,8 @@ class CreateInvoiceResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1513,8 +1523,8 @@ class CreateInvoiceResponse
 	public $invoiceURL;
 
 	/**
-	*  The total amount of the invoice (cost of items, shipping and
-	*  tax, less any discount). 
+	 * The total amount of the invoice (cost of items, shipping and
+	 * tax, less any discount). 
 	 * @access public
 	 
 	 	 	 	 
@@ -1523,7 +1533,7 @@ class CreateInvoiceResponse
 	public $totalAmount;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1538,13 +1548,13 @@ class CreateInvoiceResponse
 
 
 /**
- *  The request object for SendInvoice. 
+ * The request object for SendInvoice. 
  */
 class SendInvoiceRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1553,7 +1563,7 @@ class SendInvoiceRequest
 	public $requestEnvelope;
 
 	/**
-	*  ID of the invoice to send. 
+	 * ID of the invoice to send. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1575,13 +1585,13 @@ class SendInvoiceRequest
 
 
 /**
- *  The response object for SendInvoice. 
+ * The response object for SendInvoice. 
  */
 class SendInvoiceResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1590,7 +1600,7 @@ class SendInvoiceResponse
 	public $responseEnvelope;
 
 	/**
-	*  The sent invoice's ID. 
+	 * The sent invoice's ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1599,8 +1609,8 @@ class SendInvoiceResponse
 	public $invoiceID;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1609,7 +1619,7 @@ class SendInvoiceResponse
 	public $invoiceURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1624,13 +1634,13 @@ class SendInvoiceResponse
 
 
 /**
- *  The request object for CreateAndSendInvoice. 
+ * The request object for CreateAndSendInvoice. 
  */
 class CreateAndSendInvoiceRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1639,7 +1649,7 @@ class CreateAndSendInvoiceRequest
 	public $requestEnvelope;
 
 	/**
-	*  Data to populate the newly created invoice. 
+	 * Data to populate the newly created invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1661,13 +1671,13 @@ class CreateAndSendInvoiceRequest
 
 
 /**
- *  The response object for CreateAndSendInvoice. 
+ * The response object for CreateAndSendInvoice. 
  */
 class CreateAndSendInvoiceResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1676,7 +1686,7 @@ class CreateAndSendInvoiceResponse
 	public $responseEnvelope;
 
 	/**
-	*  The created invoice's ID. 
+	 * The created invoice's ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1685,7 +1695,7 @@ class CreateAndSendInvoiceResponse
 	public $invoiceID;
 
 	/**
-	*  The created invoice's number. 
+	 * The created invoice's number. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1694,8 +1704,8 @@ class CreateAndSendInvoiceResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1704,8 +1714,8 @@ class CreateAndSendInvoiceResponse
 	public $invoiceURL;
 
 	/**
-	*  The total amount of the invoice (cost of items, shipping and
-	*  tax, less any discount). 
+	 * The total amount of the invoice (cost of items, shipping and
+	 * tax, less any discount). 
 	 * @access public
 	 
 	 	 	 	 
@@ -1714,7 +1724,7 @@ class CreateAndSendInvoiceResponse
 	public $totalAmount;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1729,13 +1739,13 @@ class CreateAndSendInvoiceResponse
 
 
 /**
- *  The request object for UpdateInvoice. 
+ * The request object for UpdateInvoice. 
  */
 class UpdateInvoiceRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1744,7 +1754,7 @@ class UpdateInvoiceRequest
 	public $requestEnvelope;
 
 	/**
-	*  invoice's ID 
+	 * invoice's ID 
 	 * @access public
 	 
 	 	 	 	 
@@ -1753,7 +1763,7 @@ class UpdateInvoiceRequest
 	public $invoiceID;
 
 	/**
-	*  Data to populate the newly created invoice. 
+	 * Data to populate the newly created invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1776,13 +1786,13 @@ class UpdateInvoiceRequest
 
 
 /**
- *  The response object for UpdateInvoice. 
+ * The response object for UpdateInvoice. 
  */
 class UpdateInvoiceResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1791,7 +1801,7 @@ class UpdateInvoiceResponse
 	public $responseEnvelope;
 
 	/**
-	*  The invoice's ID. 
+	 * The invoice's ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1800,7 +1810,7 @@ class UpdateInvoiceResponse
 	public $invoiceID;
 
 	/**
-	*  The updated invoice's number. 
+	 * The updated invoice's number. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1809,8 +1819,8 @@ class UpdateInvoiceResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1819,8 +1829,8 @@ class UpdateInvoiceResponse
 	public $invoiceURL;
 
 	/**
-	*  The total amount of the invoice (cost of items, shipping and
-	*  tax, less any discount). 
+	 * The total amount of the invoice (cost of items, shipping and
+	 * tax, less any discount). 
 	 * @access public
 	 
 	 	 	 	 
@@ -1829,7 +1839,7 @@ class UpdateInvoiceResponse
 	public $totalAmount;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1844,13 +1854,13 @@ class UpdateInvoiceResponse
 
 
 /**
- *  The request object for GetInvoiceDetails. 
+ * The request object for GetInvoiceDetails. 
  */
 class GetInvoiceDetailsRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1859,7 +1869,7 @@ class GetInvoiceDetailsRequest
 	public $requestEnvelope;
 
 	/**
-	*  ID of the invoice to retrieve. 
+	 * ID of the invoice to retrieve. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1881,13 +1891,13 @@ class GetInvoiceDetailsRequest
 
 
 /**
- *  The response object for CreateInvoice. 
+ * The response object for CreateInvoice. 
  */
 class GetInvoiceDetailsResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1896,7 +1906,7 @@ class GetInvoiceDetailsResponse
 	public $responseEnvelope;
 
 	/**
-	*  The requested invoice. 
+	 * The requested invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1905,7 +1915,7 @@ class GetInvoiceDetailsResponse
 	public $invoice;
 
 	/**
-	*  The requested invoice details. 
+	 * The requested invoice details. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1914,7 +1924,7 @@ class GetInvoiceDetailsResponse
 	public $invoiceDetails;
 
 	/**
-	*  The requested invoice payment details. 
+	 * The requested invoice payment details. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1923,7 +1933,7 @@ class GetInvoiceDetailsResponse
 	public $paymentDetails;
 
 	/**
-	*  The requested invoice refund details. 
+	 * The requested invoice refund details. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1932,8 +1942,8 @@ class GetInvoiceDetailsResponse
 	public $refundDetails;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -1942,7 +1952,7 @@ class GetInvoiceDetailsResponse
 	public $invoiceURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -1957,13 +1967,13 @@ class GetInvoiceDetailsResponse
 
 
 /**
- *  The request object for CancelInvoice. 
+ * The request object for CancelInvoice. 
  */
 class CancelInvoiceRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -1972,7 +1982,7 @@ class CancelInvoiceRequest
 	public $requestEnvelope;
 
 	/**
-	*  invoice's ID 
+	 * invoice's ID 
 	 * @access public
 	 
 	 	 	 	 
@@ -1981,7 +1991,7 @@ class CancelInvoiceRequest
 	public $invoiceID;
 
 	/**
-	*  Subject of the cancellation notification 
+	 * Subject of the cancellation notification 
 	 * @access public
 	 
 	 	 	 	 
@@ -1990,7 +2000,7 @@ class CancelInvoiceRequest
 	public $subject;
 
 	/**
-	*  Note to send payer within the cancellation notification 
+	 * Note to send payer within the cancellation notification 
 	 * @access public
 	 
 	 	 	 	 
@@ -1999,7 +2009,7 @@ class CancelInvoiceRequest
 	public $noteForPayer;
 
 	/**
-	*  send a copy of cancellation notification to merchant 
+	 * send a copy of cancellation notification to merchant 
 	 * @access public
 	 
 	 	 	 	 
@@ -2020,13 +2030,13 @@ class CancelInvoiceRequest
 
 
 /**
- *  The response object for CancelInvoice. 
+ * The response object for CancelInvoice. 
  */
 class CancelInvoiceResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2035,7 +2045,7 @@ class CancelInvoiceResponse
 	public $responseEnvelope;
 
 	/**
-	*  The canceled invoice's ID. 
+	 * The canceled invoice's ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2044,7 +2054,7 @@ class CancelInvoiceResponse
 	public $invoiceID;
 
 	/**
-	*  The canceled invoice's number. 
+	 * The canceled invoice's number. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2053,8 +2063,8 @@ class CancelInvoiceResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2063,7 +2073,7 @@ class CancelInvoiceResponse
 	public $invoiceURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -2078,13 +2088,13 @@ class CancelInvoiceResponse
 
 
 /**
- *  The request object for SearchInvoices. 
+ * The request object for SearchInvoices. 
  */
 class SearchInvoicesRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2093,7 +2103,7 @@ class SearchInvoicesRequest
 	public $requestEnvelope;
 
 	/**
-	*  Invoice creator's email. 
+	 * Invoice creator's email. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2102,7 +2112,7 @@ class SearchInvoicesRequest
 	public $merchantEmail;
 
 	/**
-	*  Parameters constraining the search. 
+	 * Parameters constraining the search. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2111,7 +2121,7 @@ class SearchInvoicesRequest
 	public $parameters;
 
 	/**
-	*  Page number of result set, starting with 1. 
+	 * Page number of result set, starting with 1. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2120,7 +2130,7 @@ class SearchInvoicesRequest
 	public $page;
 
 	/**
-	*  Number of results per page, between 1 and 100. 
+	 * Number of results per page, between 1 and 100. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2145,13 +2155,13 @@ class SearchInvoicesRequest
 
 
 /**
- *  The response object for SearchInvoices. 
+ * The response object for SearchInvoices. 
  */
 class SearchInvoicesResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2160,7 +2170,7 @@ class SearchInvoicesResponse
 	public $responseEnvelope;
 
 	/**
-	*  Number of invoices that matched the search. 
+	 * Number of invoices that matched the search. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2169,7 +2179,7 @@ class SearchInvoicesResponse
 	public $count;
 
 	/**
-	*  Page of invoice summaries that matched the search. 
+	 * Page of invoice summaries that matched the search. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2178,7 +2188,7 @@ class SearchInvoicesResponse
 	public $invoiceList;
 
 	/**
-	*  Page number of result set. 
+	 * Page number of result set. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2187,7 +2197,7 @@ class SearchInvoicesResponse
 	public $page;
 
 	/**
-	*  True if another page of invoice summary results exists. 
+	 * True if another page of invoice summary results exists. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2196,7 +2206,7 @@ class SearchInvoicesResponse
 	public $hasNextPage;
 
 	/**
-	*  True if a previous page of invoice summary results exists. 
+	 * True if a previous page of invoice summary results exists. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2205,7 +2215,7 @@ class SearchInvoicesResponse
 	public $hasPreviousPage;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -2220,13 +2230,13 @@ class SearchInvoicesResponse
 
 
 /**
- *  The request object for MarkInvoiceAsPaid. 
+ * The request object for MarkInvoiceAsPaid. 
  */
 class MarkInvoiceAsPaidRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2235,7 +2245,7 @@ class MarkInvoiceAsPaidRequest
 	public $requestEnvelope;
 
 	/**
-	*  ID of the invoice to mark as paid. 
+	 * ID of the invoice to mark as paid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2244,7 +2254,7 @@ class MarkInvoiceAsPaidRequest
 	public $invoiceID;
 
 	/**
-	*  Details of the payment made against this invoice. 
+	 * Details of the payment made against this invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2267,13 +2277,13 @@ class MarkInvoiceAsPaidRequest
 
 
 /**
- *  The response object for MarkInvoiceAsPaid. 
+ * The response object for MarkInvoiceAsPaid. 
  */
 class MarkInvoiceAsPaidResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2282,7 +2292,7 @@ class MarkInvoiceAsPaidResponse
 	public $responseEnvelope;
 
 	/**
-	*  The paid invoice ID. 
+	 * The paid invoice ID. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2291,7 +2301,7 @@ class MarkInvoiceAsPaidResponse
 	public $invoiceID;
 
 	/**
-	*  The paid invoice number. 
+	 * The paid invoice number. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2300,8 +2310,8 @@ class MarkInvoiceAsPaidResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL which lead merchant to view the invoice details on
-	*  web. 
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2310,7 +2320,7 @@ class MarkInvoiceAsPaidResponse
 	public $invoiceURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -2325,13 +2335,13 @@ class MarkInvoiceAsPaidResponse
 
 
 /**
- *  The request object for MarkInvoiceAsRefunded. 
+ * The request object for MarkInvoiceAsRefunded. 
  */
 class MarkInvoiceAsRefundedRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2340,7 +2350,7 @@ class MarkInvoiceAsRefundedRequest
 	public $requestEnvelope;
 
 	/**
-	*  ID of the invoice to mark as refunded. 
+	 * ID of the invoice to mark as refunded. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2349,7 +2359,7 @@ class MarkInvoiceAsRefundedRequest
 	public $invoiceID;
 
 	/**
-	*  Details of the refund made against this invoice. 
+	 * Details of the refund made against this invoice. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2372,13 +2382,13 @@ class MarkInvoiceAsRefundedRequest
 
 
 /**
- *  The response object for MarkInvoiceAsRefunded. 
+ * The response object for MarkInvoiceAsRefunded. 
  */
 class MarkInvoiceAsRefundedResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2387,7 +2397,7 @@ class MarkInvoiceAsRefundedResponse
 	public $responseEnvelope;
 
 	/**
-	*  The invoice ID of the invoice that was marked as refunded. 
+	 * The invoice ID of the invoice that was marked as refunded. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2396,8 +2406,8 @@ class MarkInvoiceAsRefundedResponse
 	public $invoiceID;
 
 	/**
-	*  The invoice number of the invoice that was marked as
-	*  refunded. 
+	 * The invoice number of the invoice that was marked as
+	 * refunded. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2406,8 +2416,8 @@ class MarkInvoiceAsRefundedResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL of the details page of the invoice that was marked
-	*  as refunded. 
+	 * The URL of the details page of the invoice that was marked
+	 * as refunded. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2416,7 +2426,7 @@ class MarkInvoiceAsRefundedResponse
 	public $invoiceURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -2431,13 +2441,13 @@ class MarkInvoiceAsRefundedResponse
 
 
 /**
- *  The request object for MarkInvoiceAsUnpaid. 
+ * The request object for MarkInvoiceAsUnpaid. 
  */
 class MarkInvoiceAsUnpaidRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2446,7 +2456,7 @@ class MarkInvoiceAsUnpaidRequest
 	public $requestEnvelope;
 
 	/**
-	*  ID of the invoice to mark as unpaid. 
+	 * ID of the invoice to mark as unpaid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2468,13 +2478,13 @@ class MarkInvoiceAsUnpaidRequest
 
 
 /**
- *  The response object for MarkInvoiceAsUnpaid. 
+ * The response object for MarkInvoiceAsUnpaid. 
  */
 class MarkInvoiceAsUnpaidResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2483,7 +2493,7 @@ class MarkInvoiceAsUnpaidResponse
 	public $responseEnvelope;
 
 	/**
-	*  The invoice ID of the invoice that was marked as unpaid. 
+	 * The invoice ID of the invoice that was marked as unpaid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2492,8 +2502,8 @@ class MarkInvoiceAsUnpaidResponse
 	public $invoiceID;
 
 	/**
-	*  The invoice number of the invoice that was marked as unpaid.
-	*  
+	 * The invoice number of the invoice that was marked as unpaid.
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2502,8 +2512,8 @@ class MarkInvoiceAsUnpaidResponse
 	public $invoiceNumber;
 
 	/**
-	*  The URL of the details page of the invoice that was marked
-	*  as unpaid. 
+	 * The URL of the details page of the invoice that was marked
+	 * as unpaid. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2512,7 +2522,7 @@ class MarkInvoiceAsUnpaidResponse
 	public $invoiceURL;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
@@ -2527,13 +2537,13 @@ class MarkInvoiceAsUnpaidResponse
 
 
 /**
- *  Payment refund details about the invoice.  
+ * Payment refund details about the invoice.  
  */
 class PaymentRefundDetailsType  
   extends PPMessage   {
 
 	/**
-	*  True if the invoice was refunded using PayPal.  
+	 * True if the invoice was refunded using PayPal.  
 	 * @access public
 	 
 	 	 	 	 
@@ -2542,7 +2552,7 @@ class PaymentRefundDetailsType
 	public $viaPayPal;
 
 	/**
-	*  Other payment refund details.  
+	 * Other payment refund details.  
 	 * @access public
 	 
 	 	 	 	 
@@ -2551,7 +2561,7 @@ class PaymentRefundDetailsType
 	public $paypalPayment;
 
 	/**
-	*  details.  
+	 * details.  
 	 * @access public
 	 
 	 	 	 	 
@@ -2565,13 +2575,13 @@ class PaymentRefundDetailsType
 
 
 /**
- *  The request object for DeleteInvoice. 
+ * The request object for DeleteInvoice. 
  */
 class DeleteInvoiceRequest  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2580,7 +2590,7 @@ class DeleteInvoiceRequest
 	public $requestEnvelope;
 
 	/**
-	*  ID of the invoice to be deleted. 
+	 * ID of the invoice to be deleted. 
 	 * @access public
 	 
 	 	 	 	 
@@ -2602,13 +2612,13 @@ class DeleteInvoiceRequest
 
 
 /**
- *  The response object for DeleteInvoice. 
+ * The response object for DeleteInvoice. 
  */
 class DeleteInvoiceResponse  
   extends PPMessage   {
 
 	/**
-	*  
+	 * 
 	 * @access public
 	 
 	 	 	 	 
@@ -2617,7 +2627,7 @@ class DeleteInvoiceResponse
 	public $responseEnvelope;
 
 	/**
-	*  
+	 * 
      * @array
 	 * @access public
 	 
