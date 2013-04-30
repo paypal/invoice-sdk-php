@@ -1,7 +1,7 @@
 <?php 
 
 /**
- *  AUTO GENERATED code for Invoice
+ * AUTO GENERATED code for Invoice
  */
 class InvoiceService extends PPBaseService {
 
@@ -15,10 +15,10 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.3.100";
+	protected static $SDK_VERSION = "2.3.101";
 
-	public function __construct($config = null) {
-		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);
+	public function __construct() {
+		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'));
         parent::$SDK_NAME    = self::$SDK_NAME ;
         parent::$SDK_VERSION = self::$SDK_VERSION;
 	}
