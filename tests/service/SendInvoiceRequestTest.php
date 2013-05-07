@@ -33,9 +33,10 @@ class SendInvoiceRequestTest extends PHPUnit_Framework_TestCase
      */
     public function testToNVPString()
     {
-      $requestEnvelope = new RequestEnvelope('en_US');
-      $invociId = "INV-1111";
-        $this->object = new SendInvoiceRequest($requestEnvelope , $invociId);
+        $requestEnvelope = new RequestEnvelope();
+        $requestEnvelope->errorLanguage = "en_US";
+      	$invoiceId = "INV-1111";
+        $this->object = new SendInvoiceRequest($requestEnvelope , $invoiceId);
         $ret = $this->object->toNVPString();
         $this->assertEquals("requestEnvelope.errorLanguage=en_US&invoiceID=INV-1111", $ret);
     }

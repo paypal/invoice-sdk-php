@@ -2,7 +2,7 @@
     "name": "paypal/invoice-sdk-php",
     "description": "PayPal invoice SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://www.x.com/developers/paypal",
+    "homepage": "https://developer.paypal.com",
     "license": "Apache2",
     "authors": [
         {
@@ -16,6 +16,6 @@
         "paypal/sdk-core-php":"v1.4.0"
     },
     "autoload": {
-        "classmap": ["./"]
+        "classmap": ["lib"]
     }
 }
