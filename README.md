@@ -30,7 +30,6 @@ If using composer, run `composer update` from the samples folder. Otherwise, run
 To use the SDK,
 
    * Create a composer.json file with the following contents.
-
 ```json
 {
     "name": "me/shopping-cart-app",
@@ -39,6 +38,7 @@ To use the SDK,
     }
 }
 ```
+
    * Install the SDK as a dependency using composer or the install.php script. 
    * Require `vendor/autoload.php` OR `PPBootStrap.php` in your application depending on whether you used composer or the custom installer.
    * Choose how you would like to configure the SDK - You can either
@@ -51,7 +51,7 @@ To use the SDK,
 For example,
 
 ```php
-	//sets config file path and loads all the classes
+	// Sets config file path and registers the classloader
 	require("PPBootStrap.php");
 
   	$invoice = new InvoiceType($merchantEmail, $payerEmail, $itemList, $currencyCode, $paymentTerms);
@@ -100,6 +100,7 @@ You can configure the SDK via the sdk_config.ini file.
     define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
     $service  = new InvoiceService();
 ```
+
 Alternatively, dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
 ```php
     $config = array(
