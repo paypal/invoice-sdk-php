@@ -1,7 +1,22 @@
 <?php 
+namespace PayPal\Service;
+use PayPal\Core\PPMessage;
+use PayPal\Core\PPBaseService;
+use PayPal\Core\PPUtils;
+use PayPal\Types\PT\CreateInvoiceResponse;
+use PayPal\Types\PT\SendInvoiceResponse;
+use PayPal\Types\PT\CreateAndSendInvoiceResponse;
+use PayPal\Types\PT\UpdateInvoiceResponse;
+use PayPal\Types\PT\GetInvoiceDetailsResponse;
+use PayPal\Types\PT\CancelInvoiceResponse;
+use PayPal\Types\PT\SearchInvoicesResponse;
+use PayPal\Types\PT\MarkInvoiceAsPaidResponse;
+use PayPal\Types\PT\MarkInvoiceAsUnpaidResponse;
+use PayPal\Types\PT\MarkInvoiceAsRefundedResponse;
+use PayPal\Types\PT\DeleteInvoiceResponse;
 
 /**
- *  AUTO GENERATED code for Invoice
+ * AUTO GENERATED code for Invoice
  */
 class InvoiceService extends PPBaseService {
 
@@ -12,13 +27,13 @@ class InvoiceService extends PPBaseService {
 	private static $SERVICE_NAME = "Invoice";
 
     // SDK Name
-	protected static $SDK_NAME = "invoice-php-sdk";
+	protected static $SDK_NAME = "sdkname";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.3.100";
+	protected static $SDK_VERSION = "sdkversion";
 
 	public function __construct($config = null) {
-		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);
+		parent::__construct(self::$SERVICE_NAME, 'NV', array('PayPal\Handler\PPPlatformServiceHandler'), $config);
         parent::$SDK_NAME    = self::$SDK_NAME ;
         parent::$SDK_VERSION = self::$SDK_VERSION;
 	}
