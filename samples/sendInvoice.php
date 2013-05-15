@@ -1,4 +1,7 @@
 <?php
+use PayPal\Service\InvoiceService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\SendInvoiceRequest;
 require_once('PPBootStrap.php');
 session_start();
 

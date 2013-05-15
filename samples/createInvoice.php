@@ -1,4 +1,10 @@
 <?php
+use PayPal\Service\InvoiceService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\CreateInvoiceRequest;
+use PayPal\Types\PT\InvoiceItemListType;
+use PayPal\Types\PT\InvoiceItemType;
+use PayPal\Types\PT\InvoiceType;
 require_once('PPBootStrap.php');
 session_start();
 

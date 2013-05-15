@@ -1,4 +1,8 @@
 <?php
+use PayPal\Service\InvoiceService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\MarkInvoiceAsRefundedRequest;
+use PayPal\Types\PT\OtherPaymentRefundDetailsType;
 require_once('PPBootStrap.php');
 session_start();
 /*

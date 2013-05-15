@@ -1,4 +1,8 @@
 <?php
+use PayPal\Service\InvoiceService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\MarkInvoiceAsPaidRequest;
+use PayPal\Types\PT\OtherPaymentDetailsType;
 require_once('PPBootStrap.php');
 session_start();
 /*

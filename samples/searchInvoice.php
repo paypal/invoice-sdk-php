@@ -1,4 +1,9 @@
 <?php
+use PayPal\Service\InvoiceService;
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\DateRangeType;
+use PayPal\Types\PT\SearchInvoicesRequest;
+use PayPal\Types\PT\SearchParametersType;
 require_once('PPBootStrap.php');
 session_start();
 
