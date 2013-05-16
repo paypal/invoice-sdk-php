@@ -1,5 +1,6 @@
 <?php
-
+use PayPal\Types\Common\BaseAddress;
+use PayPal\Types\PT\BusinessInfoType;
 /**
  * Test class for BusinessInfoType.
  * 

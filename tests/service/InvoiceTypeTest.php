@@ -1,5 +1,9 @@
 <?php
-
+use PayPal\Types\Common\BaseAddress;
+use PayPal\Types\PT\BusinessInfoType;
+use PayPal\Types\PT\InvoiceItemListType;
+use PayPal\Types\PT\InvoiceItemType;
+use PayPal\Types\PT\InvoiceType;
 /**
  * Test class for InvoiceType.
  *

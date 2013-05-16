@@ -1,5 +1,9 @@
 <?php
-
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\CreateInvoiceRequest;
+use PayPal\Types\PT\InvoiceItemListType;
+use PayPal\Types\PT\InvoiceItemType;
+use PayPal\Types\PT\InvoiceType;
 /**
  * Test class for CreateInvoiceRequest.
  *

@@ -1,5 +1,5 @@
 <?php
-
+use PayPal\Types\Common\BaseAddress;
 /**
  * Test class for BaseAddress.
  * 

@@ -1,4 +1,5 @@
 <?php
+use PayPal\Types\Common\ErrorData;
 /**
  * Test class for ErrorData.
  *

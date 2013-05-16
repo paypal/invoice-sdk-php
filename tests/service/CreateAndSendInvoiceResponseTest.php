@@ -1,4 +1,5 @@
 <?php
+use PayPal\Types\PT\CreateAndSendInvoiceResponse;
 /**
  * Test class for CreateAndSendInvoiceResponse.
  *

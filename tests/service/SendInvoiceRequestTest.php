@@ -1,5 +1,6 @@
 <?php
-
+use PayPal\Types\Common\RequestEnvelope;
+use PayPal\Types\PT\SendInvoiceRequest;
 /**
  * Test class for SendInvoiceRequest.
  * 

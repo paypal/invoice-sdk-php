@@ -1,4 +1,5 @@
 <?php
+use PayPal\Types\Common\FaultMessage;
 /**
  * Test class for FaultMessage.
  *

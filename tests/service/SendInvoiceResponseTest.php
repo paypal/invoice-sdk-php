@@ -1,5 +1,5 @@
 <?php
-
+use PayPal\Types\PT\SendInvoiceResponse;
 /**
  * Test class for SendInvoiceResponse.
  *

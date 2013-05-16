@@ -1,5 +1,5 @@
 <?php
-
+use PayPal\Types\Common\RequestEnvelope;
 /**
  * Test class for RequestEnvelope.
  * 
