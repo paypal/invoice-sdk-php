@@ -30,11 +30,7 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "sdkname";
 	
 	// SDK Version
-<<<<<<< HEAD:lib/PayPal/Service/InvoiceService.php
 	protected static $SDK_VERSION = "sdkversion";
-=======
-	protected static $SDK_VERSION = "2.4.101";
->>>>>>> origin/master:lib/services/Invoice/InvoiceService.php
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PayPal\Handler\PPPlatformServiceHandler'), $config);
