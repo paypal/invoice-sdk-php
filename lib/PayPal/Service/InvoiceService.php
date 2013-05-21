@@ -32,6 +32,10 @@ class InvoiceService extends PPBaseService {
 	// SDK Version
 	protected static $SDK_VERSION = "sdkversion";
 
+    /**
+    * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
+    *
+    */
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PayPal\Handler\PPPlatformServiceHandler'), $config);
         parent::$SDK_NAME    = self::$SDK_NAME ;
@@ -45,7 +49,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return CreateInvoiceResponse
+	 * @return Types\PT\CreateInvoiceResponse
 	 * @throws APIException
 	 */
 	public function CreateInvoice($createInvoiceRequest, $apiCredential = NULL) {
@@ -62,7 +66,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return SendInvoiceResponse
+	 * @return Types\PT\SendInvoiceResponse
 	 * @throws APIException
 	 */
 	public function SendInvoice($sendInvoiceRequest, $apiCredential = NULL) {
@@ -79,7 +83,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return CreateAndSendInvoiceResponse
+	 * @return Types\PT\CreateAndSendInvoiceResponse
 	 * @throws APIException
 	 */
 	public function CreateAndSendInvoice($createAndSendInvoiceRequest, $apiCredential = NULL) {
@@ -96,7 +100,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return UpdateInvoiceResponse
+	 * @return Types\PT\UpdateInvoiceResponse
 	 * @throws APIException
 	 */
 	public function UpdateInvoice($updateInvoiceRequest, $apiCredential = NULL) {
@@ -113,7 +117,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return GetInvoiceDetailsResponse
+	 * @return Types\PT\GetInvoiceDetailsResponse
 	 * @throws APIException
 	 */
 	public function GetInvoiceDetails($getInvoiceDetailsRequest, $apiCredential = NULL) {
@@ -130,7 +134,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return CancelInvoiceResponse
+	 * @return Types\PT\CancelInvoiceResponse
 	 * @throws APIException
 	 */
 	public function CancelInvoice($cancelInvoiceRequest, $apiCredential = NULL) {
@@ -147,7 +151,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return SearchInvoicesResponse
+	 * @return Types\PT\SearchInvoicesResponse
 	 * @throws APIException
 	 */
 	public function SearchInvoices($searchInvoicesRequest, $apiCredential = NULL) {
@@ -164,7 +168,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return MarkInvoiceAsPaidResponse
+	 * @return Types\PT\MarkInvoiceAsPaidResponse
 	 * @throws APIException
 	 */
 	public function MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $apiCredential = NULL) {
@@ -181,7 +185,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return MarkInvoiceAsUnpaidResponse
+	 * @return Types\PT\MarkInvoiceAsUnpaidResponse
 	 * @throws APIException
 	 */
 	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiCredential = NULL) {
@@ -198,7 +202,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return MarkInvoiceAsRefundedResponse
+	 * @return Types\PT\MarkInvoiceAsRefundedResponse
 	 * @throws APIException
 	 */
 	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiCredential = NULL) {
@@ -215,7 +219,7 @@ class InvoiceService extends PPBaseService {
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
 	 *      created dynamically 		
-	 * @return DeleteInvoiceResponse
+	 * @return Types\PT\DeleteInvoiceResponse
 	 * @throws APIException
 	 */
 	public function DeleteInvoice($deleteInvoiceRequest, $apiCredential = NULL) {
