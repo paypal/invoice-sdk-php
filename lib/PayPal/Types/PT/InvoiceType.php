@@ -120,6 +120,17 @@ class InvoiceType
 	public $discountAmount;
 
 	/**
+	 * If true, indicates tax included in item amount. If present,
+	 * this setting will supersede the merchant’s default
+	 * setting. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var boolean	 
+	 */ 
+	public $taxInclusive;
+
+	/**
 	 * General terms for the invoice. 
 	 * @access public
 	 

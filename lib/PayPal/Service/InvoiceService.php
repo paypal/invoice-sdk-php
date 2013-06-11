@@ -21,16 +21,16 @@ use PayPal\Types\PT\DeleteInvoiceResponse;
 class InvoiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "1.8.0";
+	private static $SERVICE_VERSION = "1.9.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "Invoice";
 
     // SDK Name
-	protected static $SDK_NAME = "sdkname";
+	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "sdkversion";
+	protected static $SDK_VERSION = "3.5.103";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
