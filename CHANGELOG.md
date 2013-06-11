@@ -1,5 +1,17 @@
 ### CHANGELOG
 
+#### Version 2.4.103 - June 11, 2013
+ 
+	- Updated stubs for 103 release.
+	- Removed deprecated methods like setAccessToken, getAccessToken from baseService in core.
+    - Added correct thirdparty auth header in core.
+	- Updated install script in samples to handle wildcard tag names. 
+	- Setting thirdparty credential using credential object in samples
+	
+You can see source code of this release in github under https://github.com/paypal/invoice-sdk-php/tree/v2.4.103.
+
+--------------------------------------------------------------------------------------------------
+
 #### Version 2.3.100 - March 25, 2013
  
    - Updated stubs for 100 release

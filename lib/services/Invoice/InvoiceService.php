@@ -6,7 +6,7 @@
 class InvoiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "1.8.0";
+	private static $SERVICE_VERSION = "1.9.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "Invoice";
@@ -15,7 +15,7 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.4.101";
+	protected static $SDK_VERSION = "2.4.103";
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);
