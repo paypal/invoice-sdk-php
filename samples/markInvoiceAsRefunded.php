@@ -1,5 +1,6 @@
 <?php
 require_once('PPBootStrap.php');
+require_once('Constants.php');
 session_start();
 /*
  * Use the MarkInvoiceAsRefunded API operation to mark an invoice as refunded. This API operation canonly be used for full refunds. 
@@ -39,12 +40,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 
 	try {
-		$markInvoiceAsRefundedResponse = $invoiceService->MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$markInvoiceAsRefundedResponse = $invoiceService->MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $cred);
+		}
+		else{
+			$markInvoiceAsRefundedResponse = $invoiceService->MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;
