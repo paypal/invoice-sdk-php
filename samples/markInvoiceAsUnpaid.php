@@ -1,5 +1,6 @@
 <?php
 require_once('PPBootStrap.php');
+require_once('Constants.php');
 session_start();
 /*
  * Use the MarkInvoiceAsUnpaid API operation to mark an invoice as unpaid. 
@@ -37,12 +38,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 
 	try {
-		$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $cred);
+		}
+		else{
+			$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;
