@@ -1,6 +1,6 @@
 <?php
 require_once('PPBootStrap.php');
-
+require_once('Constants.php');
 /*
  *  # GetInvoiceDetails API
  Use the GetInvoiceDetails API operation to get detailed information about an invoice.
@@ -46,8 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 	try {
 
@@ -56,7 +56,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 					 Invoke the appropriate method corresponding to API in service
 					 wrapper object
 		 */
-		$getInvoiceDetailsResponse = $invoiceService->GetInvoiceDetails($getInvoiceDetailsRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$getInvoiceDetailsResponse = $invoiceService->GetInvoiceDetails($getInvoiceDetailsRequest, $cred);
+		}
+		else{
+			$getInvoiceDetailsResponse = $invoiceService->GetInvoiceDetails($getInvoiceDetailsRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;

@@ -32,7 +32,8 @@ class CreateAndSendInvoiceRequestTest extends PHPUnit_Framework_TestCase
      */
     public function testToNVPString()
     {
-       $requestEnvelope = new RequestEnvelope('en_US');
+       $requestEnvelope = new RequestEnvelope();
+       $requestEnvelope->errorLanguage = "en_US";
 
        $item1 = new InvoiceItemType('item1', '3', '5');
        $item2 = new InvoiceItemType('Iitem2', '3', '5');

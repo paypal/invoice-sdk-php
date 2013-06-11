@@ -1,5 +1,6 @@
 <?php
 require_once('PPBootStrap.php');
+require_once('Constants.php');
 session_start();
 
 /*
@@ -54,8 +55,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 	try {
 		
@@ -64,7 +65,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			 Invoke the appropriate method corresponding to API in service
 			 wrapper object
 		 */
-		$sendInvoiceResponse = $invoiceService->SendInvoice($sendInvoiceRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$sendInvoiceResponse = $invoiceService->SendInvoice($sendInvoiceRequest, $cred);
+		}
+		else{
+			$sendInvoiceResponse = $invoiceService->SendInvoice($sendInvoiceRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;

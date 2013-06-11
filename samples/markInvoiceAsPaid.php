@@ -1,5 +1,6 @@
 <?php
 require_once('PPBootStrap.php');
+require_once('Constants.php');
 session_start();
 /*
  * Use the MarkInvoiceAsPaid API operation to mark an invoice as paid. 
@@ -60,12 +61,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	*/
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
-	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
+		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 	try {
-		$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $cred);
+		}
+		else{
+			$markInvoiceAsPaidResponse = $invoiceService->MarkInvoiceAsPaid($markInvoiceAsPaidRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;
