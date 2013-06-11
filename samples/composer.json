@@ -1,8 +1,8 @@
 {
-    "name": "paypal/php-sdk-sample",
+    "name": "paypal/invoice-sdk-php-sample",
     "description": "PayPal invoice SDK for PHP",
     "keywords": ["paypal", "php", "sdk"],
-    "homepage": "https://www.x.com/developers/paypal",
+    "homepage": "https://developer.paypal.com",
     "license": "Apache2",
     "authors": [
         {
@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.2.0",
         "ext-curl": "*",
-        "paypal/invoice-sdk-php":"v2.3.101",
-        "paypal/permissions-sdk-php":"v2.3.101"
+        "paypal/invoice-sdk-php":"v2.4.103",
+        "paypal/permissions-sdk-php":"v2.4.103"
     }
 }

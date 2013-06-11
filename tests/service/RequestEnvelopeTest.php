@@ -17,7 +17,8 @@ class RequestEnvelopeTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->object = new RequestEnvelope("en_US");
+        $this->object = new RequestEnvelope();
+        $this->object->errorLanguage = "en_US";
     }
 
     /**
