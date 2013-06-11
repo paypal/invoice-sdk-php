@@ -5,6 +5,9 @@ use PayPal\Types\PT\CreateInvoiceRequest;
 use PayPal\Types\PT\InvoiceItemListType;
 use PayPal\Types\PT\InvoiceItemType;
 use PayPal\Types\PT\InvoiceType;
+use PayPal\Auth\PPSignatureCredential;
+use PayPal\Auth\PPTokenAuthorization;
+
 require_once('PPBootStrap.php');
 session_start();
 
@@ -93,8 +96,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential("jb-us-seller_api1.paypal.com", "WX4WTU3S8MY44S7F", "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy");
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 	try {
 
@@ -103,7 +106,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			 Invoke the appropriate method corresponding to API in service
 			 wrapper object
 		 */
-		$createInvoiceResponse = $invoiceService->CreateInvoice($createInvoiceRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$createInvoiceResponse = $invoiceService->CreateInvoice($createInvoiceRequest, $cred);
+		}
+		else{
+			$createInvoiceResponse = $invoiceService->CreateInvoice($createInvoiceRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;

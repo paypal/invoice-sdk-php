@@ -63,6 +63,15 @@ class BusinessInfoType
 	public $website;
 
 	/**
+	 * Tax ID of the merchant. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string	 
+	 */ 
+	public $taxId;
+
+	/**
 	 * Custom value to be displayed in the contact information
 	 * details. 
 	 * @access public

@@ -2,6 +2,9 @@
 use PayPal\Service\InvoiceService;
 use PayPal\Types\Common\RequestEnvelope;
 use PayPal\Types\PT\MarkInvoiceAsUnpaidRequest;
+use PayPal\Auth\PPSignatureCredential;
+use PayPal\Auth\PPTokenAuthorization;
+
 require_once('PPBootStrap.php');
 session_start();
 /*
@@ -40,12 +43,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$invoiceService = new InvoiceService();
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
-		$invoiceService->setAccessToken($_POST['accessToken']);
-		$invoiceService->setTokenSecret($_POST['tokenSecret']);
+		$cred = new PPSignatureCredential("jb-us-seller_api1.paypal.com", "WX4WTU3S8MY44S7F", "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy");
+	    $cred->setThirdPartyAuthorization(new PPTokenAuthorization($_POST['accessToken'], $_POST['tokenSecret']));
 	}
 
 	try {
-		$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest);
+		if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
+			$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $cred);
+		}
+		else{
+			$markInvoiceAsUnpaidResponse = $invoiceService->MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest);
+		}
 	} catch (Exception $ex) {
 		require_once 'error.php';
 		exit;
