@@ -36,8 +36,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$refundDetails->date = $_POST['refundDate'];
 	$markInvoiceAsRefundedRequest = new MarkInvoiceAsRefundedRequest($requestEnvelope, $_POST['invoiceID'], $refundDetails);
 
-
-	$invoiceService = new InvoiceService();
+	/*
+	     configuration file for your credentials and endpoint
+	*/
+	$invoiceService = new InvoiceService(Configuration::getSignatureConfig());
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);

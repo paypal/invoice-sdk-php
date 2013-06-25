@@ -85,9 +85,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 /*
  *  ## Creating service wrapper object
 		 Creating service wrapper object to make API call and loading
-		 configuration file for your credentials and endpoint
- */
-	$invoiceService = new InvoiceService();
+	configuration file for your credentials and endpoint
+	*/
+	$invoiceService = new InvoiceService(Configuration::getSignatureConfig());
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
 		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);

@@ -87,9 +87,9 @@ $request->requestEnvelope = $requestEnvelope;
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-configuration file for your credentials and endpoint
-*/
-$permissions = new PermissionsService();
+Configuration::getSignatureConfig() returns array that contains credential and config parameters
+ */
+$permissions = new PermissionsService(Configuration::getSignatureConfig());
 try {
 	$response = $permissions->RequestPermissions($request);
 } catch (Exception $ex) {
