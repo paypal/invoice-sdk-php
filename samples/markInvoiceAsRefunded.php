@@ -42,8 +42,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$refundDetails->date = $_POST['refundDate'];
 	$markInvoiceAsRefundedRequest = new MarkInvoiceAsRefundedRequest($requestEnvelope, $_POST['invoiceID'], $refundDetails);
 
-
-	$invoiceService = new InvoiceService();
+	/*
+		 Configuration::getSignatureConfig() returns array that contains credential and config parameters
+    */
+	$invoiceService = new InvoiceService(Configuration::getSignatureConfig());
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$cred = new PPSignatureCredential("jb-us-seller_api1.paypal.com", "WX4WTU3S8MY44S7F", "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy");
