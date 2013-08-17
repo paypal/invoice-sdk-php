@@ -25,9 +25,9 @@ $request->verifier = $_REQUEST['Verifier'];
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-Configuration::getSignatureConfig() returns array that contains credential and config parameters
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
  */
-$permissions = new PermissionsService(Configuration::getSignatureConfig());
+$permissions = new PermissionsService(Configuration::getAcctAndConfig());
 
 try {
 	/* wrap API method calls on the service object with a try catch */
@@ -56,7 +56,7 @@ if($ack != "SUCCESS"){
 </head>
 
 <body>
-		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 
 <div id="request_form">
 <center>
