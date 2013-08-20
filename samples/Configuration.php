@@ -12,8 +12,7 @@ class Configuration
 				// These values are defaulted in SDK. If you want to override default values, uncomment it and add your value.
 				// "http.ConnectionTimeOut" => "5000",
 				// "http.Retry" => "2",
-				// "http.ReadTimeOut" => "30000",
-				// "http.MaxConnection" => "100"
+				
 		);
 		return $config;
 	}
