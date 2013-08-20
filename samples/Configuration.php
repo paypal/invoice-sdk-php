@@ -1,7 +1,7 @@
 <?php 
 class Configuration
 {
-	// For a full list of configuration parameters refer at [https://github.com/paypal/invoice-sdk-php/wiki/SDK-Configuration-Parameters]
+	// For a full list of configuration parameters refer in wiki page (https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK)
 	public static function getConfig()
 	{
 		$config = array(
