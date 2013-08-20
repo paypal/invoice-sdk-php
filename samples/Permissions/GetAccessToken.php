@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../sdk.css"/>
 </head>
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 
 	<center><h3>Permissions - Get Access Token</h3></center>
 	<form action="GetAccessTokenReceipt.php" method="post">

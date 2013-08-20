@@ -9,6 +9,7 @@ require_once('PPBootStrap.php');
 </head>
 
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
 	<br/>
     <center>
 	  <h4>PayPal Invoicing SDK Samples Home</h4>
