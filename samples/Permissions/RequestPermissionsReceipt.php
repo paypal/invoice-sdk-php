@@ -87,9 +87,9 @@ $request->requestEnvelope = $requestEnvelope;
 /*
  * 	 ## Creating service wrapper object
 Creating service wrapper object to make API call and loading
-configuration file for your credentials and endpoint
-*/
-$permissions = new PermissionsService();
+Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+ */
+$permissions = new PermissionsService(Configuration::getAcctAndConfig());
 try {
 	$response = $permissions->RequestPermissions($request);
 } catch (Exception $ex) {
@@ -116,6 +116,7 @@ if($ack != "SUCCESS"){
 </head>
 
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 <div class="overview">Step 2) Redirect third party to PayPal so that the user may login and grant permissions to the API caller.</div>
  
 <br />
