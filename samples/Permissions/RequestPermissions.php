@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../sdk.css"/>
 </head>
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 <div id="request_form">
 
 <form name="Form1" id="Form1" method="post"
