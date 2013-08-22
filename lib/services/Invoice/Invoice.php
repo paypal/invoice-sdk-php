@@ -793,12 +793,11 @@ class InvoiceType
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($merchantEmail = NULL, $payerEmail = NULL, $itemList = NULL, $currencyCode = NULL, $paymentTerms = NULL) {
+	public function __construct($merchantEmail = NULL, $payerEmail = NULL, $itemList = NULL, $currencyCode = NULL) {
 		$this->merchantEmail = $merchantEmail;
 		$this->payerEmail = $payerEmail;
 		$this->itemList = $itemList;
 		$this->currencyCode = $currencyCode;
-		$this->paymentTerms = $paymentTerms;
 	}
 
 
@@ -1608,6 +1607,110 @@ class SendInvoiceRequest
  * The response object for SendInvoice. 
  */
 class SendInvoiceResponse  
+  extends PPMessage   {
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var ResponseEnvelope 	 
+	 */ 
+	public $responseEnvelope;
+
+	/**
+	 * The sent invoice's ID. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $invoiceID;
+
+	/**
+	 * The URL which lead merchant to view the invoice details on
+	 * web. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $invoiceURL;
+
+	/**
+	 * 
+     * @array
+	 * @access public
+	 
+	 	 	 	 
+	 * @var ErrorData 	 
+	 */ 
+	public $error;
+
+
+}
+
+
+
+/**
+ * The request object for RemindInvoice. 
+ */
+class RemindInvoiceRequest  
+  extends PPMessage   {
+
+	/**
+	 * 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var RequestEnvelope 	 
+	 */ 
+	public $requestEnvelope;
+
+	/**
+	 * ID of the invoice to remind. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $invoiceID;
+
+	/**
+	 * Subject of the Reminder notification 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $subject;
+
+	/**
+	 * Note to send payer within the reminder notification 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $noteForPayer;
+
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($requestEnvelope = NULL, $invoiceID = NULL) {
+		$this->requestEnvelope = $requestEnvelope;
+		$this->invoiceID = $invoiceID;
+	}
+
+
+}
+
+
+
+/**
+ * The response object for RemindInvoice. 
+ */
+class RemindInvoiceResponse  
   extends PPMessage   {
 
 	/**

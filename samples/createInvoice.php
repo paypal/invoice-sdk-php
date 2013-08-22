@@ -16,6 +16,7 @@ session_start();
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
 	<h2>CreateInvoice API Test Page</h2>
 <?php
 
@@ -83,9 +84,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	/*
 	 *  ## Creating service wrapper object
 		 Creating service wrapper object to make API call and loading
-		 configuration file for your credentials and endpoint
-	 */
-	$invoiceService = new InvoiceService();
+	     configuration file for your credentials and endpoint
+	*/
+	$invoiceService = new InvoiceService(Configuration::getAcctAndConfig());
 	// required in third party permissioning
 	if(($_POST['accessToken']!= null) && ($_POST['tokenSecret'] != null)) {
 		$cred = new PPSignatureCredential(USERNAME, PASSWORD, SIGNATURE);

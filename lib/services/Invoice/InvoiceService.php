@@ -6,7 +6,7 @@
 class InvoiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "1.9.0";
+	private static $SERVICE_VERSION = "1.10.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "Invoice";
@@ -15,7 +15,7 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.4.103";
+	protected static $SDK_VERSION = "2.5.106";
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);
@@ -53,6 +53,23 @@ class InvoiceService extends PPBaseService {
 	public function SendInvoice($sendInvoiceRequest, $apiCredential = NULL) {
 		$ret = new SendInvoiceResponse();
 		$resp = $this->call('Invoice', 'SendInvoice', $sendInvoiceRequest, $apiCredential);
+		$ret->init(PPUtils::nvpToMap($resp));
+		return $ret;
+	}
+	 
+
+	/**
+	 * Service Call: RemindInvoice
+	 * @param RemindInvoiceRequest $remindInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
+	 * @return RemindInvoiceResponse
+	 * @throws APIException
+	 */
+	public function RemindInvoice($remindInvoiceRequest, $apiCredential = NULL) {
+		$ret = new RemindInvoiceResponse();
+		$resp = $this->call('Invoice', 'RemindInvoice', $remindInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}

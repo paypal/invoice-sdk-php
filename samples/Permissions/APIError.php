@@ -9,6 +9,7 @@ $response=$_SESSION['reshash'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 
 <div id="request_form">
 <center>
