@@ -19,6 +19,7 @@ session_start();
 	<script type="text/javascript" src="sdk.js"></script>
 </head>
 <body>
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png">
 <h2>MarkInvoiceAsRefunded API Test Page</h2>
 <?php
 
@@ -42,8 +43,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$refundDetails->date = $_POST['refundDate'];
 	$markInvoiceAsRefundedRequest = new MarkInvoiceAsRefundedRequest($requestEnvelope, $_POST['invoiceID'], $refundDetails);
 
-
-	$invoiceService = new InvoiceService();
+	/*
+		 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
+    */
+	$invoiceService = new InvoiceService(Configuration::getAcctAndConfig());
 	// required in third party permissioning
 	if(($_POST['accessToken'] != null) && ($_POST['tokenSecret'] != null)) {
 		$cred = new PPSignatureCredential("jb-us-seller_api1.paypal.com", "WX4WTU3S8MY44S7F", "AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy");

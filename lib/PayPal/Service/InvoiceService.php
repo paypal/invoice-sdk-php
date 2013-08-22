@@ -5,6 +5,7 @@ use PayPal\Core\PPBaseService;
 use PayPal\Core\PPUtils;
 use PayPal\Types\PT\CreateInvoiceResponse;
 use PayPal\Types\PT\SendInvoiceResponse;
+use PayPal\Types\PT\RemindInvoiceResponse;
 use PayPal\Types\PT\CreateAndSendInvoiceResponse;
 use PayPal\Types\PT\UpdateInvoiceResponse;
 use PayPal\Types\PT\GetInvoiceDetailsResponse;
@@ -21,7 +22,7 @@ use PayPal\Types\PT\DeleteInvoiceResponse;
 class InvoiceService extends PPBaseService {
 
 	// Service Version
-	private static $SERVICE_VERSION = "1.9.0";
+	private static $SERVICE_VERSION = "1.10.0";
 
 	// Service Name
 	private static $SERVICE_NAME = "Invoice";
@@ -30,7 +31,7 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "3.5.103";
+	protected static $SDK_VERSION = "3.6.106";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
@@ -72,6 +73,23 @@ class InvoiceService extends PPBaseService {
 	public function SendInvoice($sendInvoiceRequest, $apiCredential = NULL) {
 		$ret = new SendInvoiceResponse();
 		$resp = $this->call('Invoice', 'SendInvoice', $sendInvoiceRequest, $apiCredential);
+		$ret->init(PPUtils::nvpToMap($resp));
+		return $ret;
+	}
+	 
+
+	/**
+	 * Service Call: RemindInvoice
+	 * @param RemindInvoiceRequest $remindInvoiceRequest
+	 * @param mixed $apiCredential - Optional API credential - can either be
+	 * 		a username configured in sdk_config.ini or a ICredential object
+	 *      created dynamically 		
+	 * @return Types\PT\RemindInvoiceResponse
+	 * @throws APIException
+	 */
+	public function RemindInvoice($remindInvoiceRequest, $apiCredential = NULL) {
+		$ret = new RemindInvoiceResponse();
+		$resp = $this->call('Invoice', 'RemindInvoice', $remindInvoiceRequest, $apiCredential);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
