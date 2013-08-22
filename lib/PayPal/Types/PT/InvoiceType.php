@@ -255,12 +255,11 @@ class InvoiceType
 	/**
 	 * Constructor with arguments
 	 */
-	public function __construct($merchantEmail = NULL, $payerEmail = NULL, $itemList = NULL, $currencyCode = NULL, $paymentTerms = NULL) {
+	public function __construct($merchantEmail = NULL, $payerEmail = NULL, $itemList = NULL, $currencyCode = NULL) {
 		$this->merchantEmail = $merchantEmail;
 		$this->payerEmail = $payerEmail;
 		$this->itemList = $itemList;
 		$this->currencyCode = $currencyCode;
-		$this->paymentTerms = $paymentTerms;
 	}
 
 
