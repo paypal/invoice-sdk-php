@@ -34,7 +34,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/invoice-sdk-php":"v2.4.103"
+        "paypal/invoice-sdk-php":"v2.5.106"
     }
 }
 ```
