@@ -21,7 +21,7 @@ If using composer, run `composer update` from the samples folder. Otherwise, run
     cd samples
     curl  https://raw.github.com/paypal/invoice-sdk-php/stable/samples/install.php | php    
         (OR)        
-    php install.php
+    php samples/install.php
 ```
 
 ## Using the SDK
@@ -39,7 +39,7 @@ To use the SDK,
 }
 ```
 
-   * Install the SDK as a dependency using composer or the install.php script. 
+   * Install the SDK as a dependency using composer or the [install.php](https://github.com/paypal/invoice-sdk-php/blob/master/samples/install.php) script from the samples directory. 
    * Require `vendor/autoload.php` OR `PPBootStrap.php` in your application depending on whether you used composer or the custom installer.
    * Choose how you would like to configure the SDK - You can either
 	  * Create a hashmap containing configuration parameters and pass it to the service object OR
