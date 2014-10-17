@@ -15,12 +15,10 @@ class InvoiceService extends PPBaseService {
 	protected static $SDK_NAME = "invoice-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.5.106";
+	protected static $SDK_VERSION = "2.6.106";
 
 	public function __construct($config = null) {
-		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);
-        parent::$SDK_NAME    = self::$SDK_NAME ;
-        parent::$SDK_VERSION = self::$SDK_VERSION;
+		parent::__construct(self::$SERVICE_NAME, 'NV', $config);
 	}
 
 
@@ -35,7 +33,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function CreateInvoice($createInvoiceRequest, $apiCredential = NULL) {
 		$ret = new CreateInvoiceResponse();
-		$resp = $this->call('Invoice', 'CreateInvoice', $createInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'CreateInvoice', $createInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -52,7 +54,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function SendInvoice($sendInvoiceRequest, $apiCredential = NULL) {
 		$ret = new SendInvoiceResponse();
-		$resp = $this->call('Invoice', 'SendInvoice', $sendInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'SendInvoice', $sendInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -69,7 +75,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function RemindInvoice($remindInvoiceRequest, $apiCredential = NULL) {
 		$ret = new RemindInvoiceResponse();
-		$resp = $this->call('Invoice', 'RemindInvoice', $remindInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'RemindInvoice', $remindInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -86,7 +96,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function CreateAndSendInvoice($createAndSendInvoiceRequest, $apiCredential = NULL) {
 		$ret = new CreateAndSendInvoiceResponse();
-		$resp = $this->call('Invoice', 'CreateAndSendInvoice', $createAndSendInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'CreateAndSendInvoice', $createAndSendInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -103,7 +117,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function UpdateInvoice($updateInvoiceRequest, $apiCredential = NULL) {
 		$ret = new UpdateInvoiceResponse();
-		$resp = $this->call('Invoice', 'UpdateInvoice', $updateInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'UpdateInvoice', $updateInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -120,7 +138,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function GetInvoiceDetails($getInvoiceDetailsRequest, $apiCredential = NULL) {
 		$ret = new GetInvoiceDetailsResponse();
-		$resp = $this->call('Invoice', 'GetInvoiceDetails', $getInvoiceDetailsRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'GetInvoiceDetails', $getInvoiceDetailsRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -137,7 +159,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function CancelInvoice($cancelInvoiceRequest, $apiCredential = NULL) {
 		$ret = new CancelInvoiceResponse();
-		$resp = $this->call('Invoice', 'CancelInvoice', $cancelInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'CancelInvoice', $cancelInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -154,7 +180,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function SearchInvoices($searchInvoicesRequest, $apiCredential = NULL) {
 		$ret = new SearchInvoicesResponse();
-		$resp = $this->call('Invoice', 'SearchInvoices', $searchInvoicesRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'SearchInvoices', $searchInvoicesRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -171,7 +201,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function MarkInvoiceAsPaid($markInvoiceAsPaidRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsPaidResponse();
-		$resp = $this->call('Invoice', 'MarkInvoiceAsPaid', $markInvoiceAsPaidRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'MarkInvoiceAsPaid', $markInvoiceAsPaidRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -188,7 +222,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function MarkInvoiceAsUnpaid($markInvoiceAsUnpaidRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsUnpaidResponse();
-		$resp = $this->call('Invoice', 'MarkInvoiceAsUnpaid', $markInvoiceAsUnpaidRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'MarkInvoiceAsUnpaid', $markInvoiceAsUnpaidRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -205,7 +243,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function MarkInvoiceAsRefunded($markInvoiceAsRefundedRequest, $apiCredential = NULL) {
 		$ret = new MarkInvoiceAsRefundedResponse();
-		$resp = $this->call('Invoice', 'MarkInvoiceAsRefunded', $markInvoiceAsRefundedRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'MarkInvoiceAsRefunded', $markInvoiceAsRefundedRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
@@ -222,7 +264,11 @@ class InvoiceService extends PPBaseService {
 	 */
 	public function DeleteInvoice($deleteInvoiceRequest, $apiCredential = NULL) {
 		$ret = new DeleteInvoiceResponse();
-		$resp = $this->call('Invoice', 'DeleteInvoice', $deleteInvoiceRequest, $apiCredential);
+		$apiContext = new PPApiContext($this->config);
+        $handlers = array(
+            new PPPlatformServiceHandler($apiCredential, self::$SDK_NAME, self::$SDK_VERSION),
+        );
+		$resp = $this->call('Invoice', 'DeleteInvoice', $deleteInvoiceRequest, $apiContext, $handlers);
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}

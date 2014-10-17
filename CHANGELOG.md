@@ -1,5 +1,11 @@
 ### CHANGELOG
 
+#### Version 2.6.106 - Oct 17, 2014
+
+    - Updated code to use newer SDK Core
+You can see source code of this release in github under https://github.com/paypal/invoice-sdk-php/tree/v2.6.106.
+--------------------------------------------------------------------------------------------------
+
 #### Version 2.5.106 - August 22, 2013
  
 	- Updated stubs.
