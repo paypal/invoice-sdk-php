@@ -1,5 +1,37 @@
 # PayPal PHP Invoice SDK
 
+## POODLE Update
+- Because of the Poodle vulnerability, PayPal has disabled SSLv3.
+- To enable TLS encryption, the changes were made to [PPHttpConfig.php](https://github.com/paypal/sdk-core-php/blob/namespace-5.3/lib/PayPal/Core/PPHttpConfig.php#L11) in [SDK Core](https://github.com/paypal/sdk-core-php/tree/namespace-5.3) to use a cipher list specific to TLS encryption.
+``` php
+    /**
+	 * Some default options for curl
+	 * These are typically overridden by PPConnectionManager
+	 */
+	public static $DEFAULT_CURL_OPTS = array(
+		CURLOPT_SSLVERSION => 1,
+		CURLOPT_CONNECTTIMEOUT => 10,
+		CURLOPT_RETURNTRANSFER => TRUE,
+		CURLOPT_TIMEOUT        => 60,	// maximum number of seconds to allow cURL functions to execute
+		CURLOPT_USERAGENT      => 'PayPal-PHP-SDK',
+		CURLOPT_HTTPHEADER     => array(),
+		CURLOPT_SSL_VERIFYHOST => 2,
+		CURLOPT_SSL_VERIFYPEER => 1,
+		CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
+	);
+```
+- There are two primary changes done to curl options:
+    - CURLOPT_SSLVERSION is set to 1 . See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html) for more information
+    - CURLOPT_SSL_CIPHER_LIST was set to TLSv1, See [here](http://curl.haxx.se/libcurl/c/CURLOPT_SSL_CIPHER_LIST.html) for more information
+
+All these changes are included in the recent release, along with many other bug fixes. We highly encourage you to update your versions, by either using `composer` or running this command shown below:
+
+```
+curl -k -L https://raw.githubusercontent.com/paypal/invoice-sdk-php/stable-php5.3/samples/install.php | php
+        OR
+wget  https://raw.githubusercontent.com/paypal/invoice-sdk-php/stable-php5.3/samples/install.php
+php install.php
+```
 
 ## Prerequisites
 
@@ -26,7 +58,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/invoice-sdk-php":"v3.6.106"
+        "paypal/invoice-sdk-php":"3.*"
     }
 }
 ```
