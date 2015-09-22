@@ -13,12 +13,12 @@
     "require": {
         "php": ">=5.3.0",
         "ext-curl": "*",
-        "paypal/sdk-core-php":"2.5.*"
+        "paypal/sdk-core-php":"3.*"
     },
     "autoload": {
         "psr-0": {
             "PayPal\\Service": "lib/",
             "PayPal\\Types": "lib/"
         }
-    }    
+    }
 }

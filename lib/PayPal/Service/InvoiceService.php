@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace PayPal\Service;
 use PayPal\Common\PPApiContext;
 use PayPal\Core\PPMessage;
@@ -31,9 +31,9 @@ class InvoiceService extends PPBaseService {
 
     // SDK Name
 	protected static $SDK_NAME = "invoice-php-sdk";
-	
+
 	// SDK Version
-	protected static $SDK_VERSION = "3.6.107";
+	protected static $SDK_VERSION = "3.9.0";
 
     /**
     * @param $config - Dynamic config map. This takes the higher precedence if config file is also present.
@@ -49,7 +49,7 @@ class InvoiceService extends PPBaseService {
 	 * @param CreateInvoiceRequest $createInvoiceRequest
 	 * @param mixed $apiCredential - Optional API credential - can either be
 	 * 		a username configured in sdk_config.ini or a ICredential object
-	 *      created dynamically 		
+	 *      created dynamically
 	 * @return Types\PT\CreateInvoiceResponse
 	 * @throws APIException
 	 */
@@ -294,5 +294,5 @@ class InvoiceService extends PPBaseService {
 		$ret->init(PPUtils::nvpToMap($resp));
 		return $ret;
 	}
-	 
+
 }
