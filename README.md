@@ -33,8 +33,11 @@ wget  https://raw.githubusercontent.com/paypal/invoice-sdk-php/stable-php5.3/sam
 php install.php
 ```
 
-## Prerequisites
+## Support
 
+> Please contact [PayPal Technical Support](https://developer.paypal.com/support/) for any live or account issues.
+
+## Prerequisites
 
 PayPal's PHP Invoicing SDK requires 
 
